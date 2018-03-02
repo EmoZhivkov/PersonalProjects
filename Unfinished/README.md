@@ -1,3 +1,1 @@
-Някой от случайте не работят, незнайно защо
-- при i между 0 и n/ j = n
-- при i = m
+##The projects or problems that are still unfinished
