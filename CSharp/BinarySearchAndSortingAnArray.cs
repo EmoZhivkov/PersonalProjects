@@ -9,12 +9,19 @@ namespace ConsoleApp1
 {
     class Program
     {
-     
+
         static void Main()
         {
-            int[] arr = { 5, 4, 1, 3, 2 };
-            int[] arrSorted = new int[arr.Length];
+            int[] arr = { 1,2,3,4,5};
 
+            int[] arrSorted = SortArray(arr);
+
+            Console.WriteLine(BinarySearch(arrSorted));
+        }
+
+        public static int[] SortArray(int[]arr)
+        {
+            int[] arrSorted = new int[arr.Length];
             int minIndex = 0;
             int helper = int.MaxValue;
             for (int i = 0; i < arr.Length; i++)
@@ -32,8 +39,11 @@ namespace ConsoleApp1
                 helper = int.MaxValue;
                 arr[minIndex] = int.MaxValue;
             }
+            return arrSorted;
+        }
 
-
+        public static int BinarySearch(int[]arrSorted)
+        {
             int min = 0;
             int max = arrSorted.Length - 1;
             int key = 4;
@@ -55,10 +65,8 @@ namespace ConsoleApp1
                     break;
                 }
             }
-            Console.WriteLine(indexKey);
-
+            return arrSorted[indexKey - 1];
         }
-
         
     }
 }
