@@ -1,0 +1,7 @@
+D:\Desktop\vmware\vmware\bin\Debug\vmware.exe.config
+D:\Desktop\vmware\vmware\bin\Debug\vmware.exe
+D:\Desktop\vmware\vmware\bin\Debug\vmware.pdb
+D:\Desktop\vmware\vmware\obj\Debug\vmware.csprojResolveAssemblyReference.cache
+D:\Desktop\vmware\vmware\obj\Debug\vmware.csproj.CoreCompileInputs.cache
+D:\Desktop\vmware\vmware\obj\Debug\vmware.exe
+D:\Desktop\vmware\vmware\obj\Debug\vmware.pdb
