@@ -2,6 +2,8 @@
 
 namespace BinarySearchTree
 {
+    //The binary tree contains nodes which have a value
+    //and are connected to the nodes on the left and right
     class Node
     {
         private int value;
@@ -31,20 +33,26 @@ namespace BinarySearchTree
         }
     }
 
+    //The binary tree has its own root, Search and Insert methods
     class BinaryTree
     {
         public Node root;
 
+        //The Insert function takes a value and calls the InsertRecursive method
+        //with the root Node and a value
         public void Insert(int value)
         {
             root = InsertRecursive(root, value);
         }
 
-        public bool Search(int value)
+        //The SearchTree method takes a value and calls the SearchRecursive method
+        //with the root Node and a value
+        public bool SearchTree(int value)
         {
             return SearchRecursive(root, value);
         }
 
+        //Recursively inserts the element
         private Node InsertRecursive(Node current, int value)
         {
             if (current == null)
@@ -62,6 +70,7 @@ namespace BinarySearchTree
             return current;
         }
 
+        //Recursively searches for the element
         private bool SearchRecursive(Node current, int value)
         {
             if (current == null)
@@ -80,15 +89,26 @@ namespace BinarySearchTree
             {
                 return SearchRecursive(current.Left, value);
             }
-
         }
     }
+
+    //Contains the Search method
+    class SearchMethod
+    {
+        //The Search method takes a tree and a value and calls the SearchTree method with the value
+        public static bool Search(BinaryTree tree, int value)
+        {
+            return tree.SearchTree(value);
+        }
+    }
+    
 }
 
 namespace _Program
 { 
     class Program
     {
+
         static void Main(string[] args)
         {
 
@@ -108,7 +128,7 @@ namespace _Program
             {
                 n = int.Parse(Console.ReadLine());
 
-                bool search = tree.Search(n);
+                bool search = BinarySearchTree.SearchMethod.Search(tree, n);
 
                 Console.WriteLine(search);
             }
