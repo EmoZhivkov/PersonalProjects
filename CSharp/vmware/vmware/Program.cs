@@ -4,75 +4,111 @@ namespace BinarySearchTree
 {
     class Node
     {
-        public int value;
-        public Node left;
-        public Node right;
+        private int value;
+        private Node left;
+        private Node right;
+
+        public Node(int v)
+        {
+            this.value = v;
+            this.left = null;
+            this.right = null;
+        }
+        public int Value
+        {
+            get { return this.value; }
+            set { this.value = value; }
+        }
+        public Node Left
+        {
+            get { return this.left; }
+            set { this.left = value; }
+        }
+        public Node Right
+        {
+            get { return this.right; }
+            set { this.right = value; }
+        }
     }
 
     class BinaryTree
     {
-        public Node Insert(Node root, int value)
+        public Node root;
+
+        public void Insert(int value)
         {
-            if (root == null)
-            {
-                root = new Node();
-                root.value = value;
-            }
-            else if (value < root.value)
-            {
-                root.left = Insert(root.left, value);
-            }
-            else 
-            {
-                root.right = Insert(root.right, value);
-            }
-            return root;
+            root = InsertRecursive(root, value);
         }
 
-        public bool Search(Node root, int x)
+        public bool Search(int value)
         {
-            if (root == null)
+            return SearchRecursive(root, value);
+        }
+
+        private Node InsertRecursive(Node current, int value)
+        {
+            if (current == null)
             {
-                return false;
+                return new Node(value);
             }
-            else if (root.value == x)
+            else if (value <= current.Value)
             {
-                return true;
-            }
-            else if (root.value < x)
-            {
-                return Search(root.right, x);
+                current.Left = InsertRecursive(current.Left, value);
             }
             else
             {
-                return Search(root.left, x);
+                current.Right = InsertRecursive(current.Right, value);
             }
-            
+            return current;
+        }
+
+        private bool SearchRecursive(Node current, int value)
+        {
+            if (current == null)
+            {
+                return false;
+            }
+            else if (current.Value == value)
+            {
+                return true;
+            }
+            else if (current.Value < value)
+            {
+                return SearchRecursive(current.Right, value);
+            }
+            else
+            {
+                return SearchRecursive(current.Left, value);
+            }
+
         }
     }
+}
 
-    class BinarySearchTree
+namespace _Program
+{ 
+    class Program
     {
         static void Main(string[] args)
         {
-            Node root = null;
-            BinaryTree tree = new BinaryTree();
-            root = tree.Insert(root, 15);
-            root = tree.Insert(root, 31);
-            root = tree.Insert(root, 7);
-            root = tree.Insert(root, 10);
-            root = tree.Insert(root, 3);
-            root = tree.Insert(root, 9);
-            root = tree.Insert(root, 1);
-            root = tree.Insert(root, 20);
+
+            BinarySearchTree.BinaryTree tree = new BinarySearchTree.BinaryTree();
+            tree.Insert(15);
+            tree.Insert(31);
+            tree.Insert(7);
+            tree.Insert(7);
+            tree.Insert(3);
+            tree.Insert(3);
+            tree.Insert(1);
+            tree.Insert(20);
 
             int n = 100;
 
-            while(n != 0)
+            while (n != 0)
             {
                 n = int.Parse(Console.ReadLine());
 
-                bool search = tree.Search(root, n);
+                bool search = tree.Search(n);
 
                 Console.WriteLine(search);
             }
