@@ -4,49 +4,21 @@ import org.sqrt.Sqrt;
 
 public class SqrtTest {
     @Test
-    public void testSqrtNotPrecise1() {
+    public void testSqrtNotExact() {
         int output = Sqrt.sqrt();
         int expected = 0;
 
         Assert.assertEquals(expected, output);
     }
     @Test
-    public void testSqrtNotPrecise2(){
+    public void testSqrtExact() {
         int output = Sqrt.sqrt();
         int expected = 0;
 
         Assert.assertEquals(expected, output);
     }
     @Test
-    public void testSqrtNotPrecise3() {
-        int output = Sqrt.sqrt();
-        int expected = 0;
-
-        Assert.assertEquals(expected, output);
-    }
-    @Test
-    public void testSqrtPrecise1() {
-        int output = Sqrt.sqrt();
-        int expected = 0;
-
-        Assert.assertEquals(expected, output);
-    }
-    @Test
-    public void testSqrtPrecise2() {
-        int output = Sqrt.sqrt();
-        int expected = 0;
-
-        Assert.assertEquals(expected, output);
-    }
-    @Test
-    public void testSqrtNegative1() {
-        int output = Sqrt.sqrt();
-        int expected = 0;
-
-        Assert.assertEquals(expected, output);
-    }
-    @Test
-    public void testSqrtNegative2() {
+    public void testSqrtNegative() {
         int output = Sqrt.sqrt();
         int expected = 0;
 
@@ -54,6 +26,27 @@ public class SqrtTest {
     }
     @Test
     public void testSqrtZero() {
+        int output = Sqrt.sqrt();
+        int expected = 0;
+
+        Assert.assertEquals(expected, output);
+    }
+    @Test
+    public void testSqrtInfinity() {
+        int output = Sqrt.sqrt();
+        int expected = 0;
+
+        Assert.assertEquals(expected, output);
+    }
+    @Test
+    public void testSqrtLargeNumber() {
+        int output = Sqrt.sqrt();
+        int expected = 0;
+
+        Assert.assertEquals(expected, output);
+    }
+    @Test
+    public void testSqrtBetweenZeroAndOne() {
         int output = Sqrt.sqrt();
         int expected = 0;
 
