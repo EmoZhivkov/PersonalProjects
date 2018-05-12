@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\45.PersonalTitles\bin\Debug\45.PersonalTitles.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\45.PersonalTitles\bin\Debug\45.PersonalTitles.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\45.PersonalTitles\bin\Debug\45.PersonalTitles.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\45.PersonalTitles\obj\Debug\45.PersonalTitles.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\45.PersonalTitles\obj\Debug\45.PersonalTitles.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\45.PersonalTitles\obj\Debug\45.PersonalTitles.pdb

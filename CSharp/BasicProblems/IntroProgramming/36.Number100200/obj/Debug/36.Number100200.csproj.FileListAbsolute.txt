@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\36.Number100200\bin\Debug\36.Number100200.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\36.Number100200\bin\Debug\36.Number100200.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\36.Number100200\bin\Debug\36.Number100200.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\36.Number100200\obj\Debug\36.Number100200.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\36.Number100200\obj\Debug\36.Number100200.pdb

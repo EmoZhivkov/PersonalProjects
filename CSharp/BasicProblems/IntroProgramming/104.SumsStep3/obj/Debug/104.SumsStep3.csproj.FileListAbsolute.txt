@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\104.SumsStep3\bin\Debug\104.SumsStep3.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\104.SumsStep3\bin\Debug\104.SumsStep3.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\104.SumsStep3\bin\Debug\104.SumsStep3.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\104.SumsStep3\obj\Debug\104.SumsStep3.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\104.SumsStep3\obj\Debug\104.SumsStep3.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\104.SumsStep3\obj\Debug\104.SumsStep3.pdb

@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\04.BackToThePast\bin\Debug\04.BackToThePast.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\04.BackToThePast\bin\Debug\04.BackToThePast.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\04.BackToThePast\bin\Debug\04.BackToThePast.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\04.BackToThePast\obj\Debug\04.BackToThePast.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\04.BackToThePast\obj\Debug\04.BackToThePast.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\04.BackToThePast\obj\Debug\04.BackToThePast.pdb

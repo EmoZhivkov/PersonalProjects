@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\Num1....20\bin\Debug\Num1._._._._20.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\Num1....20\bin\Debug\Num1._._._._20.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\Num1....20\bin\Debug\Num1._._._._20.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\Num1....20\obj\Debug\Num1._._._._20.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\Num1....20\obj\Debug\Num1._._._._20.pdb

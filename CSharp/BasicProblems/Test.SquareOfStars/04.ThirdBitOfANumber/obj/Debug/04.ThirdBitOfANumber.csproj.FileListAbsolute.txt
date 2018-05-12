@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\04.ThirdBitOfANumber\bin\Debug\04.ThirdBitOfANumber.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\04.ThirdBitOfANumber\bin\Debug\04.ThirdBitOfANumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\04.ThirdBitOfANumber\bin\Debug\04.ThirdBitOfANumber.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\04.ThirdBitOfANumber\obj\Debug\04.ThirdBitOfANumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\04.ThirdBitOfANumber\obj\Debug\04.ThirdBitOfANumber.pdb

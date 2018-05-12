@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\42.NumberZeroTo100ToText\bin\Debug\42.NumberZeroTo100ToText.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\42.NumberZeroTo100ToText\bin\Debug\42.NumberZeroTo100ToText.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\42.NumberZeroTo100ToText\bin\Debug\42.NumberZeroTo100ToText.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\42.NumberZeroTo100ToText\obj\Debug\42.NumberZeroTo100ToText.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\42.NumberZeroTo100ToText\obj\Debug\42.NumberZeroTo100ToText.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\42.NumberZeroTo100ToText\obj\Debug\42.NumberZeroTo100ToText.pdb

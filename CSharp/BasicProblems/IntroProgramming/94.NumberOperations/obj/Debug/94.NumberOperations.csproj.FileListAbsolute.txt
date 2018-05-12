@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\94.NumberOperations\bin\Debug\94.NumberOperations.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\94.NumberOperations\obj\Debug\94.NumberOperations.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\94.NumberOperations\bin\Debug\94.NumberOperations.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\94.NumberOperations\bin\Debug\94.NumberOperations.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\94.NumberOperations\obj\Debug\94.NumberOperations.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\94.NumberOperations\obj\Debug\94.NumberOperations.pdb

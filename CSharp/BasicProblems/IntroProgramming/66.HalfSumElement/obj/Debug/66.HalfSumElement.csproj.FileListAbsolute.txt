@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\66.HalfSumElement\bin\Debug\66.HalfSumElement.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\66.HalfSumElement\bin\Debug\66.HalfSumElement.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\66.HalfSumElement\bin\Debug\66.HalfSumElement.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\66.HalfSumElement\obj\Debug\66.HalfSumElement.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\66.HalfSumElement\obj\Debug\66.HalfSumElement.pdb

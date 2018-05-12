@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\43.TransportPrice\bin\Debug\43.TransportPrice.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\43.TransportPrice\obj\Debug\43.TransportPrice.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\43.TransportPrice\bin\Debug\43.TransportPrice.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\43.TransportPrice\bin\Debug\43.TransportPrice.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\43.TransportPrice\obj\Debug\43.TransportPrice.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\43.TransportPrice\obj\Debug\43.TransportPrice.pdb

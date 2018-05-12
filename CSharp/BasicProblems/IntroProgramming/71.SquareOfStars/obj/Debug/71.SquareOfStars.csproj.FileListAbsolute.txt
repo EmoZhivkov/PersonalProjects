@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\71.SquareOfStars\bin\Debug\71.SquareOfStars.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\71.SquareOfStars\bin\Debug\71.SquareOfStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\71.SquareOfStars\bin\Debug\71.SquareOfStars.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\71.SquareOfStars\obj\Debug\71.SquareOfStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\71.SquareOfStars\obj\Debug\71.SquareOfStars.pdb

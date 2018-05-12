@@ -1,0 +1,3 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\03\bin\Debug\03.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\03\obj\Debug\03.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\03\obj\Debug\03.pdb

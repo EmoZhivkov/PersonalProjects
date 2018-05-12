@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\106.PerfectDiamond\bin\Debug\106.PerfectDiamond.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\106.PerfectDiamond\bin\Debug\106.PerfectDiamond.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\106.PerfectDiamond\bin\Debug\106.PerfectDiamond.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\106.PerfectDiamond\obj\Debug\106.PerfectDiamond.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\106.PerfectDiamond\obj\Debug\106.PerfectDiamond.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\106.PerfectDiamond\obj\Debug\106.PerfectDiamond.pdb

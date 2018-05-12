@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\13.GreetingByName\bin\Debug\13.GreetingByName.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\13.GreetingByName\bin\Debug\13.GreetingByName.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\13.GreetingByName\bin\Debug\13.GreetingByName.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\13.GreetingByName\obj\Debug\13.GreetingByName.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\13.GreetingByName\obj\Debug\13.GreetingByName.pdb

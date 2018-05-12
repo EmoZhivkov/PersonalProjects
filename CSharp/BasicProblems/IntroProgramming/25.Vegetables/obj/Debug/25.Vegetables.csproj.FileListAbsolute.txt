@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\25.Vegetables\bin\Debug\25.Vegetables.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\25.Vegetables\obj\Debug\25.Vegetables.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\25.Vegetables\bin\Debug\25.Vegetables.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\25.Vegetables\bin\Debug\25.Vegetables.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\25.Vegetables\obj\Debug\25.Vegetables.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\25.Vegetables\obj\Debug\25.Vegetables.pdb

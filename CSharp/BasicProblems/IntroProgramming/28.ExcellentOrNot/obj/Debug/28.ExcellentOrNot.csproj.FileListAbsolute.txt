@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\28.ExcellentOrNot\bin\Debug\28.ExcellentOrNot.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\28.ExcellentOrNot\bin\Debug\28.ExcellentOrNot.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\28.ExcellentOrNot\bin\Debug\28.ExcellentOrNot.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\28.ExcellentOrNot\obj\Debug\28.ExcellentOrNot.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\28.ExcellentOrNot\obj\Debug\28.ExcellentOrNot.pdb

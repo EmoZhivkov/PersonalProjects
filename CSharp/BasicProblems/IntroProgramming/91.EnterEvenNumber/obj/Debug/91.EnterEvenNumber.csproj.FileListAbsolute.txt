@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\91.EnterEvenNumber\bin\Debug\91.EnterEvenNumber.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\91.EnterEvenNumber\bin\Debug\91.EnterEvenNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\91.EnterEvenNumber\bin\Debug\91.EnterEvenNumber.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\91.EnterEvenNumber\obj\Debug\91.EnterEvenNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\91.EnterEvenNumber\obj\Debug\91.EnterEvenNumber.pdb

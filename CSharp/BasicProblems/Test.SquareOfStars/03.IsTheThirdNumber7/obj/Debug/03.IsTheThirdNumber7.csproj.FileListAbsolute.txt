@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\03.IsTheThirdNumber7\bin\Debug\03.IsTheThirdNumber7.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\03.IsTheThirdNumber7\bin\Debug\03.IsTheThirdNumber7.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\03.IsTheThirdNumber7\bin\Debug\03.IsTheThirdNumber7.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\03.IsTheThirdNumber7\obj\Debug\03.IsTheThirdNumber7.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\03.IsTheThirdNumber7\obj\Debug\03.IsTheThirdNumber7.pdb

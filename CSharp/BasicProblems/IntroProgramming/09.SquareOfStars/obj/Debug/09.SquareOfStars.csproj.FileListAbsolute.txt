@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\09.SquareOfStars\bin\Debug\09.SquareOfStars.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\09.SquareOfStars\bin\Debug\09.SquareOfStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\09.SquareOfStars\bin\Debug\09.SquareOfStars.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\09.SquareOfStars\obj\Debug\09.SquareOfStars.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\09.SquareOfStars\obj\Debug\09.SquareOfStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\09.SquareOfStars\obj\Debug\09.SquareOfStars.pdb

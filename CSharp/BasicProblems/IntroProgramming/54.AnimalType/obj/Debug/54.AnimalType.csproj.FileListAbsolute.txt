@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\54.AnimalType\bin\Debug\54.AnimalType.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\54.AnimalType\bin\Debug\54.AnimalType.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\54.AnimalType\bin\Debug\54.AnimalType.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\54.AnimalType\obj\Debug\54.AnimalType.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\54.AnimalType\obj\Debug\54.AnimalType.pdb

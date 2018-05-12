@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\23.CurrencyConverter\bin\Debug\23.CurrencyConverter.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\23.CurrencyConverter\bin\Debug\23.CurrencyConverter.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\23.CurrencyConverter\bin\Debug\23.CurrencyConverter.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\23.CurrencyConverter\obj\Debug\23.CurrencyConverter.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\23.CurrencyConverter\obj\Debug\23.CurrencyConverter.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\23.CurrencyConverter\obj\Debug\23.CurrencyConverter.pdb

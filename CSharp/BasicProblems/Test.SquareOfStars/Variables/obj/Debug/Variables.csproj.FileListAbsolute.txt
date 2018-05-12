@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Variables\bin\Debug\Variables.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Variables\obj\Debug\Variables.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Variables\bin\Debug\Variables.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Variables\bin\Debug\Variables.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Variables\obj\Debug\Variables.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Variables\obj\Debug\Variables.pdb

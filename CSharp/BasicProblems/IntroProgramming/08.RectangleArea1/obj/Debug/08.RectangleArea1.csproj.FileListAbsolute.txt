@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\08.RectangleArea1\bin\Debug\08.RectangleArea1.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\08.RectangleArea1\bin\Debug\08.RectangleArea1.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\08.RectangleArea1\bin\Debug\08.RectangleArea1.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\08.RectangleArea1\obj\Debug\08.RectangleArea1.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\08.RectangleArea1\obj\Debug\08.RectangleArea1.pdb

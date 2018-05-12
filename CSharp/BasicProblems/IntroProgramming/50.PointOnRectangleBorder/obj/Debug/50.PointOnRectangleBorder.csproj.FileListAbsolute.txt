@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\50.PointOnRectangleBorder\bin\Debug\50.PointOnRectangleBorder.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\50.PointOnRectangleBorder\bin\Debug\50.PointOnRectangleBorder.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\50.PointOnRectangleBorder\bin\Debug\50.PointOnRectangleBorder.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\50.PointOnRectangleBorder\obj\Debug\50.PointOnRectangleBorder.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\50.PointOnRectangleBorder\obj\Debug\50.PointOnRectangleBorder.pdb

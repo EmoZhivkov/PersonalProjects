@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\84.EvenPowers Of 2\bin\Debug\84.EvenPowers Of 2.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\84.EvenPowers Of 2\bin\Debug\84.EvenPowers Of 2.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\84.EvenPowers Of 2\bin\Debug\84.EvenPowers Of 2.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\84.EvenPowers Of 2\obj\Debug\84.EvenPowers Of 2.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\84.EvenPowers Of 2\obj\Debug\84.EvenPowers Of 2.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\84.EvenPowers Of 2\obj\Debug\84.EvenPowers Of 2.pdb

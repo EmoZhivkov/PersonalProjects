@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\105.IncreasingElements\bin\Debug\105.IncreasingElements.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\105.IncreasingElements\bin\Debug\105.IncreasingElements.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\105.IncreasingElements\bin\Debug\105.IncreasingElements.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\105.IncreasingElements\obj\Debug\105.IncreasingElements.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\105.IncreasingElements\obj\Debug\105.IncreasingElements.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\105.IncreasingElements\obj\Debug\105.IncreasingElements.pdb

@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\61.SumNumbers\bin\Debug\61.SumNumbers.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\61.SumNumbers\bin\Debug\61.SumNumbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\61.SumNumbers\bin\Debug\61.SumNumbers.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\61.SumNumbers\obj\Debug\61.SumNumbers.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\61.SumNumbers\obj\Debug\61.SumNumbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\61.SumNumbers\obj\Debug\61.SumNumbers.pdb

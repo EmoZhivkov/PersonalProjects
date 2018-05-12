@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\51.FruitShop\bin\Debug\51.FruitShop.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\51.FruitShop\bin\Debug\51.FruitShop.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\51.FruitShop\bin\Debug\51.FruitShop.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\51.FruitShop\obj\Debug\51.FruitShop.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\51.FruitShop\obj\Debug\51.FruitShop.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\51.FruitShop\obj\Debug\51.FruitShop.pdb

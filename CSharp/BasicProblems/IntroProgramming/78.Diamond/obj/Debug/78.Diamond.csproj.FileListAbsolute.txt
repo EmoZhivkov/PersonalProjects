@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\78.Diamond\bin\Debug\78.Diamond.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\78.Diamond\bin\Debug\78.Diamond.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\78.Diamond\bin\Debug\78.Diamond.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\78.Diamond\obj\Debug\78.Diamond.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\78.Diamond\obj\Debug\78.Diamond.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\78.Diamond\obj\Debug\78.Diamond.pdb

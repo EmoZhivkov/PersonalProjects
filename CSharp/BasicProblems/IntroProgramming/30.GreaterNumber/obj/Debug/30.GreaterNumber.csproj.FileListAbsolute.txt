@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\30.GreaterNumber\bin\Debug\30.GreaterNumber.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\30.GreaterNumber\bin\Debug\30.GreaterNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\30.GreaterNumber\bin\Debug\30.GreaterNumber.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\30.GreaterNumber\obj\Debug\30.GreaterNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\30.GreaterNumber\obj\Debug\30.GreaterNumber.pdb

@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\11.RectangleArea\bin\Debug\11.RectangleArea.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\11.RectangleArea\bin\Debug\11.RectangleArea.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\11.RectangleArea\bin\Debug\11.RectangleArea.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\11.RectangleArea\obj\Debug\11.RectangleArea.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\11.RectangleArea\obj\Debug\11.RectangleArea.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\11.RectangleArea\obj\Debug\11.RectangleArea.pdb

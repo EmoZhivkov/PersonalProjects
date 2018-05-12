@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\95.CleverLilly\bin\Debug\95.CleverLilly.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\95.CleverLilly\bin\Debug\95.CleverLilly.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\95.CleverLilly\bin\Debug\95.CleverLilly.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\95.CleverLilly\obj\Debug\95.CleverLilly.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\95.CleverLilly\obj\Debug\95.CleverLilly.pdb

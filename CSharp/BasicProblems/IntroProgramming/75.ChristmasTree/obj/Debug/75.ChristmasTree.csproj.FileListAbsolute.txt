@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\75.ChristmasTree\bin\Debug\75.ChristmasTree.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\75.ChristmasTree\bin\Debug\75.ChristmasTree.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\75.ChristmasTree\bin\Debug\75.ChristmasTree.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\75.ChristmasTree\obj\Debug\75.ChristmasTree.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\75.ChristmasTree\obj\Debug\75.ChristmasTree.pdb

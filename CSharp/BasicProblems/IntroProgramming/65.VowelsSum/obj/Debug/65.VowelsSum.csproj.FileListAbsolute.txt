@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.VowelsSum\bin\Debug\65.VowelsSum.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.VowelsSum\obj\Debug\65.VowelsSum.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.VowelsSum\bin\Debug\65.VowelsSum.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.VowelsSum\bin\Debug\65.VowelsSum.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.VowelsSum\obj\Debug\65.VowelsSum.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.VowelsSum\obj\Debug\65.VowelsSum.pdb

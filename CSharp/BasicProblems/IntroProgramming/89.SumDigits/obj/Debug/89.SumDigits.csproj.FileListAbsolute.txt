@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\89.SumDigits\bin\Debug\89.SumDigits.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\89.SumDigits\bin\Debug\89.SumDigits.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\89.SumDigits\bin\Debug\89.SumDigits.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\89.SumDigits\obj\Debug\89.SumDigits.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\89.SumDigits\obj\Debug\89.SumDigits.pdb

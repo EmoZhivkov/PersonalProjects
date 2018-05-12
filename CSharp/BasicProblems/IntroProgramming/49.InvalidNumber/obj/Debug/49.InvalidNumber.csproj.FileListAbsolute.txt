@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\49.InvalidNumber\bin\Debug\49.InvalidNumber.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\49.InvalidNumber\bin\Debug\49.InvalidNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\49.InvalidNumber\bin\Debug\49.InvalidNumber.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\49.InvalidNumber\obj\Debug\49.InvalidNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\49.InvalidNumber\obj\Debug\49.InvalidNumber.pdb

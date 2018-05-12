@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\90.CheckPrime\bin\Debug\90.CheckPrime.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\90.CheckPrime\bin\Debug\90.CheckPrime.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\90.CheckPrime\bin\Debug\90.CheckPrime.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\90.CheckPrime\obj\Debug\90.CheckPrime.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\90.CheckPrime\obj\Debug\90.CheckPrime.pdb

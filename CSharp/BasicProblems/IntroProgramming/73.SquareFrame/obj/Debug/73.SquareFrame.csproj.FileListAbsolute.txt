@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\73.SquareFrame\bin\Debug\73.SquareFrame.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\73.SquareFrame\bin\Debug\73.SquareFrame.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\73.SquareFrame\bin\Debug\73.SquareFrame.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\73.SquareFrame\obj\Debug\73.SquareFrame.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\73.SquareFrame\obj\Debug\73.SquareFrame.pdb

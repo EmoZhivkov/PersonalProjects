@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\97.SpecialNumbers\bin\Debug\97.SpecialNumbers.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\97.SpecialNumbers\bin\Debug\97.SpecialNumbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\97.SpecialNumbers\bin\Debug\97.SpecialNumbers.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\97.SpecialNumbers\obj\Debug\97.SpecialNumbers.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\97.SpecialNumbers\obj\Debug\97.SpecialNumbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\97.SpecialNumbers\obj\Debug\97.SpecialNumbers.pdb

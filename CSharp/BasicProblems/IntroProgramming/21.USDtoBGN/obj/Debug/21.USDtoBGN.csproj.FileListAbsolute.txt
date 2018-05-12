@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\21.USDtoBGN\bin\Debug\21.USDtoBGN.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\21.USDtoBGN\bin\Debug\21.USDtoBGN.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\21.USDtoBGN\bin\Debug\21.USDtoBGN.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\21.USDtoBGN\obj\Debug\21.USDtoBGN.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\21.USDtoBGN\obj\Debug\21.USDtoBGN.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\21.USDtoBGN\obj\Debug\21.USDtoBGN.csprojResolveAssemblyReference.cache

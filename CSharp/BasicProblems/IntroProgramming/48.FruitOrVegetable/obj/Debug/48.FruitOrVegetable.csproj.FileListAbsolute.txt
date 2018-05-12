@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\48.FruitOrVegetable\bin\Debug\48.FruitOrVegetable.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\48.FruitOrVegetable\bin\Debug\48.FruitOrVegetable.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\48.FruitOrVegetable\bin\Debug\48.FruitOrVegetable.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\48.FruitOrVegetable\obj\Debug\48.FruitOrVegetable.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\48.FruitOrVegetable\obj\Debug\48.FruitOrVegetable.pdb

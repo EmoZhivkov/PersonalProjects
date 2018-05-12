@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\06.IsTheDotInTheCircle\bin\Debug\06.IsTheDotInTheCircle.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\06.IsTheDotInTheCircle\bin\Debug\06.IsTheDotInTheCircle.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\06.IsTheDotInTheCircle\bin\Debug\06.IsTheDotInTheCircle.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\06.IsTheDotInTheCircle\obj\Debug\06.IsTheDotInTheCircle.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\06.IsTheDotInTheCircle\obj\Debug\06.IsTheDotInTheCircle.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\06.IsTheDotInTheCircle\obj\Debug\06.IsTheDotInTheCircle.csprojResolveAssemblyReference.cache

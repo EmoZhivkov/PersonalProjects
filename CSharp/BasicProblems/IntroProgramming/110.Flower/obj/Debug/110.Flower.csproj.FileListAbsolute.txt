@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\110.Flower\bin\Debug\110.Flower.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\110.Flower\bin\Debug\110.Flower.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\110.Flower\bin\Debug\110.Flower.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\110.Flower\obj\Debug\110.Flower.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\110.Flower\obj\Debug\110.Flower.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\110.Flower\obj\Debug\110.Flower.pdb

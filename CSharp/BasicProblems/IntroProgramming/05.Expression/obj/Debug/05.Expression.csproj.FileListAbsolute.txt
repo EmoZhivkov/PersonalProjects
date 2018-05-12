@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\05.Expression\bin\Debug\05.Expression.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\05.Expression\bin\Debug\05.Expression.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\05.Expression\bin\Debug\05.Expression.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\05.Expression\obj\Debug\05.Expression.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\05.Expression\obj\Debug\05.Expression.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\05.Expression\obj\Debug\05.Expression.pdb

@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\52.DayOfWeek\bin\Debug\52.DayOfWeek.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\52.DayOfWeek\bin\Debug\52.DayOfWeek.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\52.DayOfWeek\bin\Debug\52.DayOfWeek.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\52.DayOfWeek\obj\Debug\52.DayOfWeek.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\52.DayOfWeek\obj\Debug\52.DayOfWeek.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\52.DayOfWeek\obj\Debug\52.DayOfWeek.pdb

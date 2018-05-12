@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\81.Numbers1...NWithStep3\bin\Debug\_81.Numbers1._._.NWithStep3.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\81.Numbers1...NWithStep3\bin\Debug\_81.Numbers1._._.NWithStep3.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\81.Numbers1...NWithStep3\bin\Debug\_81.Numbers1._._.NWithStep3.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\81.Numbers1...NWithStep3\obj\Debug\81.Numbers1...NWithStep3.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\81.Numbers1...NWithStep3\obj\Debug\_81.Numbers1._._.NWithStep3.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\81.Numbers1...NWithStep3\obj\Debug\_81.Numbers1._._.NWithStep3.pdb

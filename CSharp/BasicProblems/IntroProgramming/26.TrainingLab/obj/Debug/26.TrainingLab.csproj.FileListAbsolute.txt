@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\26.TrainingLab\bin\Debug\26.TrainingLab.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\26.TrainingLab\bin\Debug\26.TrainingLab.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\26.TrainingLab\bin\Debug\26.TrainingLab.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\26.TrainingLab\obj\Debug\26.TrainingLab.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\26.TrainingLab\obj\Debug\26.TrainingLab.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\26.TrainingLab\obj\Debug\26.TrainingLab.pdb

@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\15.TrapeziodArea\bin\Debug\15.TrapeziodArea.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\15.TrapeziodArea\bin\Debug\15.TrapeziodArea.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\15.TrapeziodArea\bin\Debug\15.TrapeziodArea.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\15.TrapeziodArea\obj\Debug\15.TrapeziodArea.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\15.TrapeziodArea\obj\Debug\15.TrapeziodArea.pdb

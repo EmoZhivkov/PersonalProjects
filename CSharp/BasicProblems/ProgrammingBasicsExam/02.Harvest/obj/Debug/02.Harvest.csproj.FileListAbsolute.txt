@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\02.Harvest\bin\Debug\02.Harvest.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\02.Harvest\bin\Debug\02.Harvest.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\02.Harvest\bin\Debug\02.Harvest.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\02.Harvest\obj\Debug\02.Harvest.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\02.Harvest\obj\Debug\02.Harvest.pdb

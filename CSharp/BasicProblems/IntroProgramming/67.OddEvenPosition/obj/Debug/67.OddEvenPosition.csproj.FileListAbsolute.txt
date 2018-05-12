@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\67.OddEvenPosition\bin\Debug\67.OddEvenPosition.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\67.OddEvenPosition\bin\Debug\67.OddEvenPosition.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\67.OddEvenPosition\bin\Debug\67.OddEvenPosition.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\67.OddEvenPosition\obj\Debug\67.OddEvenPosition.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\67.OddEvenPosition\obj\Debug\67.OddEvenPosition.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\67.OddEvenPosition\obj\Debug\67.OddEvenPosition.pdb

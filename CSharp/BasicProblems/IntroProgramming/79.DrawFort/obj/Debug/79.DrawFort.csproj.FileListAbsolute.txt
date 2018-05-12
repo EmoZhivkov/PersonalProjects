@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\79.DrawFort\bin\Debug\79.DrawFort.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\79.DrawFort\bin\Debug\79.DrawFort.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\79.DrawFort\bin\Debug\79.DrawFort.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\79.DrawFort\obj\Debug\79.DrawFort.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\79.DrawFort\obj\Debug\79.DrawFort.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\79.DrawFort\obj\Debug\79.DrawFort.pdb

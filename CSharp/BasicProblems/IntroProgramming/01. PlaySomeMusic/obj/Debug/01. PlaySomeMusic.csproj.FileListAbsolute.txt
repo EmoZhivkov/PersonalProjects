@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\01. PlaySomeMusic\bin\Debug\_01.PlaySomeMusic.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\01. PlaySomeMusic\bin\Debug\_01.PlaySomeMusic.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\01. PlaySomeMusic\bin\Debug\_01.PlaySomeMusic.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\01. PlaySomeMusic\obj\Debug\_01.PlaySomeMusic.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\01. PlaySomeMusic\obj\Debug\_01.PlaySomeMusic.pdb

@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\02.HelloCSharp\bin\Debug\02.HelloCSharp.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\02.HelloCSharp\bin\Debug\02.HelloCSharp.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\02.HelloCSharp\bin\Debug\02.HelloCSharp.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\02.HelloCSharp\obj\Debug\02.HelloCSharp.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\02.HelloCSharp\obj\Debug\02.HelloCSharp.pdb

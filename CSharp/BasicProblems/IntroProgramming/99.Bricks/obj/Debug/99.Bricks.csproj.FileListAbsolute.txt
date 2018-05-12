@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\99.Bricks\bin\Debug\99.Bricks.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\99.Bricks\bin\Debug\99.Bricks.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\99.Bricks\bin\Debug\99.Bricks.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\99.Bricks\obj\Debug\99.Bricks.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\99.Bricks\obj\Debug\99.Bricks.pdb

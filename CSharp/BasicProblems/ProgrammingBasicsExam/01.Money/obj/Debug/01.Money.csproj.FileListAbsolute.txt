@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\01.Money\bin\Debug\01.Money.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\01.Money\bin\Debug\01.Money.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\01.Money\bin\Debug\01.Money.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\01.Money\obj\Debug\01.Money.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\01.Money\obj\Debug\01.Money.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\01.Money\obj\Debug\01.Money.pdb

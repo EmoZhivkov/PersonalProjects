@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\24.ThousandDaysAfterBirth\bin\Debug\24.ThousandDaysAfterBirth.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\24.ThousandDaysAfterBirth\bin\Debug\24.ThousandDaysAfterBirth.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\24.ThousandDaysAfterBirth\bin\Debug\24.ThousandDaysAfterBirth.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\24.ThousandDaysAfterBirth\obj\Debug\24.ThousandDaysAfterBirth.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\24.ThousandDaysAfterBirth\obj\Debug\24.ThousandDaysAfterBirth.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\24.ThousandDaysAfterBirth\obj\Debug\24.ThousandDaysAfterBirth.csprojResolveAssemblyReference.cache

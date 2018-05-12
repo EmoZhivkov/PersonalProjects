@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\First100\bin\Debug\First100.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\First100\obj\Debug\First100.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\First100\bin\Debug\First100.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\First100\bin\Debug\First100.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\First100\obj\Debug\First100.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\First100\obj\Debug\First100.pdb

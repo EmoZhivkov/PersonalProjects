@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\87.GreatestCommonDivisor\bin\Debug\87.GreatestCommonDivisor.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\87.GreatestCommonDivisor\bin\Debug\87.GreatestCommonDivisor.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\87.GreatestCommonDivisor\bin\Debug\87.GreatestCommonDivisor.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\87.GreatestCommonDivisor\obj\Debug\87.GreatestCommonDivisor.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\87.GreatestCommonDivisor\obj\Debug\87.GreatestCommonDivisor.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\87.GreatestCommonDivisor\obj\Debug\87.GreatestCommonDivisor.pdb

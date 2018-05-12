@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\74.RhombusOfStars\bin\Debug\74.RhombusOfStars.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\74.RhombusOfStars\bin\Debug\74.RhombusOfStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\74.RhombusOfStars\bin\Debug\74.RhombusOfStars.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\74.RhombusOfStars\obj\Debug\74.RhombusOfStars.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\74.RhombusOfStars\obj\Debug\74.RhombusOfStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\74.RhombusOfStars\obj\Debug\74.RhombusOfStars.pdb

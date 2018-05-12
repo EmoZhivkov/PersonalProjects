@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\02.IntegerDivision7or5\bin\Debug\02.IntegerDivision7or5.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\02.IntegerDivision7or5\bin\Debug\02.IntegerDivision7or5.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\02.IntegerDivision7or5\bin\Debug\02.IntegerDivision7or5.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\02.IntegerDivision7or5\obj\Debug\02.IntegerDivision7or5.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\02.IntegerDivision7or5\obj\Debug\02.IntegerDivision7or5.pdb

@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\34.MetricConverter\bin\Debug\34.MetricConverter.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\34.MetricConverter\bin\Debug\34.MetricConverter.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\34.MetricConverter\bin\Debug\34.MetricConverter.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\34.MetricConverter\obj\Debug\34.MetricConverter.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\34.MetricConverter\obj\Debug\34.MetricConverter.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\34.MetricConverter\obj\Debug\34.MetricConverter.pdb

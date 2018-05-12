@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\20.RadiansToDegrees\bin\Debug\20.RadiansToDegrees.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\20.RadiansToDegrees\bin\Debug\20.RadiansToDegrees.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\20.RadiansToDegrees\bin\Debug\20.RadiansToDegrees.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\20.RadiansToDegrees\obj\Debug\20.RadiansToDegrees.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\20.RadiansToDegrees\obj\Debug\20.RadiansToDegrees.pdb

@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\09.ThreeNumsInColums\bin\Debug\09.ThreeNumsInColums.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\09.ThreeNumsInColums\bin\Debug\09.ThreeNumsInColums.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\09.ThreeNumsInColums\bin\Debug\09.ThreeNumsInColums.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\09.ThreeNumsInColums\obj\Debug\09.ThreeNumsInColums.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\09.ThreeNumsInColums\obj\Debug\09.ThreeNumsInColums.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\09.ThreeNumsInColums\obj\Debug\09.ThreeNumsInColums.pdb

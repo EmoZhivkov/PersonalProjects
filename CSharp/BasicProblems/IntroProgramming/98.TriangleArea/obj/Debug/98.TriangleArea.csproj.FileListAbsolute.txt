@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\98.TriangleArea\bin\Debug\98.TriangleArea.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\98.TriangleArea\bin\Debug\98.TriangleArea.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\98.TriangleArea\bin\Debug\98.TriangleArea.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\98.TriangleArea\obj\Debug\98.TriangleArea.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\98.TriangleArea\obj\Debug\98.TriangleArea.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\98.TriangleArea\obj\Debug\98.TriangleArea.pdb

@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\63.MinNumber\bin\Debug\63.MinNumber.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\63.MinNumber\bin\Debug\63.MinNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\63.MinNumber\bin\Debug\63.MinNumber.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\63.MinNumber\obj\Debug\63.MinNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\63.MinNumber\obj\Debug\63.MinNumber.pdb

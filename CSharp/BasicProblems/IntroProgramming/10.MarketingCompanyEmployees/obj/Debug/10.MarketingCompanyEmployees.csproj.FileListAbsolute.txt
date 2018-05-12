@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\10.MarketingCompanyEmployees\bin\Debug\10.MarketingCompanyEmployees.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\10.MarketingCompanyEmployees\bin\Debug\10.MarketingCompanyEmployees.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\10.MarketingCompanyEmployees\bin\Debug\10.MarketingCompanyEmployees.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\10.MarketingCompanyEmployees\obj\Debug\10.MarketingCompanyEmployees.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\10.MarketingCompanyEmployees\obj\Debug\10.MarketingCompanyEmployees.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\10.MarketingCompanyEmployees\obj\Debug\10.MarketingCompanyEmployees.pdb

@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\56.Volleyball\bin\Debug\56.Volleyball.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\56.Volleyball\bin\Debug\56.Volleyball.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\56.Volleyball\bin\Debug\56.Volleyball.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\56.Volleyball\obj\Debug\56.Volleyball.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\56.Volleyball\obj\Debug\56.Volleyball.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\56.Volleyball\obj\Debug\56.Volleyball.pdb

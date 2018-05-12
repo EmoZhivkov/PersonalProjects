@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\06.StopNumber\bin\Debug\06.StopNumber.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\06.StopNumber\bin\Debug\06.StopNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\06.StopNumber\bin\Debug\06.StopNumber.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\06.StopNumber\obj\Debug\06.StopNumber.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\06.StopNumber\obj\Debug\06.StopNumber.pdb

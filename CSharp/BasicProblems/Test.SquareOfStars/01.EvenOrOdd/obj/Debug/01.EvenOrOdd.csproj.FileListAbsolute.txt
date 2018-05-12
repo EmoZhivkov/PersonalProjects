@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\01.EvenOrOdd\bin\Debug\01.EvenOrOdd.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\01.EvenOrOdd\bin\Debug\01.EvenOrOdd.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\01.EvenOrOdd\bin\Debug\01.EvenOrOdd.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\01.EvenOrOdd\obj\Debug\01.EvenOrOdd.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\01.EvenOrOdd\obj\Debug\01.EvenOrOdd.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\01.EvenOrOdd\obj\Debug\01.EvenOrOdd.pdb

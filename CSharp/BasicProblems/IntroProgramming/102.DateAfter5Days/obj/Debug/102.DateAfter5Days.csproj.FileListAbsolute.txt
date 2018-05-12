@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\102.DateAfter5Days\bin\Debug\102.DateAfter5Days.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\102.DateAfter5Days\bin\Debug\102.DateAfter5Days.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\102.DateAfter5Days\bin\Debug\102.DateAfter5Days.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\102.DateAfter5Days\obj\Debug\102.DateAfter5Days.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\102.DateAfter5Days\obj\Debug\102.DateAfter5Days.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\102.DateAfter5Days\obj\Debug\102.DateAfter5Days.pdb

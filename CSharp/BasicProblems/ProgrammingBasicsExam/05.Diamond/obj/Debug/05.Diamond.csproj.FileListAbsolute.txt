@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\05.Diamond\bin\Debug\05.Diamond.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\05.Diamond\bin\Debug\05.Diamond.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\05.Diamond\bin\Debug\05.Diamond.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\05.Diamond\obj\Debug\05.Diamond.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\05.Diamond\obj\Debug\05.Diamond.pdb

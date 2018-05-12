@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\19.CelsiusToFahrenheit\bin\Debug\19.CelsiusToFahrenheit.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\19.CelsiusToFahrenheit\bin\Debug\19.CelsiusToFahrenheit.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\19.CelsiusToFahrenheit\bin\Debug\19.CelsiusToFahrenheit.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\19.CelsiusToFahrenheit\obj\Debug\19.CelsiusToFahrenheit.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\19.CelsiusToFahrenheit\obj\Debug\19.CelsiusToFahrenheit.pdb

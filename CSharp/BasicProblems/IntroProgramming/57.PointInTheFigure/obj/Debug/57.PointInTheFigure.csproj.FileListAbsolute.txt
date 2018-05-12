@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\57.PointInTheFigure\bin\Debug\57.PointInTheFigure.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\57.PointInTheFigure\bin\Debug\57.PointInTheFigure.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\57.PointInTheFigure\bin\Debug\57.PointInTheFigure.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\57.PointInTheFigure\obj\Debug\57.PointInTheFigure.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\57.PointInTheFigure\obj\Debug\57.PointInTheFigure.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\57.PointInTheFigure\obj\Debug\57.PointInTheFigure.pdb

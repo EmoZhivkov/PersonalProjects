@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\03.MatchTickets\bin\Debug\03.MatchTickets.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\03.MatchTickets\bin\Debug\03.MatchTickets.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\03.MatchTickets\bin\Debug\03.MatchTickets.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\03.MatchTickets\obj\Debug\03.MatchTickets.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\ProgrammingBasicsExam\03.MatchTickets\obj\Debug\03.MatchTickets.pdb

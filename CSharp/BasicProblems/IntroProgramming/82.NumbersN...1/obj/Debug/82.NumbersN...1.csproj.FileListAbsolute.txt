@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\82.NumbersN...1\bin\Debug\_82.NumbersN._._._1.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\82.NumbersN...1\bin\Debug\_82.NumbersN._._._1.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\82.NumbersN...1\bin\Debug\_82.NumbersN._._._1.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\82.NumbersN...1\obj\Debug\_82.NumbersN._._._1.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\82.NumbersN...1\obj\Debug\_82.NumbersN._._._1.pdb

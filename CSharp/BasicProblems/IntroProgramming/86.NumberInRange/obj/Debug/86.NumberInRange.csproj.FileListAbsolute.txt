@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\86.NumberInRange\bin\Debug\86.NumberInRange.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\86.NumberInRange\bin\Debug\86.NumberInRange.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\86.NumberInRange\bin\Debug\86.NumberInRange.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\86.NumberInRange\obj\Debug\86.NumberInRange.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\86.NumberInRange\obj\Debug\86.NumberInRange.pdb

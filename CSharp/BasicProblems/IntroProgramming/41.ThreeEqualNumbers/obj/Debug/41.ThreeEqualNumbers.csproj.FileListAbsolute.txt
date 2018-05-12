@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\41.ThreeEqualNumbers\bin\Debug\41.ThreeEqualNumbers.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\41.ThreeEqualNumbers\bin\Debug\41.ThreeEqualNumbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\41.ThreeEqualNumbers\bin\Debug\41.ThreeEqualNumbers.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\41.ThreeEqualNumbers\obj\Debug\41.ThreeEqualNumbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\41.ThreeEqualNumbers\obj\Debug\41.ThreeEqualNumbers.pdb

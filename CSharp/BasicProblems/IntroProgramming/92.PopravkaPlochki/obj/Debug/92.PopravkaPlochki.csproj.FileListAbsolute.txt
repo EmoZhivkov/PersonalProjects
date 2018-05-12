@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\92.PopravkaPlochki\bin\Debug\92.PopravkaPlochki.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\92.PopravkaPlochki\bin\Debug\92.PopravkaPlochki.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\92.PopravkaPlochki\bin\Debug\92.PopravkaPlochki.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\92.PopravkaPlochki\obj\Debug\92.PopravkaPlochki.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\92.PopravkaPlochki\obj\Debug\92.PopravkaPlochki.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\92.PopravkaPlochki\obj\Debug\92.PopravkaPlochki.pdb

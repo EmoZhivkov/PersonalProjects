@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\55.Cinema\bin\Debug\55.Cinema.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\55.Cinema\bin\Debug\55.Cinema.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\55.Cinema\bin\Debug\55.Cinema.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\55.Cinema\obj\Debug\55.Cinema.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\55.Cinema\obj\Debug\55.Cinema.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\55.Cinema\obj\Debug\55.Cinema.csprojResolveAssemblyReference.cache

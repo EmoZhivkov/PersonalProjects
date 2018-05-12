@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Age10YearsLater\bin\Debug\Age10YearsLater.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Age10YearsLater\bin\Debug\Age10YearsLater.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Age10YearsLater\bin\Debug\Age10YearsLater.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Age10YearsLater\obj\Debug\Age10YearsLater.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\Age10YearsLater\obj\Debug\Age10YearsLater.pdb

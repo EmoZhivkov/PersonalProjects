@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\107.RectangleWithStars\bin\Debug\107.RectangleWithStars.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\107.RectangleWithStars\bin\Debug\107.RectangleWithStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\107.RectangleWithStars\bin\Debug\107.RectangleWithStars.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\107.RectangleWithStars\obj\Debug\107.RectangleWithStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\107.RectangleWithStars\obj\Debug\107.RectangleWithStars.pdb

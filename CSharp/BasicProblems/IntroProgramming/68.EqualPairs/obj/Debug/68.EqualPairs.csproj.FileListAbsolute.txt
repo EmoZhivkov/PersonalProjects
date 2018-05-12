@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\68.EqualPairs\bin\Debug\68.EqualPairs.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\68.EqualPairs\bin\Debug\68.EqualPairs.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\68.EqualPairs\bin\Debug\68.EqualPairs.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\68.EqualPairs\obj\Debug\68.EqualPairs.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\68.EqualPairs\obj\Debug\68.EqualPairs.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\68.EqualPairs\obj\Debug\68.EqualPairs.pdb

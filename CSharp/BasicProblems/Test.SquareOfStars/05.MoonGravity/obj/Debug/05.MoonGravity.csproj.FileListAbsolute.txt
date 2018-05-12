@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\05.MoonGravity\bin\Debug\05.MoonGravity.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\05.MoonGravity\bin\Debug\05.MoonGravity.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\05.MoonGravity\bin\Debug\05.MoonGravity.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\05.MoonGravity\obj\Debug\05.MoonGravity.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\05.MoonGravity\obj\Debug\05.MoonGravity.pdb

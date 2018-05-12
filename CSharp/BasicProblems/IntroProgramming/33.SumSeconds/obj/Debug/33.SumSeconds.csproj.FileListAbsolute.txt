@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\33.SumSeconds\bin\Debug\33.SumSeconds.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\33.SumSeconds\bin\Debug\33.SumSeconds.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\33.SumSeconds\bin\Debug\33.SumSeconds.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\33.SumSeconds\obj\Debug\33.SumSeconds.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\33.SumSeconds\obj\Debug\33.SumSeconds.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\33.SumSeconds\obj\Debug\33.SumSeconds.pdb

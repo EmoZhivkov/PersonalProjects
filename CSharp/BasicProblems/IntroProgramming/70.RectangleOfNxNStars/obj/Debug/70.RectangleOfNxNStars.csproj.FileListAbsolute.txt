@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\70.RectangleOfNxNStars\bin\Debug\70.RectangleOfNxNStars.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\70.RectangleOfNxNStars\bin\Debug\70.RectangleOfNxNStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\70.RectangleOfNxNStars\bin\Debug\70.RectangleOfNxNStars.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\70.RectangleOfNxNStars\obj\Debug\70.RectangleOfNxNStars.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\70.RectangleOfNxNStars\obj\Debug\70.RectangleOfNxNStars.pdb

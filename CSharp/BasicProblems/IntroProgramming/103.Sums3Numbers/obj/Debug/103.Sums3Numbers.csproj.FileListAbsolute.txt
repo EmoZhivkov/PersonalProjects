@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\103.Sums3Numbers\bin\Debug\103.Sums3Numbers.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\103.Sums3Numbers\bin\Debug\103.Sums3Numbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\103.Sums3Numbers\bin\Debug\103.Sums3Numbers.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\103.Sums3Numbers\obj\Debug\103.Sums3Numbers.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\103.Sums3Numbers\obj\Debug\103.Sums3Numbers.pdb

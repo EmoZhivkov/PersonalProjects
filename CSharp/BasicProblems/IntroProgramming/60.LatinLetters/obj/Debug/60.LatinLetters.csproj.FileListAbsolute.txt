@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\60.LatinLetters\bin\Debug\60.LatinLetters.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\60.LatinLetters\bin\Debug\60.LatinLetters.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\60.LatinLetters\bin\Debug\60.LatinLetters.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\60.LatinLetters\obj\Debug\60.LatinLetters.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\60.LatinLetters\obj\Debug\60.LatinLetters.pdb

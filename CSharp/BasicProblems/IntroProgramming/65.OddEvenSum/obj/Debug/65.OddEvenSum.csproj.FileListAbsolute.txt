@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.OddEvenSum\bin\Debug\65.OddEvenSum.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.OddEvenSum\bin\Debug\65.OddEvenSum.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.OddEvenSum\bin\Debug\65.OddEvenSum.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.OddEvenSum\obj\Debug\65.OddEvenSum.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\65.OddEvenSum\obj\Debug\65.OddEvenSum.pdb

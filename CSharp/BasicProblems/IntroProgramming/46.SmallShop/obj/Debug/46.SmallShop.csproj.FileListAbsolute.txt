@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\46.SmallShop\bin\Debug\46.SmallShop.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\46.SmallShop\bin\Debug\46.SmallShop.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\46.SmallShop\bin\Debug\46.SmallShop.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\46.SmallShop\obj\Debug\46.SmallShop.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\46.SmallShop\obj\Debug\46.SmallShop.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\46.SmallShop\obj\Debug\46.SmallShop.pdb

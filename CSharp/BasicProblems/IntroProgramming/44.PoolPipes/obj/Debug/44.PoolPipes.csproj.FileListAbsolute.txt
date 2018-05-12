@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\44.PoolPipes\bin\Debug\44.PoolPipes.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\44.PoolPipes\obj\Debug\44.PoolPipes.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\44.PoolPipes\bin\Debug\44.PoolPipes.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\44.PoolPipes\bin\Debug\44.PoolPipes.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\44.PoolPipes\obj\Debug\44.PoolPipes.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\44.PoolPipes\obj\Debug\44.PoolPipes.pdb

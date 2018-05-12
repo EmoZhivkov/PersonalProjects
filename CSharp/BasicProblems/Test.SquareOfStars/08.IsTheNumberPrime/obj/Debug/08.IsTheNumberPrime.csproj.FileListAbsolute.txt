@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\08.IsTheNumberPrime\bin\Debug\08.IsTheNumberPrime.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\08.IsTheNumberPrime\bin\Debug\08.IsTheNumberPrime.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\08.IsTheNumberPrime\bin\Debug\08.IsTheNumberPrime.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\08.IsTheNumberPrime\obj\Debug\08.IsTheNumberPrime.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\08.IsTheNumberPrime\obj\Debug\08.IsTheNumberPrime.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\Test.SquareOfStars\08.IsTheNumberPrime\obj\Debug\08.IsTheNumberPrime.csprojResolveAssemblyReference.cache

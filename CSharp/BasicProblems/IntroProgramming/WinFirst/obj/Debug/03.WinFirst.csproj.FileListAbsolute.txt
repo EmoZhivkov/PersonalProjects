@@ -1,0 +1,9 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\bin\Debug\WinFirst.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\bin\Debug\WinFirst.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\bin\Debug\WinFirst.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\obj\Debug\03.WinFirst.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\obj\Debug\WinFirst.Summator.resources
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\obj\Debug\WinFirst.Properties.Resources.resources
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\obj\Debug\03.WinFirst.csproj.GenerateResource.Cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\obj\Debug\WinFirst.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\WinFirst\obj\Debug\WinFirst.pdb

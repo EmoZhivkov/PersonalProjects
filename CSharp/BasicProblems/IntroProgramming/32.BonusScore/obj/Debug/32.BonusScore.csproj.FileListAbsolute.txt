@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\32.BonusScore\bin\Debug\32.BonusScore.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\32.BonusScore\bin\Debug\32.BonusScore.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\32.BonusScore\bin\Debug\32.BonusScore.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\32.BonusScore\obj\Debug\32.BonusScore.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\32.BonusScore\obj\Debug\32.BonusScore.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\32.BonusScore\obj\Debug\32.BonusScore.pdb

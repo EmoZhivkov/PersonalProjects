@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\14.ConcatenateData\bin\Debug\14.ConcatenateData.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\14.ConcatenateData\obj\Debug\14.ConcatenateData.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\14.ConcatenateData\bin\Debug\14.ConcatenateData.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\14.ConcatenateData\bin\Debug\14.ConcatenateData.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\14.ConcatenateData\obj\Debug\14.ConcatenateData.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\14.ConcatenateData\obj\Debug\14.ConcatenateData.pdb

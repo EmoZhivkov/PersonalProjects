@@ -1,0 +1,5 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\40.TimePlus15Minutes\bin\Debug\40.TimePlus15Minutes.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\40.TimePlus15Minutes\bin\Debug\40.TimePlus15Minutes.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\40.TimePlus15Minutes\bin\Debug\40.TimePlus15Minutes.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\40.TimePlus15Minutes\obj\Debug\40.TimePlus15Minutes.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\40.TimePlus15Minutes\obj\Debug\40.TimePlus15Minutes.pdb

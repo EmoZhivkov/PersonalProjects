@@ -1,0 +1,9 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\bin\Debug\CurrencyConverterForm.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\bin\Debug\CurrencyConverterForm.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\bin\Debug\CurrencyConverterForm.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\obj\Debug\CurrencyConverterForm.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\obj\Debug\CurrencyConverterForm.Form1.resources
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\obj\Debug\CurrencyConverterForm.Properties.Resources.resources
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\obj\Debug\CurrencyConverterForm.csproj.GenerateResource.Cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\obj\Debug\CurrencyConverterForm.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\CurrencyConverterForm\obj\Debug\CurrencyConverterForm.pdb

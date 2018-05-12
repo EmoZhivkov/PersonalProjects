@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\100.PointOnSegment\bin\Debug\100.PointOnSegment.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\100.PointOnSegment\bin\Debug\100.PointOnSegment.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\100.PointOnSegment\bin\Debug\100.PointOnSegment.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\100.PointOnSegment\obj\Debug\100.PointOnSegment.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\100.PointOnSegment\obj\Debug\100.PointOnSegment.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\100.PointOnSegment\obj\Debug\100.PointOnSegment.pdb

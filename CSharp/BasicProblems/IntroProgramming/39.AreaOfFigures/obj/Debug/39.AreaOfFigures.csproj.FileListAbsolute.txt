@@ -1,0 +1,6 @@
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\39.AreaOfFigures\bin\Debug\39.AreaOfFigures.exe.config
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\39.AreaOfFigures\bin\Debug\39.AreaOfFigures.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\39.AreaOfFigures\bin\Debug\39.AreaOfFigures.pdb
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\39.AreaOfFigures\obj\Debug\39.AreaOfFigures.csprojResolveAssemblyReference.cache
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\39.AreaOfFigures\obj\Debug\39.AreaOfFigures.exe
+C:\Users\Emo Jivkov\Desktop\Softuni\IntroProgramming\39.AreaOfFigures\obj\Debug\39.AreaOfFigures.pdb
