@@ -13,7 +13,7 @@ private:
 	void setContainer(Pair<T> *temp, int currentPairCount);
 	void clearSettings();
 	void copySettings(const Settings& temp);
-	bool compareKeys(char* key1, char* key2);
+	bool compareKeys(const char* key1,const char* key2);
 public:
 	Settings<T>();
 	Settings<T>(const Settings& temp);
@@ -21,8 +21,8 @@ public:
 	~Settings<T>();
 
 	int count();
-	void set(char* key, T value);
-	bool get(char* key, T& value);
+	void set(const char* key, T value);
+	bool get(const char* key, T& value);
 };
 
 template<class T>
@@ -52,7 +52,7 @@ inline void Settings<T>::copySettings(const Settings & temp)
 }
 
 template<class T>
-inline bool Settings<T>::compareKeys(char * key1, char * key2)
+inline bool Settings<T>::compareKeys(const char * key1,const char * key2)
 {
 	bool b = true;
 
@@ -62,14 +62,22 @@ inline bool Settings<T>::compareKeys(char * key1, char * key2)
 	}
 	else
 	{
-		for (int i = 0; i < strlen(key1); i++)
+		if (strlen(key1) < 0)
 		{
-			if (key1[i] != key2[i])
+			b = false;
+		}
+		else
+		{
+			for (unsigned int i = 0; i < strlen(key1); i++)
 			{
-				b = false;
-				break;
+				if (key1[i] != key2[i])
+				{
+					b = false;
+					break;
+				}
 			}
 		}
+		
 	}
 	return b;
 }
@@ -111,31 +119,38 @@ inline int Settings<T>::count()
 }
 
 template<class T>
-inline void Settings<T>::set(char * key, T value)
+inline void Settings<T>::set(const char * key, T value)
 {
-	Pair<T> currentPair;
+	Pair<T> *currentPair = new Pair<T>();
 	bool b = false;
+	
 	for (int i = 0; i < this->currentPairCount; i++)
 	{
-		currentPair = this->container[i];
-		if (this->compareKeys(currentPair.getKey(), key))
+		*currentPair = this->container[i];
+		if (this->compareKeys(currentPair->getKey(), key))
 		{
 			b = true;
 			break;
 		}
 	}
 
+	
 	if (b)
 	{
-		currentPair.setValue(value);
+		currentPair->setValue(value);	
 	}
 	else
 	{
-		this->container[this->currentPairCount] = currentPair;
-		this->currentDeviceCount++;
 
-		if (this->currentDeviceCount % (30 * this->resizeCounter) == 1)
+		//TODO tuka se chupi mnogo moshtno, nqmam ideq zashto ne bachka
+		cout << "//////" << endl;
+		this->container[this->currentPairCount] = *currentPair;
+		cout << "//////" << endl;
+		this->currentPairCount++;
+
+		if (this->currentPairCount % (30 * this->resizeCounter) == 1)
 		{
+			
 			Pair<T> *temporary = new Pair<T>[(30 * this->resizeCounter) + 1];
 			for (int i = 0; i < (30 * this->resizeCounter) + 1; i++)
 			{
@@ -143,7 +158,7 @@ inline void Settings<T>::set(char * key, T value)
 			}
 			delete[] this->container;
 
-			this->container = new Pair<T>[(30 * ((currentDeviceCount / 30) + 1)) + 1];
+			this->container = new Pair<T>[(30 * ((currentPairCount / 30) + 1)) + 1];
 
 			for (int i = 0; i < (30 * this->resizeCounter) + 1; i++)
 			{
@@ -156,7 +171,7 @@ inline void Settings<T>::set(char * key, T value)
 }
 
 template<class T>
-inline bool Settings<T>::get(char * key, T & value)
+inline bool Settings<T>::get(const char * key, T & value)
 {
 	bool b = false;
 	for (int i = 0; i < this->currentPairCount; i++)

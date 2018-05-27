@@ -74,7 +74,6 @@ inline Pair<T>& Pair<T>::operator=(const Pair& temp)
 {
 	if (this != &temp)
 	{
-		this->clearPair();
 		this->copyPair(temp);
 	}
 	return *this;
