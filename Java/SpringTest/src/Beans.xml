@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id = "firstSpring" class = "org.appcontext.FirstSpring" scope="prototype">
+        <property name="message" value = "Hello World!" />
+        <property name="number" value="5" />
+    </bean>
+
+    <bean id = "book" class="org.appcontext.Book" scope="prototype">
+
+        <property name="author" ref="author" />
+        <property name="title" value="Lord of the Rings" />
+
+    </bean>
+
+    <bean id="author" class="org.appcontext.Author" >
+
+        <property name="name" value="Jorkata"/>
+        <property name="books">
+            <util:list>
+                <bean id="book1" class="org.appcontext.Book" scope="prototype">
+                    <property name="title" value="Lord Of The Rings"/>
+                    <property name="author" ref="author"/>
+                </bean>
+
+                <bean id="book2" class="org.appcontext.Book" scope="prototype">
+                    <property name="title" value="451 Fahrenheit"/>
+                    <property name="author" ref="author"/>
+                </bean>
+
+                <bean id="book3" class="org.appcontext.Book" scope="prototype">
+                    <property name="title" value="King Rat"/>
+                    <property name="author" ref="author"/>
+                </bean>
+            </util:list>
+        </property>
+
+    </bean>
+
+
+</beans>
