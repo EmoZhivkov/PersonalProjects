@@ -8,8 +8,8 @@ private:
     int currentProjectNum;
     int successRate;
 public:
-    PrivateCompany(int successRate);
-    virtual bool perform(char *project);
+    PrivateCompany(int successRate, const char* name);
+    virtual bool perform(const char *project);
 };
 
 
