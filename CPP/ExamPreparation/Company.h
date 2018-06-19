@@ -5,12 +5,12 @@
 class Company {
 private:
     int successfulProjects;
-    int unsuccessfulProjects;
+    int allProjects;
 public:
     virtual bool perform(char * project) = 0;
     double reliabilityRate() const;
     void iterateSuccessfulProjects();
-    void iterateUnsuccessfulProjects();
+    void iterateAllProjects();
 };
 
 

@@ -14,9 +14,10 @@ bool PrivateCompany::perform(char *project) {
     if((this->currentProjectNum % this->successRate) != 0) {
         b = true;
         iterateSuccessfulProjects();
+        iterateAllProjects();
     } else {
         b = false;
-        iterateUnsuccessfulProjects();
+        iterateAllProjects();
     }
 
     return b;
