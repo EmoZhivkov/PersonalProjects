@@ -1,6 +1,8 @@
 #ifndef EXAMPREPARATION_COMPANY_H
 #define EXAMPREPARATION_COMPANY_H
 
+#include <iostream>
+using namespace std;
 
 class Company {
 private:
@@ -18,13 +20,14 @@ public:
     Company& operator=(const Company& company);
     virtual ~Company();
 
+    virtual friend ostream& operator<<(ostream& os, const Company& company) = 0;
     virtual bool perform(const char * project) = 0;
     double reliabilityRate() const;
 
     void iterateSuccessfulProjects();
     void iterateAllProjects();
 
-    char *getName();
+    char *getName() const;
 };
 
 

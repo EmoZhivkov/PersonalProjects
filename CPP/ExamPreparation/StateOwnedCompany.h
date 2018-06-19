@@ -9,6 +9,7 @@ private:
 public:
     StateOwnedCompany(const char* name);
     bool perform(const char *project) override;
+    virtual friend ostream& operator<<(ostream& os, const StateOwnedCompany& privateCompany);
 };
 
 

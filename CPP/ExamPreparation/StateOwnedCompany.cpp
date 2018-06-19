@@ -18,3 +18,8 @@ bool StateOwnedCompany::perform(const char *project) {
 
     return b;
 }
+
+ostream &operator<<(ostream &os, const StateOwnedCompany &privateCompany) {
+    os << "state: " << this->getName() << endl;
+    return os;
+}

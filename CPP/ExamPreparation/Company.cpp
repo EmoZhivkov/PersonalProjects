@@ -61,7 +61,7 @@ Company::Company(const char *name) : name(nullptr) {
     this->setName(name);
 }
 
-char *Company::getName() {
+char *Company::getName() const{
     return this->name;
 }
 
