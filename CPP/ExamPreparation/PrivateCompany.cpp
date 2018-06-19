@@ -1,14 +1,9 @@
 #include "PrivateCompany.h"
 
-PrivateCompany::PrivateCompany(int successRate) : Company(){
-    this->successRate = successRate;
 
-    this->currentProjectNum = 0;
-}
 
-bool PrivateCompany::perform(char *project) {
+bool PrivateCompany::perform(const char *project) {
     this->currentProjectNum++;
-
     bool b = false;
 
     if((this->currentProjectNum % this->successRate) != 0) {
@@ -16,9 +11,12 @@ bool PrivateCompany::perform(char *project) {
         iterateSuccessfulProjects();
         iterateAllProjects();
     } else {
-        b = false;
         iterateAllProjects();
     }
 
     return b;
+}
+
+PrivateCompany::PrivateCompany(int successRate, const char *name) : Company(name) {
+    this->successRate = successRate;
 }
