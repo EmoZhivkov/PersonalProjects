@@ -20,3 +20,8 @@ bool PrivateCompany::perform(const char *project) {
 PrivateCompany::PrivateCompany(int successRate, const char *name) : Company(name) {
     this->successRate = successRate;
 }
+
+ostream &operator<<(ostream &os, const PrivateCompany &privateCompany) {
+    os << "private: " << this->successRate << " " << this->getName() << endl;
+    return os;
+}
