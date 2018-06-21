@@ -22,6 +22,10 @@ PrivateCompany::PrivateCompany(int successRate, const char *name) : Company(name
 }
 
 ostream &operator<<(ostream &os, const PrivateCompany &privateCompany) {
-    os << "private: " << this->successRate << " " << this->getName() << endl;
+    os << "private: " << privateCompany.successRate << " " << privateCompany.getName() << endl;
     return os;
+}
+
+Company *PrivateCompany::newInstanceOf() const {
+    return new PrivateCompany(*this);
 }

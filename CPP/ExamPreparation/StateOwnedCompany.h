@@ -8,8 +8,9 @@ private:
     int currentProjectNum;
 public:
     StateOwnedCompany(const char* name);
-    bool perform(const char *project) override;
-    virtual friend ostream& operator<<(ostream& os, const StateOwnedCompany& privateCompany);
+    virtual bool perform(const char *project);
+    virtual Company* newInstanceOf() const;
+    friend ostream& operator<<(ostream& os, const StateOwnedCompany& privateCompany);
 };
 
 
