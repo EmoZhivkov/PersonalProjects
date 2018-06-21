@@ -10,7 +10,8 @@ private:
 public:
     PrivateCompany(int successRate, const char* name);
     virtual bool perform(const char *project);
-    virtual friend ostream& operator<<(ostream& os, const PrivateCompany& privateCompany);
+    virtual Company* newInstanceOf() const;
+    friend ostream& operator<<(ostream& os, const PrivateCompany& privateCompany);
 };
 
 

@@ -20,7 +20,8 @@ public:
     Company& operator=(const Company& company);
     virtual ~Company();
 
-    virtual friend ostream& operator<<(ostream& os, const Company& company) = 0;
+
+    virtual Company* newInstanceOf() const = 0;
     virtual bool perform(const char * project) = 0;
     double reliabilityRate() const;
 
