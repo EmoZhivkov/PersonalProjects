@@ -28,8 +28,6 @@ void Company::clearCompany() {
 }
 
 void Company::copyCompany(const Company &company) {
-    this->clearCompany();
-
     this->successfulProjects = company.successfulProjects;
     this->allProjects = company.allProjects;
     this->setName(company.name);
