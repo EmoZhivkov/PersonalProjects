@@ -1,9 +1,13 @@
 package com.simplewebservice;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -15,8 +19,11 @@ class CoolCarController {
     }
 
     @GetMapping("/cool-cars")
+    @CrossOrigin(origins = "http://localhost:4200")
     public Collection<Car> coolCars() {
-        return repository.findAll().stream()
+        List<Car> jo = new ArrayList<>();
+        jo.add(new Car());
+        return  repository.findAll().stream()
                 .filter(this::isCool)
                 .collect(Collectors.toList());
     }
