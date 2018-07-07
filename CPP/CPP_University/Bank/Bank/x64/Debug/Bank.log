@@ -1,0 +1,17 @@
+﻿  Account.cpp
+  Bank.cpp
+  CurrentAccount.cpp
+  Customer.cpp
+  HelperFunctions.cpp
+  Main.cpp
+  Menu.cpp
+  PrivilegeAccount.cpp
+  SavingsAccount.cpp
+  String.cpp
+d:\desktop\bank\bank\string.cpp(39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\desktop\bank\bank\string.cpp(40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\desktop\bank\bank\string.cpp(56): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\desktop\bank\bank\string.cpp(57): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\desktop\bank\bank\string.cpp(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Bank.vcxproj -> D:\Desktop\Bank\x64\Debug\Bank.exe

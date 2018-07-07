@@ -1,0 +1,5 @@
+﻿  Timestamp.cpp
+  Source.cpp
+  Generating Code...
+d:\desktop\oopexam\oopexam\timestamp.cpp(52): warning C4717: 'operator>>': recursive on all control paths, function will cause runtime stack overflow
+  OOPExam.vcxproj -> D:\Desktop\OOPExam\Debug\OOPExam.exe
