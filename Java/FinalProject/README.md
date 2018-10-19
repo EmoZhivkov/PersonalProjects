@@ -1,3 +1,5 @@
+# Assembly Line
+
 ## Setting up the program
 - Configure your own MS SQL Server
     - Username: sa
