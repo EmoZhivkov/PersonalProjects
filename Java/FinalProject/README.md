@@ -1,4 +1,4 @@
-# Assembly Line
+# Vehicle Assembly Line
 
 ## Setting up the program
 - Configure your own MS SQL Server
