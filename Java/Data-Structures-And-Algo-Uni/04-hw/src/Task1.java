@@ -1,5 +1,9 @@
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Task1 {
     static class LinkedList {
@@ -10,7 +14,7 @@ public class Task1 {
         }
 
         void insert(int value) {
-           root = new Node(value, root);
+            root = new Node(value, root);
         }
     }
 
@@ -22,74 +26,90 @@ public class Task1 {
             this.value = value;
             this.next = next;
         }
-
-        Node next() {
-            return this.next;
-        }
     }
 
     public static void main(String[] args) {
-        MyBufferedReader reader = new MyBufferedReader(System.in);
         LinkedList linkedList = new LinkedList();
 
-        String input = new String();
-        try {
-            input = reader.readLine();
-        } catch (IOException e) {
-
-        }
-
-        while(input != null) {
-            try {
-                linkedList.insert(Integer.parseInt(input));
-                input = reader.readLine();
-            } catch (IOException e) {
-                break;
-            } catch (NumberFormatException e) {
-                break;
-            }
-        }
-
-        int min = linkedList.root.value;
-        int max = linkedList.root.value;
+        InputReader reader = new InputReader();
         long sum = 0;
+        int min = 10001;
+        int max = 0;
+        int num = 0;
 
-        Node temp1 = linkedList.root;
-
-        while (temp1.next != null) {
-            if (temp1.value < min) {
-                min = temp1.value;
+        while(true) {
+            try {
+                num = reader.readInt();
+            } catch (InputMismatchException e) {
+                break;
             }
-            if (temp1.value > max) {
-                max = temp1.value;
+
+            linkedList.insert(num);
+
+            sum += num;
+
+            if (num > max) {
+                max = num;
             }
-            sum += temp1.value;
-            temp1 = temp1.next();
-        }
 
-        if (temp1.value < min) {
-            min = temp1.value;
+            if (num < min) {
+                min = num;
+            }
         }
-        if (temp1.value > max) {
-            max = temp1.value;
-        }
-        sum += temp1.value;
-
 
         System.out.println(min + " " + max + " " + sum);
     }
 
-    static class MyBufferedReader {
-        private InputStream in;
-        public MyBufferedReader (InputStream in) {this.in = in;}
-        public String readLine() throws IOException {
-            final StringBuffer sb = new StringBuffer(80);
-            int i  = 0;
-            while (((i = in.read()) != '\n') && (i != -1))
-                if (i != '\r')
-                    sb.append((char) i);
-            if (i == -1)
-                return null;
-            return sb.toString();}
+    private static class InputReader {
+        private InputStream stream;
+        private byte[] buf = new byte[1024];
+        private int curChar;
+        private int numChars;
+
+        InputReader() {
+            this.stream = System.in;
+        }
+
+        int read() {
+            if (numChars == -1)
+                throw new InputMismatchException();
+            if (curChar >= numChars) {
+                curChar = 0;
+                try {
+                    numChars = stream.read(buf);
+                } catch (IOException e) {
+                    throw new InputMismatchException();
+                }
+                if (numChars <= 0)
+                    return -1;
+            }
+            return buf[curChar++];
+        }
+
+        int readInt() {
+            int c = read();
+            while (isSpaceChar(c)) {
+                c = read();
+            }
+            int sgn = 1;
+            if (c == '-') {
+                sgn = -1;
+                c = read();
+            }
+            int res = 0;
+            do {
+                if (c < '0' || c > '9') {
+                    throw new InputMismatchException();
+                }
+                res *= 10;
+                res += c - '0';
+                c = read();
+            } while (!isSpaceChar(c));
+            return res * sgn;
+        }
+
+        boolean isSpaceChar(int c) {
+            return c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == -1;
+        }
     }
 }
