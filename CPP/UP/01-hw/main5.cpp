@@ -1,3 +1,17 @@
+/**
+*
+* Solution to homework task 5
+* Introduction to programming course
+* Faculty of Mathematics and Informatics of Sofia University
+* Winter semester 2018/2019
+*
+* @author Emil Zhivkov
+* @idnumber 62215
+* @task 5
+* @compiler GCC
+*
+*/
+
 #include <iostream>
 #include <math.h>
 
