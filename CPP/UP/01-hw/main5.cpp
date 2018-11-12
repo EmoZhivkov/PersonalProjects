@@ -17,6 +17,18 @@ double distance(Point a, Point b) {
     return sqrt(pow(abs(a.x - b.x), 2) + pow(abs(a.y - b.y), 2));
 }
 
+bool isPointInCircle(Point point, Circle circle) {
+    return distance(point, circle.center) < circle.radius;
+}
+
+bool isPointOnTheEdge(Point point, Circle circle) {
+    return distance(point, circle.center) == circle.radius;
+}
+
+bool isLeftSide(Point point) {
+    return point.x <= 0;
+}
+
 int main() {
     double x,y;
     cin >> x >> y;
@@ -32,7 +44,59 @@ int main() {
     Point centerSmallWhiteCircle = Point{0, -3};
     Circle smallWhiteCircle = Circle{centerSmallWhiteCircle, 1};
 
+    Circle middleWhiteCircle = Circle{centerSmallBlackCircle, 1};
 
+    Circle middleBlackCircle = Circle{centerSmallWhiteCircle, 1};
+
+    if (isPointInCircle(current, bigCircle)) {
+        if (isLeftSide(current)) {
+            if (isPointInCircle(current, smallBlackCircle)) {
+                cout << "Black" << endl;
+            } else if (isPointOnTheEdge(current, smallBlackCircle)) {
+                cout << "Undefined" << endl;
+            } else if (isPointInCircle(current, middleWhiteCircle)) {
+                cout << "White" << endl;
+            } else if (isPointOnTheEdge(current, middleWhiteCircle)) {
+                cout << "Undefined" << endl;
+            }else if (isPointInCircle(current, smallWhiteCircle)) {
+                cout << "White" << endl;
+            } else if (isPointOnTheEdge(current, smallWhiteCircle)) {
+                cout << "Undefined" << endl;
+            } else if (isPointInCircle(current, middleBlackCircle)) {
+                cout << "Black" << endl;
+            } else if (isPointOnTheEdge(current, middleBlackCircle)) {
+                cout << "Undefined" << endl;
+            } else {
+                cout << "White";
+            }
+        } else  {
+            if (isPointInCircle(current, smallBlackCircle)) {
+                cout << "Black" << endl;
+            } else if (isPointOnTheEdge(current, smallBlackCircle)) {
+                cout << "Undefined" << endl;
+            } else if (isPointInCircle(current, middleWhiteCircle)) {
+                cout << "White" << endl;
+            } else if (isPointOnTheEdge(current, middleWhiteCircle)) {
+                cout << "Undefined" << endl;
+            }else if (isPointInCircle(current, smallWhiteCircle)) {
+                cout << "White" << endl;
+            } else if (isPointOnTheEdge(current, smallWhiteCircle)) {
+                cout << "Undefined" << endl;
+            } else if (isPointInCircle(current, middleBlackCircle)) {
+                cout << "Black" << endl;
+            } else if (isPointOnTheEdge(current, middleBlackCircle)) {
+                cout << "Undefined" << endl;
+            } else {
+                cout << "Black";
+            }
+        }
+    } else {
+        if (isPointOnTheEdge(current, bigCircle)) {
+            cout << "Undefined" << endl;
+            return 0;
+        }
+        cout << "Outside" << endl;
+    }
 
     return 0;
 }
