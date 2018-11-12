@@ -8,7 +8,7 @@ func calculate(num float64) float64 {
 
 func getLimit(first float64) interface{} {
 	if first == 0 {
-		return "an cannot be 0"
+		return "a1 cannot be 0"
 	} else if first < 0 {
 		return "negative infinity"
 	} else if first > 0 && first < 4 {
@@ -46,12 +46,14 @@ func main() {
 		fmt.Print("Element at index: ")
 
 		var i int
-		_, err := fmt.Scanf("%d", &i)
-		if err != nil {
-			continue
-		}
+		fmt.Scan(&i)
 
 		fmt.Println(getNumAtIndex(num, i))
 		j++
 	}
+
+	fmt.Print("In order to exit the program => write something and then press enter: ")
+
+	var s string
+	fmt.Scan(&s)
 }
