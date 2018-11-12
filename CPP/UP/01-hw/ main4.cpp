@@ -14,7 +14,7 @@
 //        return 0;
 //    }
 //
-//    int emptyLines = (25 - 2*len)/2;
+//    int emptyLines = (26 - 2*len)/2;
 //
 //    for (int k = 0; k < emptyLines; ++k) {
 //        for (int j = 0; j < 80; ++j) {
@@ -25,7 +25,7 @@
 //
 //    int i;
 //    for (i = 0; i < len; i++) {
-//        for (int j = 0; j < (80/2) - i; ++j) {
+//        for (int j = 0; j < (80/2) - 2*i - 1; ++j) {
 //                cout << " ";
 //        }
 //
@@ -33,21 +33,17 @@
 //            cout << symbol;
 //        } else {
 //            cout << symbol;
-//            for (int j = 0; j < 2 * i - 1; ++j) {
+//            for (int j = 0; j < 2*(2 * i) - 1; ++j) {
 //                cout << symbol;
 //            }
 //            cout << symbol;
-//        }
-//
-//        for (int j = 0; j < (25/2) - i; ++j) {
-//            cout << " ";
 //        }
 //
 //        cout << endl;
 //    }
 //
 //    for (i = len - 2; i >= 0; i--) {
-//        for (int j = 0; j < (80/2) - i; ++j) {
+//        for (int j = 0; j < (80/2) - 2*i - 1; ++j) {
 //            cout << " ";
 //        }
 //
@@ -55,14 +51,10 @@
 //            cout << symbol;
 //        } else {
 //            cout << symbol;
-//            for (int j = 0; j < 2 * i - 1; ++j) {
+//            for (int j = 0; j < 2*(2 * i) - 1; ++j) {
 //                cout << symbol;
 //            }
 //            cout << symbol;
-//        }
-//
-//        for (int j = 0; j < (25/2) - i; ++j) {
-//                cout << " ";
 //        }
 //
 //        cout << endl;
