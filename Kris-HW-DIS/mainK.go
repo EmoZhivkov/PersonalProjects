@@ -7,7 +7,7 @@ func calculate(num float64) float64 {
 }
 
 func getLimit(first float64) interface{} {
-	if first > -(4 / 3) && first < -1 {
+	if first > -(4/3) && first < -1 {
 		return -1
 	} else {
 		return 1
@@ -40,12 +40,14 @@ func main() {
 		fmt.Print("Element at index: ")
 
 		var i int
-		_, err := fmt.Scanf("%d", &i)
-		if err != nil {
-			continue
-		}
+		fmt.Scan(&i)
 
 		fmt.Println(getNumAtIndex(num, i))
 		j++
 	}
+
+	fmt.Print("Write something and then press enter to exit the program: ")
+
+	var s string
+	fmt.Scan(&s)
 }
