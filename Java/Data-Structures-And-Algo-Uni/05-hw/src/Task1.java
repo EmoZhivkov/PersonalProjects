@@ -1,36 +1,51 @@
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Task1 {
     static class LinkedList {
-        Node root;
+        Node last;
+        Node first;
         int size;
 
         LinkedList() {
-            this.root = null;
+            this.first = this.last = null;
             this.size = 0;
         }
 
-        void insert(int value) {
-            if (this.root == null) {
-                this.root = new Node(value, this.size);
-                this.size++;
+        void push(long value) {
+            Node temp = new Node(value);
+
+            if (this.last == null) {
+                this.first = this.last = temp;
                 return;
             }
 
-            Node temp = root;
+            this.last.next = temp;
+            this.last = temp;
+            this.size++;
+        }
 
-
-            while (temp.hasNext()) {
-                temp = temp.getNext();
+        long pop() {
+            if (this.first == null) {
+                return -1;
             }
 
-            temp.next = new Node(value, this.size);
+            Node temp = this.first;
+            this.first = this.first.next;
 
-            size++;
+            if (this.first == null){
+                this.last = null;
+            }
+
+            this.size--;
+
+            return temp.value;
         }
 
         void print() {
-            Node temp = this.root;
+            Node temp = this.first;
             System.out.println(temp.value);
 
             while (temp.hasNext()) {
@@ -45,14 +60,18 @@ public class Task1 {
     }
 
     static class Node{
-        int index;
-        int value;
+        long value;
         Node next;
 
-        Node(int value, int index) {
-            this.index = index;
+
+        Node(long value) {
             this.value = value;
             this.next = null;
+        }
+
+        Node(Node n) {
+            this.value = n.value;
+            this.next = n.next;
         }
 
         Node getNext() {
@@ -68,29 +87,85 @@ public class Task1 {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
 
-        Scanner scanner = new Scanner(System.in);
-        int num = scanner.nextInt();
+        InputReader reader = new InputReader();
+        long num = reader.readInt();
+
+        if (num == 1) {
+            System.out.println(1);
+            return;
+        }
 
         for (int i = 1; i <= num; i++) {
-            linkedList.insert(i);
+            if (i % 2 != 0) {
+                linkedList.push(i);
+            }
         }
 
-        Node temp1 = linkedList.root;
-        while (temp1.hasNext()) {
-            temp1 = temp1.getNext();
-        }
 
-        temp1.next = linkedList.root;
-
-        Node temp = linkedList.root;
-
+        int cnt = 0;
         while (linkedList.size != 1) {
-            temp.next = temp.next.next;
-            temp = temp.getNext();
-
-            linkedList.size--;
+            if (cnt % 2 == 0) {
+                linkedList.push(linkedList.pop());
+            } else {
+                linkedList.pop();
+            }
+            cnt++;
         }
 
-        System.out.println(temp.value);
+
+        System.out.println(linkedList.pop());
+    }
+
+    private static class InputReader {
+        private InputStream stream;
+        private byte[] buf = new byte[1024];
+        private int curChar;
+        private int numChars;
+
+        InputReader() {
+            this.stream = System.in;
+        }
+
+        int read() {
+            if (numChars == -1)
+                throw new InputMismatchException();
+            if (curChar >= numChars) {
+                curChar = 0;
+                try {
+                    numChars = stream.read(buf);
+                } catch (IOException e) {
+                    throw new InputMismatchException();
+                }
+                if (numChars <= 0)
+                    return -1;
+            }
+            return buf[curChar++];
+        }
+
+        int readInt() {
+            int c = read();
+            while (isSpaceChar(c)) {
+                c = read();
+            }
+            int sgn = 1;
+            if (c == '-') {
+                sgn = -1;
+                c = read();
+            }
+            int res = 0;
+            do {
+                if (c < '0' || c > '9') {
+                    throw new InputMismatchException();
+                }
+                res *= 10;
+                res += c - '0';
+                c = read();
+            } while (!isSpaceChar(c));
+            return res * sgn;
+        }
+
+        boolean isSpaceChar(int c) {
+            return c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == -1;
+        }
     }
 }
