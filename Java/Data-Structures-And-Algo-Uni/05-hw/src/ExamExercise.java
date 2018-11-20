@@ -65,25 +65,24 @@ public class ExamExercise {
             Node temp = new Node(value);
 
             if (this.root == null) {
+                this.root = this.tail = temp;
+                this.size++;
+
                 if (pos != 0) {
-                    this.root = this.tail = temp;
-                    this.size++;
                     System.out.print("add_last");
-                    return;
-                } else {
-                    this.root = this.tail = temp;
-                    this.size++;
-                    return;
                 }
+
+                return;
             }
 
             if (pos == 0) {
-                this.insertAtFront(value);
-                return;
-            } else if (pos == this.size) {
-                this.insertAtBack(value);
+                temp.next = this.root;
+                this.root = temp;
+                this.size++;
+
                 return;
             }
+
 
             Node current = this.root;
             Node prev = null;
@@ -93,6 +92,7 @@ public class ExamExercise {
             while (current.hasNext()) {
                 prev = current;
                 current = current.getNext();
+
                 cnt++;
 
                 if (cnt == pos) {
@@ -104,9 +104,14 @@ public class ExamExercise {
             }
 
             current.next = temp;
-            if (cnt  == pos - 1) {
+
+
+            if (this.size == pos) {
+                this.size++;
                 return;
             }
+
+            this.size++;
             System.out.print("add_last");
         }
 
@@ -193,8 +198,11 @@ public class ExamExercise {
         linkedList.insertAtPosition(2, 1);
         linkedList.insertAtPosition(3, 1);
 
+
+
 //        System.out.println("////" +linkedList.size+ "///");
-       linkedList.remove(1);
+     // linkedList.remove(1);
+       // System.out.println(linkedList.size);
 
         linkedList.print();
     }
