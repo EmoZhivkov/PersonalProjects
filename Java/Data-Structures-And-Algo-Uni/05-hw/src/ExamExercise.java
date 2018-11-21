@@ -1,4 +1,8 @@
 import com.sun.org.apache.bcel.internal.generic.VariableLengthInstruction;
+import sun.awt.image.ImageWatched;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExamExercise {
     static class LinkedList {
@@ -27,6 +31,120 @@ public class ExamExercise {
         LinkedList() {
             this.root = this.tail = null;
             this.size = 0;
+        }
+
+        void group(int posX, int posY) {
+            if (posX > posY || posX < 0 || posY < 0 || posX >= this.size || posY >= this.size) {
+                System.out.print("fail_grouping");
+                return;
+            }
+
+            int currPos = 0;
+
+            int sum = 0;
+            if (currPos == posX) {
+                sum += this.root.value;
+
+                Node prev = this.root;
+                Node current = this.root;
+
+
+                while (currPos != posY) {
+                    current = current.getNext();
+                    sum += current.value;
+
+                    currPos++;
+                }
+
+                Node temp = new Node(sum);
+                this.root = current.next;
+                temp.next = this.root;
+                this.root = temp;
+
+            } else  {
+                Node prev = null;
+                Node current = this.root;
+
+                while (current.hasNext()) {
+                    prev = current;
+                    current = current.getNext();
+                    currPos++;
+                    if (currPos == posX) {
+                        sum += current.value;
+                        while (currPos != posY) {
+                            current = current.getNext();
+                            sum += current.value;
+                            currPos++;
+                        }
+                        break;
+                    }
+                }
+
+
+
+                Node temp = new Node(sum);
+                prev.next = temp;
+                temp.next = current.next;
+
+
+            }
+        }
+
+        void removeAll(int X){
+            if (this.root == null) {
+                return;
+            }
+
+            Node temp = this.root;
+            Node prev = null;
+
+            while (temp.hasNext()) {
+                prev = temp;
+                temp = temp.getNext();
+
+                if (temp.value == X) {
+                    prev.next = temp.getNext();
+                    temp = prev;
+
+                    this.size--;
+                }
+            }
+
+            if (this.root.value == X) {
+                this.root = this.root.next;
+            }
+        }
+
+
+
+        void is_palindrom() {
+            int[] arr = new int[this.size];
+
+            if (this.root == null) {
+                System.out.print("true");
+                return;
+            }
+
+            Node temp = this.root;
+
+            int cnt = 0;
+            arr[cnt] = temp.value;
+            cnt++;
+
+            while (temp.hasNext()) {
+                temp = temp.getNext();
+                arr[cnt] = temp.value;
+                cnt++;
+            }
+
+            for (int i = 0, j = this.size - 1; i < this.size && j >= 0; i++, j--) {
+                if (arr[i] != arr[j]) {
+                    System.out.print("false");
+                    return;
+                }
+            }
+
+            System.out.print("true");
         }
 
         void remove(int pos) {
@@ -174,6 +292,10 @@ public class ExamExercise {
             }
         }
 
+        boolean isEmpty() {
+            return this.size == 0;
+        }
+
         void reverse() {
             Node current = this.root;
             Node prev = null;
@@ -196,13 +318,17 @@ public class ExamExercise {
 
         linkedList.insertAtPosition(1, 0);
         linkedList.insertAtPosition(2, 1);
-        linkedList.insertAtPosition(3, 1);
+        linkedList.insertAtPosition(2, 2);
+        linkedList.insertAtPosition(1, 3);
 
 
 
-//        System.out.println("////" +linkedList.size+ "///");
-     // linkedList.remove(1);
-       // System.out.println(linkedList.size);
+        linkedList.group(0, 1);
+
+
+//      System.out.println("////" +linkedList.size+ "///")
+//      linkedList.remove(1);
+//      System.out.println(linkedList.size);
 
         linkedList.print();
     }
