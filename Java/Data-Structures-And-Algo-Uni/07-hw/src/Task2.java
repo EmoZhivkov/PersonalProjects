@@ -7,7 +7,9 @@ public class Task2 {
         maxHeap.insert(2);
         maxHeap.insert(3);
         maxHeap.insert(4);
+        maxHeap.getMax();
 
+        maxHeap.print();
     }
 
     static class MaxHeap {
@@ -20,31 +22,70 @@ public class Task2 {
             this.size = 1;
         }
 
+        void print() {
+            for (int i = 1; i < this.size; i++) {
+                System.out.println(arr[i]);
+            }
+        }
+
         int getMax() {
-            int n = this.arr[1];
+            int n = arr[this.size - 1];
 
-
+            swap(1, (this.size - 1));
+            this.size--;
+            topHeapify();
 
             return n;
+        }
+
+        void topHeapify() {
+            int i = 1;
+            int current = arr[i];
+            int leftChild = arr[2 * i];
+            int rightChild = arr[2 * i + 1];
+
+            while ((current < leftChild || current < rightChild)) {
+                if (leftChild < rightChild) {
+                    swap(i, 2 * i + 1);
+                    i = 2 * i + 1;
+
+                    current = arr[i];
+                    if (2 * i > this.size - 1) {
+                        break;
+                    }
+                    leftChild = arr[2 * i];
+                    rightChild = arr[2 * i + 1];
+                } else {
+                    swap(i, 2 * i);
+                    i = 2 * i;
+
+                    current = arr[i];
+                    if (2 * i > this.size - 1) {
+                        break;
+                    }
+                    leftChild = arr[2 * i];
+                    rightChild = arr[2 * i + 1];
+                }
+            }
         }
 
         void insert(int value) {
             this.arr[this.size] = value;
             this.size++;
-            heapify();
+            botHeapify();
         }
 
-        void heapify() {
+        void botHeapify() {
             int i = this.size - 1;
             int current = this.arr[i];
-            int parent = this.arr[i/2];
+            int parent = this.arr[i / 2];
 
             while (current > parent) {
-                swap(i, i/2);
+                swap(i, i / 2);
                 i /= 2;
 
                 current = this.arr[i];
-                parent = this.arr[i/2];
+                parent = this.arr[i / 2];
             }
         }
 
