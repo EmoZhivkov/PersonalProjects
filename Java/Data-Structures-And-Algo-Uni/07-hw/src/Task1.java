@@ -10,7 +10,6 @@ public class Task1 {
             this.root = insert(this.root, value);
         }
 
-
         void printLevelOrderAvg() {
             int h = height(root);
             int i;
@@ -82,9 +81,6 @@ public class Task1 {
             }
         }
     }
-
-
-
 
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
