@@ -19,6 +19,7 @@
          zip-with
          zip-matrix)
 
+
 ;1)
 (define (all? p? xs)
     (foldl (lambda (x nv) (and nv (p? x))) #t xs))
