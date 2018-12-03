@@ -1,20 +1,43 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
-        MinHeap minHeap = new MinHeap(4);
-        minHeap.insert(4);
-        minHeap.insert(3);
-        minHeap.insert(2);
-        minHeap.insert(1);
 
-        System.out.println(minHeap.getMin());
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
 
-        System.out.println(minHeap.extractMin());
-        System.out.println(minHeap.extractMin());
-        System.out.println(minHeap.extractMin());
 
-       // minHeap.print();
+        MinHeap minHeap = new MinHeap(n/2 + 2);
+        MaxHeap maxHeap = new MaxHeap(n/2 + 2);
+
+        double currentMedian = 0;
+        for (int i = 0; i < n; i++) {
+            int current = scanner.nextInt();
+
+            if (current > currentMedian) {
+                minHeap.insert(current);
+            } else {
+                maxHeap.insert(current);
+            }
+
+            if (minHeap.size + 1 < maxHeap.size) {
+                minHeap.insert(maxHeap.getMax());
+                maxHeap.extractMax();
+            } else if (maxHeap.size + 1 < minHeap.size) {
+                maxHeap.insert(minHeap.extractMin());
+            }
+
+            if (minHeap.size > maxHeap.size) {
+                currentMedian = minHeap.getMin();
+            } else if (maxHeap.size > minHeap.size) {
+                currentMedian = maxHeap.getMax();
+            } else {
+                currentMedian = ((double)minHeap.getMin() +maxHeap.getMax())/2;
+            }
+            System.out.printf("%.1f\n", currentMedian);
+        }
+
     }
 
     static class MinHeap {
@@ -141,6 +164,10 @@ public class Task2 {
             for (int i = 1; i < this.size; i++) {
                 System.out.println(arr[i]);
             }
+        }
+
+        int getMax() {
+            return this.arr[1];
         }
 
         int extractMax() {
