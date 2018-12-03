@@ -1,5 +1,24 @@
 #lang racket
 
+(provide all?
+         any?
+         concat
+         rows
+         cols
+         matrix-ref
+         add-before
+         drop-before
+         set
+         place
+         diag
+         reverse
+         flip
+         diags
+         map-matrix
+         filter-matrix
+         zip-with
+         zip-matrix)
+
 ;1)
 (define (all? p? xs)
     (foldl (lambda (x nv) (and nv (p? x))) #t xs))
@@ -67,7 +86,7 @@
 
 ;10.2)
 (define (diags xss)
-  (cons (diag xss) cons (diag (flip xss)) '())))
+  (cons (diag xss) cons (diag (flip xss)) '()))
 
 ;11)
 (define (map-matrix f xss)
