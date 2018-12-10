@@ -3,6 +3,8 @@
 (provide winner
          play)
 
+(require "functions.rkt")
+
 (define (id x) x)
 
 ; winner returns one of 4 possible things:
@@ -19,9 +21,9 @@
 
 ; Only detects draws right now.
 (define (winner b)
-  (if (andmap (lambda (xs) (andmap id xs)) b)
-      "D"
-      #f))
+  (cond ((andmap (lambda (xs) (andmap id xs)) b) "D")
+
+        (else #f)))
 
 ; plays is the "ai player". It takes the current board state in curr-board,
 ; as a list of lists, i.e.

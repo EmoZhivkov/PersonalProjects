@@ -1,0 +1,1 @@
+("7.0" ("f99670de8d9ad6f87ad826b50eb8261d2d34f89c" . "14705dfb70ce4b0d86c04e2ae79914d2f29dc494") #"/Users/ezhivkov/Desktop/PersonalProjects/Functional/pract/03-pract-hw/hw03/functions.rkt" (collects #"errortrace" #"errortrace-key.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt"))
