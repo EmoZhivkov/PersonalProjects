@@ -183,8 +183,6 @@ public class Task1 {
             if (root == null)
                 return root;
 
-
-
             root.height = max(height(root.left), height(root.right)) + 1;
 
             int balance = getBalance(root);

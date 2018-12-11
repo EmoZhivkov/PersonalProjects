@@ -71,8 +71,29 @@ boolExprEq (Var first) (Var second)                      = first == second
 boolExprEq (Not first) (Not second)                      = (boolExprEq first second)
 boolExprEq (And first second) (And third fourth)         = (boolExprEq first third) && (boolExprEq second fourth)
 boolExprEq (Or first second) (Or third fourth)           = (boolExprEq first third) && (boolExprEq second fourth)
-boolExprEq (Implies first second) (Implies third fourth) = 
+boolExprEq (Implies first second) (Implies third fourth) = (boolExprEq first third) && (boolExprEq second fourth)
 
+type Environment = [(Name, Bool)]
+varValue :: Environment -> Name -> Bool
+varValue [] _ = error "asdf"
+varValue ((n, val):xs) name
+    | n == name = val
+    | otherwise = varValue xs name
+
+evalWithEnv :: Environment -> Prop -> Bool
+evalWithEnv env (Var name)            = varValue env name
+evalWithEnv env (Not prop)            = (evalWithEnv env prop)
+evalWithEnv env (And propl propr)     = (evalWithEnv env propl) && (evalWithEnv env propr)
+evalWithEnv env (Or propl propr)      = (evalWithEnv env propl) || (evalWithEnv env propr)
+evalWithEnv env (Implies prop1 prop2) = not (evalWithEnv env prop1 && (not (evalWithEnv env prop2)))
+
+allVars :: Prop -> [Name]
+allVars (Const _)             = []
+allVars (Var name)            = [name]
+allVars (Not prop)            = allVars prop
+allVars (And prop1 prop2)     = (allVars prop1) ++ (allVars prop2)
+allVars (Or prop1 prop2)      = (allVars prop1) ++ (allVars prop2)
+allVars (Implies prop1 prop2) = (allVars prop1) ++ (allVars prop2)
 
 
 
