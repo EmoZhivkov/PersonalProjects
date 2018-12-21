@@ -3,4 +3,4 @@ project(02_hw)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(02_hw fn62215_d2_1_gcc.cpp)
+add_executable(02_hw fn62215_d2_1_gcc.cpp fn62215_d2_2_gcc.cpp)
