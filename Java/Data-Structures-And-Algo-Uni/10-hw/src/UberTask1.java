@@ -17,7 +17,7 @@ public class UberTask1 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,8,7,6,5};
+        int[] arr = {1,2,3,4,10,9, 8, 7};
         LinkedList<Node> list = fillUp(arr);
         int cnt = 0;
 
@@ -72,35 +72,31 @@ public class UberTask1 {
     static LinkedList<Node> fillUp(int[] arr) {
         LinkedList<Node> linkedList = new LinkedList<>();
 
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length; i++) {
             Node current = new Node(arr[i]);
 
-            if (arr[i] > arr[i + 1]) {
+            if (i != arr.length - 1) {
+                if (arr[i] > arr[i + 1]) {
+                    current.leftEnd = true;
+                    leftEnds++;
+                }
+            } else {
                 current.leftEnd = true;
                 leftEnds++;
             }
 
-            linkedList.addLast(current);
-        }
-
-        Node last = new Node(arr[arr.length - 1]);
-        last.leftEnd = true;
-        leftEnds++;
-
-        linkedList.addLast(last);
-
-        for (int i = arr.length - 1; i > 0; i--) {
-            Node current = linkedList.get(i);
-
-            if (arr[i] > arr[i - 1]) {
+            if (i != 0) {
+                if (arr[i] > arr[i - 1]) {
+                    current.rightEnd = true;
+                    rightEnds++;
+                }
+            } else {
                 current.rightEnd = true;
                 rightEnds++;
             }
-        }
 
-        Node first = linkedList.get(0);
-        first.rightEnd = true;
-        rightEnds++;
+            linkedList.addLast(current);
+        }
 
         return linkedList;
     }
