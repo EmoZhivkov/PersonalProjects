@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Task2 {
@@ -7,30 +8,28 @@ public class Task2 {
     static ArrayList<Long> distances;
     static ArrayList<Boolean> visited;
 
-    static void dijkstra(int s) {
+    static void betterDijkstra(int s) {
         distances.set(s, 0L);
 
-        for (int i = 1; i < adj.size(); i++) {
-            int v = -1;
-            for (int j = 1; j < adj.size(); j++) {
-                if (!visited.get(j) && (v == -1 || distances.get(j) > distances.get(v))) {
-                    v = j;
-                }
+        PriorityQueue<Long> q = new PriorityQueue<>();
+        q.add((long) s);
+
+        while (!q.isEmpty()) {
+            long cur = q.remove();
+            int curu = (int) cur;
+
+            if (cur >>> 32 != distances.get(curu)) {
+                continue;
             }
 
-            if (distances.get(v) == Long.MIN_VALUE) {
-                break;
-            }
+            for (Pair<Integer, Long> e : adj.get(curu)) {
+                int v = e.first;
 
-            visited.set(v, true);
+                long nprio = distances.get(curu) + e.second;
 
-            for (Pair<Integer, Long> edge :
-                    adj.get(v)) {
-                int to = edge.first;
-                long len = edge.second;
-
-                if (distances.get(v) + len > distances.get(to)) {
-                    distances.set(to, distances.get(v) + len);
+                if (distances.get(v) < nprio) {
+                    distances.set(v, nprio);
+                    q.add((nprio << 32) + v);
                 }
             }
         }
@@ -62,7 +61,8 @@ public class Task2 {
             adj.get(currentVertex).add(Pair.create(nextVertex, weight));
         }
 
-        dijkstra(s);
+        betterDijkstra(s);
+
         long distance = distances.get(t);
         if (distance == Long.MIN_VALUE) {
             System.out.println(-1);
