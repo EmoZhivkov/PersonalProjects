@@ -25,6 +25,7 @@ do
     num=100
 done
 
-echo ------------------
+echo -------------
 
-tr -cs '[:alpha:]' '\n' < text.txt | awk '{print tolower($0)}' | sort | uniq | xargs -I{} -n1 sh -c '(echo {}: && agrep -w -B -s {} dic.txt) | tr "\n" ":"; echo "\n"' | awk -F: '{if ($3 != 0) print $1":"$3":"$4}' | grep -v "::"
+tr -cs '[:alpha:]' '\n' < ~/Downloads/61000/text.txt | awk '{print tolower($0)}' | sort | uniq | xargs -I{} -n1 sh -c '(echo {}: && agrep -w -B -s {} ~/Downloads/61000/dic.txt) | tr "\n" ":"; echo "\n"'| grep . | awk -F: '{if ($3 != 0) print $1":"$3":"$4}'
+
