@@ -1,8 +1,8 @@
 #!/bin/bash
 
-dic=( $(cat ~/Downloads/61000/dic.txt) )
+dic=( $(cat dic.txt) )
 
-textByWords=( $( tr -cs '[:alpha:]' '\n' < ~/Downloads/61000/text.txt | awk '{print tolower($0)}' | sort | uniq ) )
+textByWords=( $( tr -cs '[:alpha:]' '\n' < text.txt | awk '{print tolower($0)}' | sort | uniq ) )
 
 num=100
 dicIndex=0
@@ -27,5 +27,5 @@ done
 
 echo -------------
 
-tr -cs '[:alpha:]' '\n' < ~/Downloads/61000/text.txt | awk '{print tolower($0)}' | sort | uniq | xargs -I{} -n1 sh -c '(echo {}: && agrep -w -B -s {} ~/Downloads/61000/dic.txt) | tr "\n" ":"; echo "\n"'| grep . | awk -F: '{if ($3 != 0) print $1":"$3":"$4}'
+tr -cs '[:alpha:]' '\n' < text.txt | awk '{print tolower($0)}' | sort | uniq | xargs -I{} -n1 sh -c '(echo {}: && agrep -w -B -s {} dic.txt) | tr "\n" ":"; echo "\n"'| grep . | awk -F: '{if ($3 != 0) print $1":"$3":"$4}'
 
