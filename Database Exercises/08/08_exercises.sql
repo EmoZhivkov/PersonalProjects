@@ -28,11 +28,32 @@ where model != ALL (select product.model
                                       where product.maker != ALL (select distinct product.maker 
                                                                   from product join printer on product.model = printer.model))
 
-select * from product
-
 update product SET maker = 'A' where product.maker = 'A'
 
 update pc set price = price/2, hd = hd + 20 
 
+select * from laptop
+
 update laptop set screen = screen + 1 where model = (select product.model from 
-                                                     product join )
+                                                     product join laptop on product.model = laptop.model
+                                                     where product.maker = 'B')
+
+select * from CLASSES
+select * from SHIPS
+
+select * from BATTLES
+
+insert into SHIPS(NAME, CLASS, LAUNCHED) values ('Nelson', 'Nelson', 1927)
+insert into SHIPS(NAME, CLASS, LAUNCHED) values ('Rodney', 'Nelson', 1927)
+insert into CLASSES(CLASS, TYPE, COUNTRY, NUMGUNS, BORE, DISPLACEMENT)
+values ('Nelson', 'bb', 'Gt.Britain', 9, 16, 34000 )
+
+select * from OUTCOMES
+select * from SHIPS join OUTCOMES on ships.NAME = OUTCOMES.SHIP
+
+delete from SHIPS where SHIPS.NAME in (select ships.NAME
+                                      from SHIPS join OUTCOMES on ships.NAME = OUTCOMES.SHIP
+                                      where OUTCOMES.RESULT = 'sunk')
+
+update CLASSES set BORE = BORE * 2.5
+update CLASSES set DISPLACEMENT = DISPLACEMENT / 1.1
