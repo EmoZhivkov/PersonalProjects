@@ -1,0 +1,10 @@
+#!/bin/bash
+
+awk -F':' '{print $1 " " $6}' /etc/passwd | while read user dir
+do
+	echo "$user $dir"
+	if [[ ! -d $dir ]]
+	then
+		echo "$dir doesn't exist -> $user"
+	fi
+done

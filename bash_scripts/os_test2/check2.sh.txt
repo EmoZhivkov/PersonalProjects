@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [ $# -eq 1 ]
+then
+	if [[ ! -d $1 ]]
+	then
+		echo "$1 is not a dir"
+	fi
+
+	find "$1" -type l -exec test ! -e {} \; -print
+elif [ $# -eq 2 ]
+then
+	if [[ ! -d $1 ]]
+	then
+		echo "$1 is not a dir"
+	fi
+
+	arg=$(($2 - 1))
+
+	if [[ $arg -lt 0 ]]
+	then
+		find "$1" -type f
+	else
+		find "$1" -type f -links "+$arg"
+	fi
+fi
+
+

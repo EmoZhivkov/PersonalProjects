@@ -1,0 +1,44 @@
+#!/bin/bash
+
+if [[ $(id -u) -ne 0 ]]
+then
+	echo "please run as root"
+	exit
+fi
+
+if [ ! $# -eq 3 ]
+then
+	echo "Expected [SRC] [DEST] [STR]"
+	exit
+fi
+
+if [[ ! -d $1 ]]
+then 
+	echo "$1 is not a dir"
+	exit
+fi
+
+
+if [[ ! -d $2 ]]
+then 
+	echo "$2 is not a dir"
+	exit
+fi
+
+if [[ ! -z $(ls -A "$2") ]]
+then 
+	echo "$2 is not empty"
+	exit
+fi
+
+IFS=$'\n'
+for f in $(find "$1" -type f -name "*${3}*")
+do
+	echo $f
+	newFile=$(echo "$f" | sed "s_${1}_${2}_")
+	dir=$(dirname "$newFile")
+	echo "$newFile"
+	echo "$dir"
+	mkdir -p "$dir"
+	mv "$f" "$newFile"
+done
