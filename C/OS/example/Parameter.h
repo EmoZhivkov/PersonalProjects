@@ -35,7 +35,6 @@ Parameter bdPassPart1 = {"bd_pass_part1", 4, 0, "[a-z0-9]+"};
 Parameter romChecksumPart0 = {"rom_checksum_part0", 4, 1, "[a-z0-9]+"};
 Parameter romChecksumPart1 = {"rom_checksum_part1", 4, 2, "[a-z0-9]+"};
 
-
 Parameter *parameters[15] = {
         &deviceName,
         &romRevision,

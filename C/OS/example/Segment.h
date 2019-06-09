@@ -6,7 +6,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <err.h>
+
+#define NUM_OF_SEGMENTS 5
 
 typedef union Data {
     char Text[3][16];
@@ -99,7 +100,6 @@ void getParameter(Segment *segments, int numOfSegments, char *paramName, char *b
         write(2, "Invalid configuration. The segment number doesn't match!\n", 100);
         exit(-1);
     }
-
 
     if (segments[segmentNum].Type == 0) {
         memcpy(buffer, segments[segmentNum].Data.Text[positionInSegment], bufferSize);

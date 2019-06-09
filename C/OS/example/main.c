@@ -3,13 +3,35 @@
 #include "Parameter.h"
 #include "BitManipulation.h"
 #include "Segment.h"
+#include "Command.h"
 
-#define NUM_OF_SEGMENTS 5
+
 
 int main(int argc, char **argv) {
-    Segment *segments = parseSegmentsFromFile("../bt.bin", NUM_OF_SEGMENTS);
+    initCommands();
 
-    char buffer[16];
-    getParameter(segments, NUM_OF_SEGMENTS, "serial_stop_bit", buffer, 16);
-    printf("%s\n", buffer);
+    if (argc < 2) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
+
+    if (argc == 2) {
+        char *arg = argv[1];
+        if (strlen(arg) == 2) {
+            char command = arg[1];
+            (commands[command])(argc, argv);
+        } else {
+            write(2, "Invalid arguments!\n", 30);
+            exit(-1);
+        }
+    } else {
+        char *arg = argv[2];
+        if (strlen(arg) == 2) {
+            char command = arg[1];
+            (commands[command])(argc, argv);
+        } else {
+            write(2, "Invalid arguments!\n", 30);
+            exit(-1);
+        }
+    }
 }
