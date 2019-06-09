@@ -8,19 +8,79 @@
 void (*commands[128]) (int argc, char **argv);
 
 void funcFors(int argc, char **argv) {
+    if (argc != 5) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 
+    char *fileName = argv[1];
+    char *paramName = argv[3];
+    char *paramValue = argv[4];
+
+    Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
+    setParameter(segments, NUM_OF_SEGMENTS, paramName, paramValue);
+
+    int parameterSegmentNum = getParameterSegmentNum(paramName);
+    int parameterPosition = getParameterPositionInSegment(paramName);
+
+    setNthBit(segments[parameterSegmentNum].Meta, parameterPosition + 1);
+
+    writeSegmentsToFile(segments, NUM_OF_SEGMENTS, fileName);
 }
 
 void funcForS(int argc, char **argv) {
+    if (argc != 5) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 
+    char *fileName = argv[1];
+    char *paramName = argv[3];
+    char *paramValue = argv[4];
+
+    Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
+    setParameter(segments, NUM_OF_SEGMENTS, paramName, paramValue);
+
+    writeSegmentsToFile(segments, NUM_OF_SEGMENTS, fileName);
 }
 
 void funcForg(int argc, char **argv) {
+    if (argc != 4) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 
+    char *fileName = argv[1];
+    char *paramName = argv[3];
+
+    Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
+
+    int parameterSegmentNum = getParameterSegmentNum(paramName);
+    int parameterPosition = getParameterPositionInSegment(paramName);
+
+    if (isNthBitSet(segments[parameterSegmentNum].Meta, parameterPosition + 1)) {
+        char buff[16];
+        getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
+
+        printf("%s\n", buff);
+    }
 }
 
 void funcForG(int argc, char **argv) {
+    if (argc != 4) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 
+    char *fileName = argv[1];
+    char *paramName = argv[3];
+
+    Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
+
+    char buff[16];
+    getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
+
+    printf("%s\n", buff);
 }
 
 void funcForl(int argc, char **argv) {
@@ -39,9 +99,9 @@ void funcForc(int argc, char **argv) {
 
 }
 
-// TODO
+// TODO: Finish this last
 void funcForh(int argc, char **argv) {
-    printf("%s\n", "I need to finish this last!");
+    
 }
 
 void initCommands() {

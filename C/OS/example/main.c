@@ -5,8 +5,6 @@
 #include "Segment.h"
 #include "Command.h"
 
-
-
 int main(int argc, char **argv) {
     initCommands();
 
