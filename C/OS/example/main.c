@@ -17,6 +17,11 @@ int main(int argc, char **argv) {
         char *arg = argv[1];
         if (strlen(arg) == 2) {
             char command = arg[1];
+            if (commands[command] == NULL) {
+                write(2, "Not supported argument!\n", 30);
+                exit(-1);
+            }
+
             (commands[command])(argc, argv);
         } else {
             write(2, "Invalid arguments!\n", 30);
@@ -26,6 +31,11 @@ int main(int argc, char **argv) {
         char *arg = argv[2];
         if (strlen(arg) == 2) {
             char command = arg[1];
+            if (commands[command] == NULL) {
+                write(2, "Not supported argument!\n", 30);
+                exit(-1);
+            }
+
             (commands[command])(argc, argv);
         } else {
             write(2, "Invalid arguments!\n", 30);

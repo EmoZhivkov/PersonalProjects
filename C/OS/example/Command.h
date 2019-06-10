@@ -5,7 +5,7 @@
 #include "Segment.h"
 
 // Example for function pointers
-void (*commands[128]) (int argc, char **argv);
+void (*commands[128])(int argc, char **argv);
 
 void funcFors(int argc, char **argv) {
     if (argc != 5) {
@@ -84,15 +84,103 @@ void funcForG(int argc, char **argv) {
 }
 
 void funcForl(int argc, char **argv) {
+    if (argc == 3) {
+        char *fileName = argv[1];
+        Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
 
+        for (int i = 0; i < LEN_OF_PARAMETERS; ++i) {
+            char *paramName = parameters[i]->Name;
+            int parameterSegmentNum = parameters[i]->SegmentNum;
+            int parameterPosition = parameters[i]->PositionInSegment;
+
+            if (isNthBitSet(segments[parameterSegmentNum].Meta, parameterPosition + 1)) {
+                char buff[16];
+                getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
+
+                printf("%s\n", buff);
+            }
+        }
+    } else if (argc > 3) {
+        char *fileName = argv[1];
+        Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
+
+        for (int i = 3; i < argc; ++i) {
+            char *paramName = argv[i];
+            int parameterSegmentNum = getParameterSegmentNum(paramName);
+            int parameterPosition = getParameterPositionInSegment(paramName);
+
+            if (isNthBitSet(segments[parameterSegmentNum].Meta, parameterPosition + 1)) {
+                char buff[16];
+                getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
+
+                printf("%s\n", buff);
+            }
+        }
+    } else {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 }
 
 void funcForL(int argc, char **argv) {
+    if (argc == 3) {
+        char *fileName = argv[1];
+        Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
 
+        for (int i = 0; i < LEN_OF_PARAMETERS; ++i) {
+            char *paramName = parameters[i]->Name;
+
+            char buff[16];
+            getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
+
+            printf("%s\n", buff);
+        }
+    } else if (argc > 3) {
+        char *fileName = argv[1];
+        Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
+
+        for (int i = 3; i < argc; ++i) {
+            char *paramName = argv[i];
+
+            char buff[16];
+            getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
+
+            printf("%s\n", buff);
+        }
+    } else {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 }
 
 void funcForb(int argc, char **argv) {
+    if (argc != 5) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 
+    char *fileName = argv[1];
+    char *paramName = argv[3];
+    int parameterSegmentNum = getParameterSegmentNum(paramName);
+    int parameterPosition = getParameterPositionInSegment(paramName);
+
+    uint8_t value = atoi(argv[4]);
+    if (value != 0 && value != 1) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
+
+    Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
+
+    if (value) {
+        if (!isNthBitSet(segments[parameterSegmentNum].Meta, parameterPosition + 1)) {
+            setNthBit(segments[parameterSegmentNum].Meta, parameterPosition + 1);
+        }
+    } else {
+        if (isNthBitSet(segments[parameterSegmentNum].Meta, parameterPosition + 1)) {
+            unsetNthBit(segments[parameterSegmentNum].Meta, parameterPosition + 1);
+        }
+    }
 }
 
 void funcForc(int argc, char **argv) {
@@ -101,7 +189,7 @@ void funcForc(int argc, char **argv) {
 
 // TODO: Finish this last
 void funcForh(int argc, char **argv) {
-    
+
 }
 
 void initCommands() {
@@ -115,8 +203,5 @@ void initCommands() {
     commands['c'] = &funcForc;
     commands['h'] = &funcForh;
 }
-
-// This is how you can call them
-// (*p[1]) (i, j);
 
 #endif //EXAMPLE_COMMAND_H

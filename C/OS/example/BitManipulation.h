@@ -35,4 +35,18 @@ void setNthBit(uint8_t *meta, int n) {
     meta[metaIndex] = meta[metaIndex] | bit[bitIndex];
 }
 
+void unsetNthBit(uint8_t *meta, int n) {
+    uint8_t bit[8] = {128, 64, 32, 16, 8, 4, 2, 1};
+
+    int metaIndex = (n - 1) / 8;
+    int bitIndex = n;
+    if (bitIndex > 8) {
+        bitIndex = (bitIndex % 8) - 1;
+    } else {
+        bitIndex--;
+    }
+
+    meta[metaIndex] = meta[metaIndex] ^ bit[bitIndex];
+}
+
 #endif //EXAMPLE_BITMANIPULATION_H
