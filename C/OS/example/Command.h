@@ -186,11 +186,18 @@ void funcForc(int argc, char **argv) {
     char *fileName = argv[1];
     Segment *segments = malloc(64 * (argc - 3) / 2);
 
+    uint8_t correctSegmentNum = 0;
     for (int i = 3; i < argc; i = i + 2) {
         Segment segment;
         uint8_t segmentNum = atoi(argv[i]);
+        if (segmentNum != correctSegmentNum) {
+            write(2, "Invalid arguments!\n", 20);
+            exit(-1);
+        } else {
+            correctSegmentNum++;
+        }
 
-        if (!strcmp(argv[i + 1], "t")) { // 16 byte words
+        if (!strcmp(argv[i + 1], "t")) {
             segment.Type = 0;
             for (int j = 0; j < 7; ++j) {
                 segment.Meta[j] = 0;
