@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include "Segment.h"
 
-// Example for function pointers
 void (*commands[128])(int argc, char **argv);
 
 void funcFors(int argc, char **argv) {
@@ -184,7 +183,56 @@ void funcForb(int argc, char **argv) {
 }
 
 void funcForc(int argc, char **argv) {
+    if (argc < 5) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
 
+    if ((argc - 3) % 2) {
+        write(2, "Invalid arguments!\n", 30);
+        exit(-1);
+    }
+
+    char *fileName = argv[1];
+    Segment *segments = malloc(64 * (argc - 3) / 2);
+
+    for (int i = 3; i < argc; i = i + 2) {
+        Segment segment;
+        uint8_t segmentNum = atoi(argv[i]);
+
+        if (!strcmp(argv[i + 1], "t")) { // 16 byte words
+            segment.Type = 0;
+            for (int j = 0; j < 7; ++j) {
+                segment.Meta[j] = 0;
+            }
+            for (int k = 0; k < 3; ++k) {
+                memset(segment.Data.Text[k], 0, 16);
+            }
+        } else if (!strcmp(argv[i + 1], "n")) { 
+            segment.Type = 1;
+            for (int j = 0; j < 7; ++j) {
+                segment.Meta[j] = 0;
+            }
+            for (int k = 0; k < 14; ++k) {
+                segment.Data.Num[k] = 0;
+            }
+        } else if (!strcmp(argv[i + 1], "b")) {
+            segment.Type = 1;
+            for (int j = 0; j < 7; ++j) {
+                segment.Meta[j] = 0;
+            }
+            for (int k = 0; k < 56; ++k) {
+                segment.Data.Byte[k] = 0;
+            }
+        } else {
+            write(2, "Invalid arguments!\n", 30);
+            exit(-1);
+        }
+
+        segments[segmentNum] = segment;
+    }
+
+    writeSegmentsToFile(segments, (argc - 3) / 2, fileName);
 }
 
 // TODO: Finish this last
