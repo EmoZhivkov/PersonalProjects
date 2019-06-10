@@ -5,7 +5,7 @@
 #include "Segment.h"
 #include "Command.h"
 
-// TODO: Test all the commands except -h
+// TODO: Add adequate error handling in the main method
 int main(int argc, char **argv) {
     initCommands();
 

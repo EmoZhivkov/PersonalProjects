@@ -6,6 +6,8 @@
 
 void (*commands[128])(int argc, char **argv);
 
+// TODO: Add adequate error handling and test the commands
+// TODO: Check if the file associated exists
 void funcFors(int argc, char **argv) {
     if (argc != 5) {
         write(2, "Invalid arguments!\n", 30);
@@ -232,7 +234,7 @@ void funcForc(int argc, char **argv) {
     writeSegmentsToFile(segments, (argc - 3) / 2, fileName);
 }
 
-// TODO: Finish this last
+// TODO: Create the funcForh when every command is tested
 void funcForh(int argc, char **argv) {
 
 }
