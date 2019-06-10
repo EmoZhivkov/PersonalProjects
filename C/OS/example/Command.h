@@ -16,7 +16,6 @@ int doesFileExist(char* filename){
 
 void (*commands[128])(int argc, char **argv);
 
-// TODO: Test the commands
 void funcFors(int argc, char **argv) {
     if (argc != 5) {
         write(2, "Invalid arguments! The -s command has exactly four arguments. See -s for more info.\n", 100);
@@ -216,6 +215,8 @@ void funcForb(int argc, char **argv) {
             unsetNthBit(segments[parameterSegmentNum].Meta, parameterPosition + 1);
         }
     }
+
+    writeSegmentsToFile(segments, NUM_OF_SEGMENTS, fileName);
 }
 
 void funcForc(int argc, char **argv) {
@@ -278,9 +279,8 @@ void funcForc(int argc, char **argv) {
     writeSegmentsToFile(segments, (argc - 3) / 2, fileName);
 }
 
-// TODO: Create the funcForh when every command is tested
 void funcForh(int argc, char **argv) {
-
+    printf("%s\n", "Here should stay more info");
 }
 
 void initCommands() {

@@ -16,7 +16,7 @@ typedef struct Parameter {
 } Parameter;
 
 Parameter deviceName = {"device_name", 0, 0, "[a-zA-Z0-9_-]+"};
-Parameter romRevision = {"rom_revision", 0, 1, "[a-zA-Z0-9_-\\.]+"};
+Parameter romRevision = {"rom_revision", 0, 1, "[\.a-zA-Z0-9_-]+"};
 Parameter serialNumber = {"serial_number", 0, 2, "[A-Z0-9]+"};
 
 Parameter bdAddress0 = {"bd_addr_part0", 1, 0, "[A-Z0-9:]+"};
