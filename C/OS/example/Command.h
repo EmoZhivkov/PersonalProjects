@@ -93,10 +93,7 @@ void funcForl(int argc, char **argv) {
             int parameterPosition = parameters[i]->PositionInSegment;
 
             if (isNthBitSet(segments[parameterSegmentNum].Meta, parameterPosition + 1)) {
-                char buff[16];
-                getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
-
-                printf("%s\n", buff);
+                printf("%s\n", paramName);
             }
         }
     } else if (argc > 3) {
@@ -123,16 +120,9 @@ void funcForl(int argc, char **argv) {
 
 void funcForL(int argc, char **argv) {
     if (argc == 3) {
-        char *fileName = argv[1];
-        Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
-
         for (int i = 0; i < LEN_OF_PARAMETERS; ++i) {
             char *paramName = parameters[i]->Name;
-
-            char buff[16];
-            getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
-
-            printf("%s\n", buff);
+            printf("%s\n", paramName);
         }
     } else if (argc > 3) {
         char *fileName = argv[1];
@@ -208,7 +198,7 @@ void funcForc(int argc, char **argv) {
             for (int k = 0; k < 3; ++k) {
                 memset(segment.Data.Text[k], 0, 16);
             }
-        } else if (!strcmp(argv[i + 1], "n")) { 
+        } else if (!strcmp(argv[i + 1], "n")) {
             segment.Type = 1;
             for (int j = 0; j < 7; ++j) {
                 segment.Meta[j] = 0;
