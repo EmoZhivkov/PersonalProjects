@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
     initCommands();
 
     if (argc < 2) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The program has a minimum of one argument. See -h for more info.\n", 100);
         exit(-1);
     }
 

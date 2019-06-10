@@ -3,18 +3,32 @@
 
 #include <stdio.h>
 #include "Segment.h"
+#include <sys/stat.h>
+
+int doesFileExist(char* filename){
+    struct stat buffer;
+    int exist = stat(filename,&buffer);
+    if(exist == 0)
+        return 1;
+    else // -1
+        return 0;
+}
 
 void (*commands[128])(int argc, char **argv);
 
-// TODO: Add adequate error handling and test the commands
-// TODO: Check if the file associated exists
+// TODO: Test the commands
 void funcFors(int argc, char **argv) {
     if (argc != 5) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -s command has exactly four arguments. See -s for more info.\n", 100);
         exit(-1);
     }
 
     char *fileName = argv[1];
+    if (!doesFileExist(fileName)) {
+        write(2, "The file does not exist!\n", 30);
+        exit(-1);
+    }
+
     char *paramName = argv[3];
     char *paramValue = argv[4];
 
@@ -31,11 +45,16 @@ void funcFors(int argc, char **argv) {
 
 void funcForS(int argc, char **argv) {
     if (argc != 5) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -S command has exactly four arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 
     char *fileName = argv[1];
+    if (!doesFileExist(fileName)) {
+        write(2, "The file does not exist!\n", 30);
+        exit(-1);
+    }
+
     char *paramName = argv[3];
     char *paramValue = argv[4];
 
@@ -47,11 +66,16 @@ void funcForS(int argc, char **argv) {
 
 void funcForg(int argc, char **argv) {
     if (argc != 4) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -g command has exactly three arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 
     char *fileName = argv[1];
+    if (!doesFileExist(fileName)) {
+        write(2, "The file does not exist!\n", 30);
+        exit(-1);
+    }
+
     char *paramName = argv[3];
 
     Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
@@ -69,11 +93,16 @@ void funcForg(int argc, char **argv) {
 
 void funcForG(int argc, char **argv) {
     if (argc != 4) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -G command has exactly three arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 
     char *fileName = argv[1];
+    if (!doesFileExist(fileName)) {
+        write(2, "The file does not exist!\n", 30);
+        exit(-1);
+    }
+
     char *paramName = argv[3];
 
     Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
@@ -87,6 +116,11 @@ void funcForG(int argc, char **argv) {
 void funcForl(int argc, char **argv) {
     if (argc == 3) {
         char *fileName = argv[1];
+        if (!doesFileExist(fileName)) {
+            write(2, "The file does not exist!\n", 30);
+            exit(-1);
+        }
+
         Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
 
         for (int i = 0; i < LEN_OF_PARAMETERS; ++i) {
@@ -115,7 +149,7 @@ void funcForl(int argc, char **argv) {
             }
         }
     } else {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -l command has two or more arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 }
@@ -128,6 +162,11 @@ void funcForL(int argc, char **argv) {
         }
     } else if (argc > 3) {
         char *fileName = argv[1];
+        if (!doesFileExist(fileName)) {
+            write(2, "The file does not exist!\n", 30);
+            exit(-1);
+        }
+
         Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
 
         for (int i = 3; i < argc; ++i) {
@@ -139,18 +178,23 @@ void funcForL(int argc, char **argv) {
             printf("%s\n", buff);
         }
     } else {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -L command has two or more arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 }
 
 void funcForb(int argc, char **argv) {
     if (argc != 5) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -b command has exactly four arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 
     char *fileName = argv[1];
+    if (!doesFileExist(fileName)) {
+        write(2, "The file does not exist!\n", 30);
+        exit(-1);
+    }
+
     char *paramName = argv[3];
     int parameterSegmentNum = getParameterSegmentNum(paramName);
     int parameterPosition = getParameterPositionInSegment(paramName);
@@ -176,12 +220,12 @@ void funcForb(int argc, char **argv) {
 
 void funcForc(int argc, char **argv) {
     if (argc < 5) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -c command has not less than four arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 
     if ((argc - 3) % 2) {
-        write(2, "Invalid arguments!\n", 30);
+        write(2, "Invalid arguments! The -c command must have a even number of arguments. See -h for more info.\n", 100);
         exit(-1);
     }
 
@@ -224,7 +268,7 @@ void funcForc(int argc, char **argv) {
                 segment.Data.Byte[k] = 0;
             }
         } else {
-            write(2, "Invalid arguments!\n", 30);
+            write(2, "Invalid arguments! The segment numbers in the -c command must be in order without holes. See -h for more info.\n", 130);
             exit(-1);
         }
 
