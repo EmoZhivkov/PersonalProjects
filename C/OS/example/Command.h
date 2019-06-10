@@ -280,7 +280,54 @@ void funcForc(int argc, char **argv) {
 }
 
 void funcForh(int argc, char **argv) {
-    printf("%s\n", "Here should stay more info");
+    printf("%s\n", "./bk8000l_conf [fileName] -s [parameterName] [parameterValue]");
+    printf("---->%s\n", "Sets the value of the given parameter if the parameter bit is set.");
+    printf("\n");
+
+    printf("%s\n", "./bk8000l_conf [fileName] -S [parameterName] [parameterValue]");
+    printf("---->%s\n", "Sets the value of the given parameter regardless if the parameter bit is set.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -g [parameterName]");
+    printf("---->%s\n", "Outputs the value of the given parameter if the parameter bit is set.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -G [parameterName]");
+    printf("---->%s\n", "Outputs the value of the given parameter regardless if the parameter bit is set.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -l");
+    printf("---->%s\n", "Outputs all the parameters if the parameter bit is set.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -L");
+    printf("---->%s\n", "Outputs all the parameters regardless if the parameter bit is set.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -l [parameterName] [parameterName] ...");
+    printf("---->%s\n", "Outputs all of the values of the given parameters if the parameter bit is set.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -L [parameterName] [parameterName] ...");
+    printf("---->%s\n", "Outputs all of the values of the given parameters regardless if the parameter bit is set.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -b [parameterName] [bit]");
+    printf("---->%s\n", "Sets the parameter bit of a given given parameter.");
+    printf("\n");
+
+
+    printf("%s\n", "./bk8000l_conf [fileName] -c [segmentNum] [segmentType] [segmentNum] [segmentType] ...");
+    printf("---->%s\n", "Creates a new configuration file with the given file name and segments.");
+    printf("    %s\n", "segmentType: t, b, n");
+    printf("    %s\n", "segmentNum: 0, 1, 2...");
 }
 
 void initCommands() {
