@@ -10,7 +10,7 @@ int doesFileExist(char* filename){
     int exist = stat(filename,&buffer);
     if(exist == 0)
         return 1;
-    else // -1
+    else
         return 0;
 }
 
@@ -40,6 +40,7 @@ void funcFors(int argc, char **argv) {
     setNthBit(segments[parameterSegmentNum].Meta, parameterPosition + 1);
 
     writeSegmentsToFile(segments, NUM_OF_SEGMENTS, fileName);
+    free(segments);
 }
 
 void funcForS(int argc, char **argv) {
@@ -61,6 +62,7 @@ void funcForS(int argc, char **argv) {
     setParameter(segments, NUM_OF_SEGMENTS, paramName, paramValue);
 
     writeSegmentsToFile(segments, NUM_OF_SEGMENTS, fileName);
+    free(segments);
 }
 
 void funcForg(int argc, char **argv) {
@@ -88,6 +90,7 @@ void funcForg(int argc, char **argv) {
 
         printf("%s\n", buff);
     }
+    free(segments);
 }
 
 void funcForG(int argc, char **argv) {
@@ -110,6 +113,7 @@ void funcForG(int argc, char **argv) {
     getParameter(segments, NUM_OF_SEGMENTS, paramName, buff, 16);
 
     printf("%s\n", buff);
+    free(segments);
 }
 
 void funcForl(int argc, char **argv) {
@@ -131,6 +135,7 @@ void funcForl(int argc, char **argv) {
                 printf("%s\n", paramName);
             }
         }
+        free(segments);
     } else if (argc > 3) {
         char *fileName = argv[1];
         Segment *segments = parseSegmentsFromFile(fileName, NUM_OF_SEGMENTS);
@@ -147,6 +152,7 @@ void funcForl(int argc, char **argv) {
                 printf("%s\n", buff);
             }
         }
+        free(segments);
     } else {
         write(2, "Invalid arguments! The -l command has two or more arguments. See -h for more info.\n", 100);
         exit(-1);
@@ -176,6 +182,7 @@ void funcForL(int argc, char **argv) {
 
             printf("%s\n", buff);
         }
+        free(segments);
     } else {
         write(2, "Invalid arguments! The -L command has two or more arguments. See -h for more info.\n", 100);
         exit(-1);
@@ -217,6 +224,7 @@ void funcForb(int argc, char **argv) {
     }
 
     writeSegmentsToFile(segments, NUM_OF_SEGMENTS, fileName);
+    free(segments);
 }
 
 void funcForc(int argc, char **argv) {
@@ -277,6 +285,7 @@ void funcForc(int argc, char **argv) {
     }
 
     writeSegmentsToFile(segments, (argc - 3) / 2, fileName);
+    free(segments);
 }
 
 void funcForh(int argc, char **argv) {

@@ -5,7 +5,6 @@
 #include "Segment.h"
 #include "Command.h"
 
-// TODO: Add adequate error handling in the main method
 int main(int argc, char **argv) {
     initCommands();
 
@@ -19,7 +18,7 @@ int main(int argc, char **argv) {
         if (strlen(arg) == 2) {
             char command = arg[1];
             if (commands[command] == NULL) {
-                write(2, "Not supported argument!\n", 30);
+                write(2, "Not supported argument! See -h for more info.\n", 50);
                 exit(-1);
             }
 
@@ -33,13 +32,13 @@ int main(int argc, char **argv) {
         if (strlen(arg) == 2) {
             char command = arg[1];
             if (commands[command] == NULL) {
-                write(2, "Not supported argument!\n", 30);
+                write(2, "Not supported argument! See -h for more info.\n", 50);
                 exit(-1);
             }
 
             (commands[command])(argc, argv);
         } else {
-            write(2, "Invalid arguments!\n", 30);
+            write(2, "Invalid arguments! See -h for more info.\n", 50);
             exit(-1);
         }
     }
