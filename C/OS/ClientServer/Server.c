@@ -28,6 +28,7 @@ int main(int argc, char **argv) {
     if ((fd_shm = shm_open(SHARED_MEM_NAME, O_RDWR | O_CREAT, 0660)) == -1)
         error("shm_open");
 
+    ftruncate(fd_shm, 256);
 
     if ((shared_mem_ptr = mmap(NULL, 256, PROT_READ | PROT_WRITE, MAP_SHARED,
                                fd_shm, 0)) == MAP_FAILED)

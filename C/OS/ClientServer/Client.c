@@ -9,15 +9,9 @@
 #include <semaphore.h>
 #include <sys/mman.h>
 
-// Buffer data structures
-//#define MAX_BUFFERS 10
-
 #define SEM_MUTEX_NAME "/sem-mutex"
-//#define SEM_BUFFER_COUNT_NAME "/sem-buffer-count"
 #define SEM_SPOOL_SIGNAL_NAME "/sem-spool-signal"
 #define SHARED_MEM_NAME "/posix-shared-mem-example"
-
-//char buf[256];
 
 void error(char *msg);
 
@@ -26,13 +20,15 @@ int main(int argc, char **argv) {
     sem_t *mutex_sem, *spool_signal_sem;
     int fd_shm;
 
-    //  mutual exclusion semaphore, mutex_sem 
+    //  mutual exclusion semaphore, mutex_sem
     if ((mutex_sem = sem_open(SEM_MUTEX_NAME, 0, 0, 0)) == SEM_FAILED)
         error("sem_open");
 
-    // Get shared memory 
+    // Get shared memory
     if ((fd_shm = shm_open(SHARED_MEM_NAME, O_RDWR, 0)) == -1)
         error("shm_open");
+
+    ftruncate(fd_shm, 256);
 
     if ((shared_mem_ptr = mmap(NULL, 256, PROT_READ | PROT_WRITE, MAP_SHARED,
                                fd_shm, 0)) == MAP_FAILED)
@@ -52,7 +48,7 @@ int main(int argc, char **argv) {
         if (buff[length - 1] == '\n')
             buff[length - 1] = '\0';
 
-        /* There might be multiple producers. We must ensure that 
+        /* There might be multiple producers. We must ensure that
             only one producer uses buffer_index at a time.  */
         // P (mutex_sem);
         if (sem_wait(mutex_sem) == -1)
