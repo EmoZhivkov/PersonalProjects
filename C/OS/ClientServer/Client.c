@@ -30,9 +30,8 @@ int main(int argc, char **argv) {
 
     ftruncate(fd_shm, 256);
 
-    if ((shared_mem_ptr = mmap(NULL, 256, PROT_READ | PROT_WRITE, MAP_SHARED,
-                               fd_shm, 0)) == MAP_FAILED)
-        error("mmap");
+    shared_mem_ptr = mmap(NULL, 256, PROT_READ | PROT_WRITE, MAP_SHARED,
+                          fd_shm, 0);
 
     // counting semaphore, indicating the number of strings to be printed. Initial value = 0
     if ((spool_signal_sem = sem_open(SEM_SPOOL_SIGNAL_NAME, 0, 0, 0)) == SEM_FAILED)
