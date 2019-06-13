@@ -35,7 +35,7 @@ int doesFileExist(char* filename){
 
 void error(char *msg) {
     perror(msg);
-    exit(1);
+    exit(-1);
 }
 
 #endif //CLIENTSERVER_COMM_H

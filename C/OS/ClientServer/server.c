@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <semaphore.h>
 #include <sys/mman.h>
-#include "Comm.h"
+#include "comm.h"
 
 int main(int argc, char **argv) {
     if (argc != 2) {
@@ -29,7 +29,12 @@ int main(int argc, char **argv) {
         }
     } else {
         fd = open(fileName, O_RDWR);
-        read(fd, &bank, 8*4);
+        int bytesRead = read(fd, &bank, 8*4);
+        if (bytesRead != 8*4)
+        {
+            error("Could not read the numbers from the file");
+        }
+        
     }
 
     char *shared_mem_ptr;
@@ -45,10 +50,11 @@ int main(int argc, char **argv) {
     if ((fd_shm = shm_open(SHARED_MEM_NAME, O_RDWR | O_CREAT, 0660)) == -1)
         error("shm_open");
 
-    ftruncate(fd_shm, 256);
+    if (ftruncate(fd_shm, 256) < 0) {
+        error("Could not set the shared memory size.");
+    }
 
-    shared_mem_ptr = mmap(NULL, 256, PROT_READ | PROT_WRITE, MAP_SHARED,
-                          fd_shm, 0);
+    shared_mem_ptr = mmap(NULL, 256, PROT_READ | PROT_WRITE, MAP_SHARED, fd_shm, 0);
 
     // counting semaphore, indicating the number of strings to be printed. Initial value = 0
     if ((spool_signal_sem = sem_open(SEM_SPOOL_SIGNAL_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
