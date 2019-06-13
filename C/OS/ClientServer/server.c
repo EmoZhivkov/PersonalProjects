@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
     initValidAccount();
 
-    u_int32_t bank[8];
+    uint32_t bank[8];
     int fd;
 
     char *fileName = argv[1];
@@ -68,6 +68,8 @@ int main(int argc, char **argv) {
     if (sem_post(mutex_sem) == -1)
         error("sem_post: mutex_sem");
 
+
+// ne rabotqt davaneto na otricatelno chislo + sled towa wsichki dawat invalid account
     while (1) {
         // Is there a string to print? P (spool_signal_sem);
         if (sem_wait(spool_signal_sem) == -1)
@@ -75,17 +77,68 @@ int main(int argc, char **argv) {
 
         strcpy (buff, shared_mem_ptr);
         char account = buff[1];
-        uint8_t index = (uint8_t)account;
-        if (!isValidAccount[index]) {
+        uint8_t indexForValid = (uint8_t)account;
+        uint8_t index = account - 65;
+        
+        if (!isValidAccount[indexForValid]) {
             sprintf(buff, "%d", -1);
             strcpy(shared_mem_ptr, buff);
+
+
+        if (sem_post(take_from_bank_sem) == -1)
+            error("sem_post: take_from_bank_sem");
+
+        continue;
         } else {
-            sprintf(buff, "%d", bank[account - 65]);
+            sprintf(buff, "%d", bank[index]);
             strcpy(shared_mem_ptr, buff);
         }
 
         if (sem_post(take_from_bank_sem) == -1)
             error("sem_post: take_from_bank_sem");
 
+        if (sem_wait(spool_signal_sem) == -1)
+            error("sem_wait: spool_signal_sem");
+
+        long mult = 1;
+        if (shared_mem_ptr[0] == '-') {
+            shared_mem_ptr++;
+            mult = -1;
+        } 
+        
+        long toAdd = strtol(shared_mem_ptr, (char **)NULL, 10);
+        if (toAdd > UINT16_MAX) {
+            sprintf(buff, "%d", -1);
+            strcpy(shared_mem_ptr, buff);
+
+
+        if (sem_post(take_from_bank_sem) == -1)
+            error("sem_post: take_from_bank_sem");
+
+        continue;
+        } else {
+            toAdd *= mult;
+            if ((long)bank[index] + toAdd < 0 || (long)bank[index] + toAdd > UINT32_MAX) {
+                sprintf(buff, "%d", -1);
+                strcpy(shared_mem_ptr, buff);
+
+
+        if (sem_post(take_from_bank_sem) == -1)
+            error("sem_post: take_from_bank_sem");
+
+        continue;
+            } else {
+                bank[index] = bank[index] + toAdd;
+                sprintf(shared_mem_ptr, "%s", "success");
+                lseek(fd, 0, SEEK_SET);
+                int size = write(fd, &bank, 8*4);    
+                if (size != 8*4) {
+                    error("Failed to write to file");
+                }
+            }
+        }
+        
+        if (sem_post(take_from_bank_sem) == -1)
+            error("sem_post: take_from_bank_sem");
     }
 }

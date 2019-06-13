@@ -55,9 +55,7 @@ int main(int argc, char **argv) {
     if (sem_wait(take_from_bank_sem) == -1)
         error("sem_wait: take_from_bank");
 
-    //printf("%s\n", shared_mem_ptr);
     if (shared_mem_ptr[0] == '-') {
-
         // Release mutex sem: V (mutex_sem)
         if (sem_post(mutex_sem) == -1)
             error("sem_post: mutex_sem");
@@ -69,6 +67,29 @@ int main(int argc, char **argv) {
         printf("%s", shared_mem_ptr);
         printf(" left in it. What transaction would you like to make:\n");
     }
+
+    char buff[16];
+    if (fgets(buff, 16, stdin) == NULL)
+    {
+       error("Failed to get the desired amount");
+    }
+
+    sprintf(shared_mem_ptr, "%s", buff);
+  
+    if (sem_post(spool_signal_sem) == -1)
+        error("sem_post: (spool_signal_sem");
+
+    if (sem_wait(take_from_bank_sem) == -1)
+        error("sem_wait: take_from_bank");
+
+    if (shared_mem_ptr[0] == '-') {
+        // Release mutex sem: V (mutex_sem)
+        if (sem_post(mutex_sem) == -1)
+            error("sem_post: mutex_sem");
+
+        munmap(shared_mem_ptr, 256);
+        error("Invalid amount! Could not make the transaction");
+    } 
 
     // Release mutex sem: V (mutex_sem)
     if (sem_post(mutex_sem) == -1)
