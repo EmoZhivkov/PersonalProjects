@@ -53,8 +53,10 @@ int main(int argc, char **argv) {
 
     if (sem_wait(take_from_bank_sem) == -1)
         error("sem_wait: take_from_bank");
-    
+
+    //printf("%s\n", shared_mem_ptr);
     if (shared_mem_ptr[0] == '-') {
+        munmap(shared_mem_ptr, 256);
         error("Invalid account number!");
     } else {
         printf("Account %s has ", accountIdentifier);
@@ -62,12 +64,10 @@ int main(int argc, char **argv) {
         printf(" left in it. What transaction would you like to make:\n");
     }
 
-
     // Release mutex sem: V (mutex_sem)
     if (sem_post(mutex_sem) == -1)
         error("sem_post: mutex_sem");
 
-
-    if (munmap(shared_mem_ptr, 256) == -1)
-        exit(0);
+    munmap(shared_mem_ptr, 256);
+    exit(0);
 }

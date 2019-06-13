@@ -81,6 +81,5 @@ int main(int argc, char **argv) {
         if (sem_post(take_from_bank_sem) == -1)
             error("sem_post: take_from_bank_sem");
 
-        //printf("%s", buff);
     }
 }
