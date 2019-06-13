@@ -1,23 +1,24 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
-#include <time.h>
 #include <unistd.h>
 #include <semaphore.h>
 #include <sys/mman.h>
-
-#define SEM_MUTEX_NAME "/sem-mutex"
-#define SEM_SPOOL_SIGNAL_NAME "/sem-spool-signal"
-#define SHARED_MEM_NAME "/posix-shared-mem-example"
-
-void error(char *msg);
+#include "Comm.h"
 
 int main(int argc, char **argv) {
+    if (argc != 2) {
+        error("The client takes exactly one argument. Namely the bank identifier");
+    }
+
+    char* identifier = argv[1];
+
+    if (strlen(identifier) != 2) {
+        error("Invalid identifier");
+    }
+
     char *shared_mem_ptr;
-    sem_t *mutex_sem, *spool_signal_sem;
+    sem_t *mutex_sem, *spool_signal_sem,*take_from_bank_sem;
     int fd_shm;
 
     //  mutual exclusion semaphore, mutex_sem
@@ -37,11 +38,15 @@ int main(int argc, char **argv) {
     if ((spool_signal_sem = sem_open(SEM_SPOOL_SIGNAL_NAME, 0, 0, 0)) == SEM_FAILED)
         error("sem_open");
 
+    if ((take_from_bank_sem = sem_open(SEM_BANK_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
+        error("sem_open");
+
     char buff[256];
 
     printf("Please type a message: ");
 
-    while (fgets(buff, 256, stdin)) {
+   // while (fgets(buff, 256, stdin)) {
+    fgets(buff, 256, stdin);
         // remove newline from string
         int length = strlen(buff);
         if (buff[length - 1] == '\n')
@@ -63,15 +68,15 @@ int main(int argc, char **argv) {
         if (sem_post(spool_signal_sem) == -1)
             error("sem_post: (spool_signal_sem");
 
-        printf("Please type a message: ");
-    }
+        if (sem_wait(take_from_bank_sem) == -1)
+            error("sem_wait: take_from_bank");
+
+        //sprintf (shared_mem_ptr, "%s\n", buff);
+        printf("%s\n", shared_mem_ptr);
+
+        //printf("Please type a message: ");
+    //}
 
     if (munmap(shared_mem_ptr, sizeof(buff)) == -1)
     exit(0);
-}
-
-// Print system error and exit
-void error(char *msg) {
-    perror(msg);
-    exit(1);
 }
