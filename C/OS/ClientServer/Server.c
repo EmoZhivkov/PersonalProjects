@@ -11,20 +11,25 @@ int main(int argc, char **argv) {
         error("The server takes exactly one argument. Namely the file it reads from");
     }
 
+    initValidAccount();
+
+    u_int32_t bank[8];
     int fd;
 
     char *fileName = argv[1];
     if (!doesFileExist(fileName)) {
         fd = open(fileName, O_CREAT | O_RDWR, 0666);
         for (int i = 0; i < 8; ++i) {
-            int temp = 0;
-            int size = write(fd, &temp, 4);
+            uint32_t temp = 0;
+            uint32_t size = write(fd, &temp, 4);
             if (size != 4) {
                 error("Could not write the numbers to the file.");
             }
+            bank[i] = 0;
         }
     } else {
         fd = open(fileName, O_RDWR);
+        read(fd, &bank, 8*4);
     }
 
     char *shared_mem_ptr;
@@ -63,11 +68,15 @@ int main(int argc, char **argv) {
             error("sem_wait: spool_signal_sem");
 
         strcpy (buff, shared_mem_ptr);
-
-
-        printf("%s", buff);
-
-        sprintf (shared_mem_ptr, "%s\n", "it works!");
+        char account = buff[1];
+        uint8_t index = (uint8_t)account;
+        if (!isValidAccount[index]) {
+            sprintf(buff, "%d", -1);
+            strcpy(shared_mem_ptr, buff);
+        } else {
+            sprintf(buff, "%d", bank[account - 65]);
+            strcpy(shared_mem_ptr, buff);
+        }
 
         if (sem_post(take_from_bank_sem) == -1)
             error("sem_post: take_from_bank_sem");
