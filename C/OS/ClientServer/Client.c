@@ -56,6 +56,11 @@ int main(int argc, char **argv) {
 
     //printf("%s\n", shared_mem_ptr);
     if (shared_mem_ptr[0] == '-') {
+
+        // Release mutex sem: V (mutex_sem)
+        if (sem_post(mutex_sem) == -1)
+            error("sem_post: mutex_sem");
+
         munmap(shared_mem_ptr, 256);
         error("Invalid account number!");
     } else {
