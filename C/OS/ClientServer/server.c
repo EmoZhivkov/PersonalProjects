@@ -21,19 +21,16 @@ int main(int argc, char **argv) {
         for (int i = 0; i < 8; ++i) {
             uint32_t temp = 0;
             uint32_t size = write(fd, &temp, 4);
-            if (size != 4) {
+            if (size != 4) 
                 error("Could not write the numbers to the file.");
-            }
+            
             bank[i] = 0;
         }
     } else {
         fd = open(fileName, O_RDWR);
         int bytesRead = read(fd, &bank, 8*4);
         if (bytesRead != 8*4)
-        {
-            error("Could not read the numbers from the file");
-        }
-        
+            error("Could not read the numbers from the file");   
     }
 
     Query *shared_mem_ptr;
@@ -49,7 +46,7 @@ int main(int argc, char **argv) {
     if ((shared_mem_ptr = mmap(NULL, sizeof(Query), PROT_READ | PROT_WRITE, MAP_SHARED, fd_shm, 0)) == MAP_FAILED)
         error("Failed to map the shared memory");
         
-    if ((spool_signal_sem = sem_open(SEM_SPOOL_SIGNAL_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
+    if ((spool_signal_sem = sem_open(SEM_SIGNAL_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
         error("sem_open");
 
     if ((take_from_bank_sem = sem_open(SEM_BANK_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
@@ -62,7 +59,6 @@ int main(int argc, char **argv) {
         error("sem_post: mutex_sem");
 
     while (1) {
-        // Is there a string to print? P (spool_signal_sem);
         if (sem_wait(spool_signal_sem) == -1)
             error("sem_wait: spool_signal_sem");
 
@@ -117,9 +113,8 @@ int main(int argc, char **argv) {
 
                 lseek(fd, 0, SEEK_SET);
                 int size = write(fd, &bank, 8*4);    
-                if (size != 8*4) {
+                if (size != 8*4) 
                     error("Failed to write to file");
-                }
             }
         }
         
