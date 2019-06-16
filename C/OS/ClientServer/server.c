@@ -47,20 +47,20 @@ int main(int argc, char **argv) {
         error("Failed to map the shared memory");
         
     if ((spool_signal_sem = sem_open(SEM_SIGNAL_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
-        error("sem_open");
+        error("sem_open failed");
 
     if ((take_from_bank_sem = sem_open(SEM_BANK_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
-        error("sem_open");
+        error("sem_open failed");
     
     if ((mutex_sem = sem_open(SEM_MUTEX_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
-        error("sem_open");
+        error("sem_open failed");
 
     if (sem_post(mutex_sem) == -1)
-        error("sem_post: mutex_sem");
+        error("sem_post: mutex_sem failed");
 
     while (1) {
         if (sem_wait(spool_signal_sem) == -1)
-            error("sem_wait: spool_signal_sem");
+            error("sem_wait: spool_signal_sem failed");
 
         Query currentAccount = {0,0,shared_mem_ptr->account};
         
@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
             memcpy(shared_mem_ptr, &currentAccount, sizeof(Query));
 
             if (sem_post(take_from_bank_sem) == -1)
-                error("sem_post: take_from_bank_sem");
+                error("sem_post: take_from_bank_sem failed");
 
             continue;
         } else {
@@ -81,10 +81,10 @@ int main(int argc, char **argv) {
         }
 
         if (sem_post(take_from_bank_sem) == -1)
-            error("sem_post: take_from_bank_sem");
+            error("sem_post: take_from_bank_sem failed");
 
         if (sem_wait(spool_signal_sem) == -1)
-            error("sem_wait: spool_signal_sem");
+            error("sem_wait: spool_signal_sem failed");
         
         int32_t toAdd = shared_mem_ptr->transaction;
         if (toAdd > INT16_MAX || toAdd < INT16_MIN) {
@@ -92,7 +92,7 @@ int main(int argc, char **argv) {
             memcpy(shared_mem_ptr, &currentAccount, sizeof(Query));
 
             if (sem_post(take_from_bank_sem) == -1)
-                error("sem_post: take_from_bank_sem");
+                error("sem_post: take_from_bank_sem failed");
 
             continue;
         } else {
@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
                 memcpy(shared_mem_ptr, &currentAccount, sizeof(Query));
 
                 if (sem_post(take_from_bank_sem) == -1)
-                    error("sem_post: take_from_bank_sem");
+                    error("sem_post: take_from_bank_sem failed");
 
             continue;
             } else {
@@ -114,11 +114,11 @@ int main(int argc, char **argv) {
                 lseek(fd, 0, SEEK_SET);
                 int size = write(fd, &bank, 8*4);    
                 if (size != 8*4) 
-                    error("Failed to write to file");
+                    error("Failed to write to file.");
             }
         }
         
         if (sem_post(take_from_bank_sem) == -1)
-            error("sem_post: take_from_bank_sem");
+            error("sem_post: take_from_bank_sem failed");
     }
 }

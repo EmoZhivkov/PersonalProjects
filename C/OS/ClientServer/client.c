@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv) {
     if (argc != 2) 
-        error("The client takes exactly one argument. Namely the account identifier");
+        error("The client takes exactly one argument. Namely the account identifier.");
     
     char *accountIdentifier = argv[1];
 
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     int fd_shm;
 
     if ((fd_shm = shm_open(SHARED_MEM_NAME, O_RDWR, 0)) == -1)
-        error("shm_open");
+        error("shm_open failed");
 
     if (ftruncate(fd_shm, sizeof(Query)) < 0) 
         error("Could not set the shared memory");
@@ -29,30 +29,30 @@ int main(int argc, char **argv) {
         error("Failed to map the shared memory");
 
     if ((spool_signal_sem = sem_open(SEM_SIGNAL_NAME, 0, 0, 0)) == SEM_FAILED)
-        error("sem_open");
+        error("sem_open failed");
 
     if ((take_from_bank_sem = sem_open(SEM_BANK_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
-        error("sem_open");
+        error("sem_open failed");
 
     if ((mutex_sem = sem_open(SEM_MUTEX_NAME, 0, 0, 0)) == SEM_FAILED)
-        error("sem_open");
+        error("sem_open failed");
 
     if (sem_wait(mutex_sem) == -1)
-        error("sem_wait: mutex_sem");
+        error("sem_wait failed");
 
     Query currentAccount = {0,0,accountIdentifier[0]};
 
     memcpy(shared_mem_ptr, &currentAccount, sizeof(Query));
 
     if (sem_post(spool_signal_sem) == -1)
-        error("sem_post: spool_signal_sem");
+        error("sem_post: spool_signal_sem failed");
 
     if (sem_wait(take_from_bank_sem) == -1)
-        error("sem_wait: take_from_bank");
+        error("sem_wait: take_from_bank failed");
 
     if (shared_mem_ptr->transaction == -1) {
         if (sem_post(mutex_sem) == -1)
-            error("sem_post: mutex_sem");
+            error("sem_post: mutex_sem failed");
 
         error("Invalid account number!");
     } else {
@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
     
     if (scanf("%d", &currentAccount.transaction) < 0) {
         if (sem_post(mutex_sem) == -1)
-            error("sem_post: mutex_sem");
+            error("sem_post: mutex_sem failed");
 
         error("Failed to get the desired amount");
     }
@@ -71,20 +71,20 @@ int main(int argc, char **argv) {
     memcpy(shared_mem_ptr, &currentAccount, sizeof(Query));
   
     if (sem_post(spool_signal_sem) == -1)
-        error("sem_post: (spool_signal_sem");
+        error("sem_post: spool_signal_sem failed");
 
     if (sem_wait(take_from_bank_sem) == -1)
-        error("sem_wait: take_from_bank");
+        error("sem_wait: take_from_bank failed");
 
     if (shared_mem_ptr->transaction == -1) {
         if (sem_post(mutex_sem) == -1)
-            error("sem_post: mutex_sem");
+            error("sem_post: mutex_sem failed");
 
         error("Invalid amount! Could not make the transaction.");
     } 
 
     if (sem_post(mutex_sem) == -1)
-        error("sem_post: mutex_sem");
+        error("sem_post: mutex_sem failed");
 
     exit(0);
 }
