@@ -56,9 +56,7 @@ int main(int argc, char **argv) {
 
         error("Invalid account number!");
     } else {
-        printf("Account %s has ", accountIdentifier);
-        printf("%u", shared_mem_ptr->inBank);
-        printf(" left in it. What transaction would you like to make:\n");
+        printf("%u\n", shared_mem_ptr->inBank);
     }
     
     if (scanf("%d", &currentAccount.transaction) < 0) {
