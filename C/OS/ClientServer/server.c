@@ -37,6 +37,9 @@ int main(int argc, char **argv) {
     sem_t *mutex_sem,*spool_signal_sem,*take_from_bank_sem;
     int fd_shm;
 
+    if ((mutex_sem = sem_open(SEM_MUTEX_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
+        error("sem_open failed");
+
     if ((fd_shm = shm_open(SHARED_MEM_NAME, O_RDWR | O_CREAT, 0660)) == -1)
         error("shm_open");
 
@@ -50,9 +53,6 @@ int main(int argc, char **argv) {
         error("sem_open failed");
 
     if ((take_from_bank_sem = sem_open(SEM_BANK_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
-        error("sem_open failed");
-    
-    if ((mutex_sem = sem_open(SEM_MUTEX_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
         error("sem_open failed");
 
     if (sem_post(mutex_sem) == -1)

@@ -19,6 +19,12 @@ int main(int argc, char **argv) {
     sem_t *mutex_sem, *spool_signal_sem, *take_from_bank_sem;
     int fd_shm;
 
+    if ((mutex_sem = sem_open(SEM_MUTEX_NAME, O_RDWR)) == SEM_FAILED)
+        error("sem_open failed");
+    
+    if (sem_wait(mutex_sem) == -1)
+        error("sem_wait failed");
+
     if ((fd_shm = shm_open(SHARED_MEM_NAME, O_RDWR, 0)) == -1)
         error("shm_open failed");
 
@@ -28,17 +34,11 @@ int main(int argc, char **argv) {
     if ((shared_mem_ptr = mmap(NULL, sizeof(Query), PROT_READ | PROT_WRITE, MAP_SHARED, fd_shm, 0)) == MAP_FAILED)
         error("Failed to map the shared memory");
 
-    if ((spool_signal_sem = sem_open(SEM_SIGNAL_NAME, 0, 0, 0)) == SEM_FAILED)
+    if ((spool_signal_sem = sem_open(SEM_SIGNAL_NAME, O_RDWR)) == SEM_FAILED)
         error("sem_open failed");
 
-    if ((take_from_bank_sem = sem_open(SEM_BANK_NAME, O_CREAT, 0660, 0)) == SEM_FAILED)
+    if ((take_from_bank_sem = sem_open(SEM_BANK_NAME, O_RDWR)) == SEM_FAILED)
         error("sem_open failed");
-
-    if ((mutex_sem = sem_open(SEM_MUTEX_NAME, 0, 0, 0)) == SEM_FAILED)
-        error("sem_open failed");
-
-    if (sem_wait(mutex_sem) == -1)
-        error("sem_wait failed");
 
     Query currentAccount = {0,0,accountIdentifier[0]};
 
