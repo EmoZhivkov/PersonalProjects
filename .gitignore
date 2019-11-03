@@ -2,3 +2,4 @@
 out/
 cmake-build-debug/
 .vscode/
+.mypy_cache
