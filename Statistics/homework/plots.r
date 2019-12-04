@@ -6,15 +6,18 @@ library(corrplot)
 
 happy_2015 <- read.csv('/home/lt34507/Desktop/statistics_project/2015.csv')
 
-# Correlogram
+# histograms of the numeric values -> box plotowe
+# Hist from he happiness score -> x, frequency -> y, mean(x) -> gives the x, through regions
+# Box plot on the happiness score
+# give the mean(x) and the std(x) -> standart deviation
+
+
+# Correlation matrix
 # Correlations: What factors have strong relationship with Happiness?
 # Now we can create a correlogram to analyze the relationships. To do that we need only numeric columns. So I select the numeric columns only and create a dataframe called num_hap.
 num_hap <- happy_2015[, c("Happiness.Rank", "Happiness.Score", "Standard.Error", "Economy", "Family", "Health", "Freedom", "Trust", "Generosity", "Dystopia.Residual")]
 m <- cor(num_hap)
 corrplot(m, method="circle", type='upper', tl.cex=0.8, tl.col = 'black')
-
-# Heatmap: (Just another variant of displaying the correlations)
-corrplot(m, method="square", type='full', tl.cex=0.8, tl.col = 'black')
 
 # Happiness Score and GDP per Capita on all regions
 # Countries that have higher gdp per capita seems to be happier.
