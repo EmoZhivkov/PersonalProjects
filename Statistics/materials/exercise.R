@@ -5,16 +5,36 @@ x1 <- round(runif(NN, 0, 5), 1)
 x2 <- round(runif(NN, 3, 7), 1)
 y <- round(runif(NN, 2, 6), 1)
 
+
+
+# n = 100
+# p = 0.1
+
+# # p (k > 3)
+
+# # p (k > 3) = 1 - p (k <= 3)
+
+# result = 1 - pbinom(3, n, p)
+# result
+# # p(k =3)
+# result = dbinom(3, n, p)
+
+
+
+
+
+# Линейна регресия
+
 # cor(x1, y)
 # cor(x2, y)
 
-model = lm(y ~ x2 + I(x2 ^ 2))
+# model = lm(y ~ x2 + I(x2 ^ 2))
 
-s = summary(model)
-
-#coef(s)[,4]
-t_values = coef(s)[, 3] # t value
-p_values = coef(s)[, 4] # p value
+# s = summary(model)
+# coef(s)[, 1]
+# #coef(s)[,4]
+# t_values = coef(s)[, 3] # t value
+# p_values = coef(s)[, 4] # p value
 
 # 't_values'
 # for (i in t_values) {
@@ -29,8 +49,8 @@ p_values = coef(s)[, 4] # p value
 
 #s$r.squared
 
-r = residuals(model)
-y_pred = predict(model)
+# r = residuals(model)
+# y_pred = predict(model)
 
 # lmtest::bptest(model)$p.value
 # plot(y_pred, r)
@@ -38,13 +58,13 @@ y_pred = predict(model)
 #lmtest::dwtest(model)$p.value
 
 # shapiro.test(r)
-qqnorm(r)
-qqline(r)
+# qqnorm(r)
+# qqline(r)
 
 
 
 
-
+# Задачата с тестовете
 
 # x1_p_value = shapiro.test(x1)$p.value
 # x2_p_value = shapiro.test(x2)$p.value
@@ -67,9 +87,9 @@ qqline(r)
 # }
 
 
-# DF = data.frame(group = c(1, 2), value = c(x1, x2))
-# DF
+DF = data.frame(group = c(1, 2), value = c(x1, x2))
+DF
 
 
-# summary(aov(value ~ group, DF))[[1]][[1, "Pr(>F)"]]
-# kruskal.test(value ~ group, DF)$p.value
+summary(aov(value ~ group, DF))[[1]][[1, "Pr(>F)"]]
+kruskal.test(value ~ group, DF)$p.value
