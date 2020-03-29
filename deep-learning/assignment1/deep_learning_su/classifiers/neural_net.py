@@ -3,6 +3,7 @@ from __future__ import print_function
 import numpy as np
 import matplotlib.pyplot as plt
 from past.builtins import xrange
+from deep_learning_su.classifiers.softmax import softmax_loss_vectorized
 
 class TwoLayerNet(object):
   """
@@ -70,33 +71,21 @@ class TwoLayerNet(object):
     N, D = X.shape
 
     # Compute the forward pass
-    scores = None
-    #############################################################################
-    # TODO: Perform the forward pass, computing the class scores for the input. #
-    # Store the result in the scores variable, which should be an array of      #
-    # shape (N, C).                                                             #
-    #############################################################################
-    pass
-    #############################################################################
-    #                              END OF YOUR CODE                             #
-    #############################################################################
-    
+    first_layer = X.dot(W1) + b1
+    relu = np.maximum(0, first_layer)
+    scores = relu.dot(W2) + b2
+
     # If the targets are not given then jump out, we're done
     if y is None:
       return scores
 
     # Compute the loss
-    loss = None
-    #############################################################################
-    # TODO: Finish the forward pass, and compute the loss. This should include  #
-    # both the data loss and L2 regularization for W1 and W2. Store the result  #
-    # in the variable loss, which should be a scalar. Use the Softmax           #
-    # classifier loss.                                                          #
-    #############################################################################
-    pass
-    #############################################################################
-    #                              END OF YOUR CODE                             #
-    #############################################################################
+
+    softmax_matrix = np.exp(scores) / np.sum(np.exp(scores), axis=1, keepdims=True)
+    loss = np.sum(-np.log(softmax_matrix[range(N), y]))
+    loss /= N
+
+    loss += reg * (np.sum(W2 * W2) + np.sum( W1 * W1 )) # regularization
 
     # Backward pass: compute gradients
     grads = {}
@@ -105,7 +94,23 @@ class TwoLayerNet(object):
     # and biases. Store the results in the grads dictionary. For example,       #
     # grads['W1'] should store the gradient on W1, and be a matrix of same size #
     #############################################################################
-    pass
+
+    softmax_matrix[np.arange(N) ,y] -= 1
+    softmax_matrix /= N
+
+    grads['b2'] = softmax_matrix.sum(axis=0)
+
+    grads['W2'] = relu.T.dot(softmax_matrix)
+
+    grads['W1'] = softmax_matrix.dot(W2.T)
+    temp = grads['W1'] * (first_layer > 0)
+    grads['W1'] = X.T.dot(temp)
+
+    grads['b1'] = temp.sum(axis=0)
+
+    grads['W1'] += reg * 2 * W1
+    grads['W2'] += reg * 2 * W2
+
     #############################################################################
     #                              END OF YOUR CODE                             #
     #############################################################################
