@@ -205,7 +205,12 @@ class TwoLayerNet(object):
     ###########################################################################
     y_pred = np.zeros(X.shape[0])
 
-    y_pred = np.argmax((X.dot(self.params['W1']) + self.params['b1']).dot(self.params['W2']) + self.params['b2'], axis=1)
+    y_pred = X.dot(self.params['W1']) + self.params['b1']
+    y_pred = np.maximum(0, y_pred)
+
+    y_pred = np.argmax(y_pred.dot(self.params['W2']) + self.params['b2'], axis=1)
+
+
     ###########################################################################
     #                              END OF YOUR CODE                           #
     ###########################################################################
