@@ -339,27 +339,11 @@ Content-Type: text/html; charset=iso-8859-1
 										поставя диалогов прозорец (както е показано по-долу за firefox и IE), показващ
 										сървъра, царството и подкана за потребителско име и парола.<br />
 									</p>
-									<p id="gdcalert1">
-										<span style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; gd2md-html
-											alert: inline image link here (to images/-0.png). Store image on your image
-											server and adjust path/filename if necessary. </span><br>(<a href="#">Back
-											to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span
-											style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; </span>
-									</p>
 									<div class="figure">
-										<img src="images/-0.png" title="image_tooltip" alt="alt_text" />
-										<p class="caption">alt_text</p>
+										<img src="images/image1.png" title="image_tooltip"" />
 									</div>
-									<p id="gdcalert2">
-										<span style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; gd2md-html
-											alert: inline image link here (to images/-1.png). Store image on your image
-											server and adjust path/filename if necessary. </span><br>(<a href="#">Back
-											to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span
-											style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; </span>
-									</p>
 									<div class="figure">
-										<img src="images/-1.png" title="image_tooltip" alt="alt_text" />
-										<p class="caption">alt_text</p>
+										<img src="images/image2.png" title="image_tooltip"" />
 									</div>
 									<p>Потребителят предоставя идентификационните данни. Браузърът отново изпраща
 										заявката с заглавие &quot;Authorization&quot;, като дава своето потребителско
@@ -457,23 +441,52 @@ worker: bob bill</code></pre>
 									<h2>Дайджест Автентикация</h2>
 									<div class="clearfix"></div>
 									<hr>
-									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-										ever since the 1500s, when an unknown printer took a galley of type and
-										scrambled it to make a type specimen book. It has survived not only five
-										centuries, but also the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of Letraset sheets
-										containing Lorem Ipsum passages, and more recently with desktop publishing
-										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-									<p>Why do we use it?It is a long established fact that a reader will be distracted
-										by the readable content of a page when looking at its layout. The point of using
-										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-										opposed to using 'Content here, content here', making it look like readable
-										English. Many desktop publishing packages and web page editors now use Lorem
-										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
-										many web sites still in their infancy. Various versions have evolved over the
-										years, sometimes by accident, sometimes on purpose (injected humour and the
-										like).</p>
+									<p>Подобно на основната автентификация, дайджест удостоверяването изисква клиентът
+										да представи своите идентификационни данни по отношение на потребителско име и
+										парола. За разлика от основното удостоверяване на достъп, дайджест
+										удостоверяванетo не изпраща паролата по мрежата с ясен текст. Вместо това се
+										предава MD5 дайджест на паролата (оттук и името дайджест удостоверяване).</p>
+									<p>(Дайджестът е хеш-стойност от еднопосочна хеш функция. Да предположим, че y е
+										дайджестът или едностранната хеш стойност на x, като се използва еднопосочна хеш
+										функция h, т.е. y = h (x). Лесно е да се изчисли y от x, но е почти невъзможно
+										да се изчисли x като y, дори ако функцията h е известна. Освен това, дори ако x1
+										и x2 са сходни, съответните дайджести y1 = h (x1) и y2 = h (x2) ще бъдaт далеч.
+										Информация за дайджест на MD5 може да бъде намерена от RFC1321 или на
+										http://userpages.umbc.edu/~mabzug1/cs/md5/md5.html.)</p>
+									<p>Схемата за дайджест автентикация не е предназначена да бъде цялостно решение на
+										нуждата от сигурност за Интернет. Схемата не осигурява криптиране на съобщението
+										(т.е. конфиденциалност на съобщението) и целостта на съобщението. Дайджест
+										схемата има за цел да избегне сериозния недостатък в основната схема (т.е.
+										изпращане на парола с ясен текст) и замяна на основната автентикация.</p>
+									<p>Подобно на основната схема, дайджест схемата се основава на проста обмяна на
+										предизвикателство-отговор за удостоверяване на потребителя. Сървърът предизвиква
+										клиента с nonce стойност и очаква отговор, който е дайджест на потребителското
+										име, паролата, дадената стойност nonce, метода HTTP и искания URL адрес. Важно е
+										да се отбележи, че паролата не се изпраща в ясен текст, както в основната схема.
+										Вместо това се изпраща хеш стойност. Nonce, което в идеалния случай трябва да
+										бъде различно за всяка заявка, се използва за предотвратяване на &quot;атака при
+										повторно изпълнение&quot;.</p>
+									<p>Детайлите за автентикацията с дайджест са следните:</p>
+									<ol style="list-style-type: decimal">
+										<li>Клиентът прави заявка за уеб ресурс, защитен от дайджест схема за
+											удостоверяване, чрез HTTP GET.</li>
+										<li>Сървърът връща отговор &quot;401 Authentication Required&quot;, като посочва
+											схемата за удостоверяване, областта и nonce, в хедъра на отговора
+											&quot;WWW-Authenticate&quot;.</li>
+										<li>
+											<p>Клиентът комбинира паролата, nonce, HTTP метод и URI, изчислява дайджеста
+												и изпраща този дайджест обратно на сървъра. Пример за изчисление:</p>
+											<p>MD5(MD5(&lt;password&gt; + &quot;:&quot; + &lt;nouce&gt; + &quot;:&quot;
+												+ MD5(&lt;method&gt; + &quot;;&quot; + &lt;uri&gt;)</p>
+										</li>
+										<li>
+											<p>Сървърът независимо генерира хеша и проверява с получения хеш. Изпраща
+												обратно поискания ресурс (със статус &quot;200 ОК&quot;), ако двете
+												стойности на хеш съвпадат. В противен случай ще бъде изпратен &quot;401
+												Authentication Required&quot; и процесът на удостоверяване се повтаря
+												(или докато клиентът не отмени заявката).</p>
+										</li>
+									</ol>
 								</div>
 
 
@@ -487,7 +500,74 @@ worker: bob bill</code></pre>
 									<h2>Имплементиране на дайджест автентикация</h2>
 									<div class="clearfix"></div>
 									<hr>
+									<p>Също като основната схема за автентикация, нужната конфигурация за използването
+										на дайджест автентикация в Апаче HTTP сървър включва следните 3 стъпки:</p>
+									<ol style="list-style-type: decimal">
+										<li>Създайте файл за пароли</li>
+										<li>Конфигурирайте апаче сървърът да използва файла за пароли</li>
+										<li>Имате възможност и да използвате файл за групи, за да контролирате достъпа
+											на ниво групи</li>
+									</ol>
+									<p><strong>Стъпка 1</strong>: За да създадете файл за пароли трябва да използвате
+										приложението &quot;htdigest&quot; в &quot;%APACHE_HOME%” по следния начин:</p>
+									<pre><code>&gt; htdigest -h
+Usage: htdigest [-c] password-file realm username
+The -c flag creates a new file.
 
+
+&gt; htdigest -c ..\conf\digest.users &quot;members only&quot; bob
+Adding password for bob in realm members only.
+New password: ***
+Re-type new password: ***
+
+
+&gt; htdigest ..\conf\digest.users &quot;members only&quot; alice
+Adding user alice in realm members only
+New password: *****
+Re-type new password: *****</code></pre>
+									<p>Съдържанието на дайджест файла за потребители &quot;conf.users&quot; е следното:
+									</p>
+									<pre><code>bob:members only:f64f2af9501033efe7c402417681e05b
+alice:members only:d65afa1afb84c30a7547aecff4431700</code></pre>
+									<p>Забележете, че за разлика от основната схема, всяка двойка потребителско име и
+										парола е свързана с царство. Потребителското име и паролата са валидни само за
+										едно царство.</p>
+									<p><strong>Стъпка 2</strong>: За да активирате дайджест схемата трябва да включите
+										следните директиви в конфигурацията на апаче &quot;conf.conf&quot; (или
+										.htaccess ако презаписването е разрешено):</p>
+									<pre><code>LoadModule digest_auth_module modules/mod_auth_digest.so
+......
+AddModule mod_auth_digest.c
+......
+
+
+&lt;Directory protected-directories&gt;
+  AuthType digest
+  AuthName &quot;members only&quot;
+  AuthDigestFile conf/digest.users  # Use AuthUserFile for Apache 2
+  Require user bob
+&lt;/Directory&gt;</code></pre>
+									<p>Директивата &quot;AuthType Digest&quot; се използва за активиране на
+										удостоверяването на дайджест достъп. Директивата “AuthDigestFile” се използва за
+										определяне на местоположението на файла с парола. (Ако срещнете грешка с
+										директивата AuthDigestFile, използвайте директивата AuthUserFile вместо за
+										Apache 2.) Царството в AuthName трябва да съответства на потребителския файл и е
+										чувствително към регистъра.</p>
+									<p><strong>Стъпка 3</strong>: Имате и възможност да използвате и файл за групи, за
+										да контролирате нивото за достъп на ниво групи. Формата на файла е същия като
+										този за основната схема за автентикация. Например:</p>
+									<pre><code>admin: alice alan
+audit: bob bill</code></pre>
+									<p>Примерна конфигурация:</p>
+									<pre><code>&lt;Directory protected-directories&gt;
+  AuthType digest
+  AuthName &quot;members only&quot;
+  AuthDigestFile conf/digest
+  AuthDigestGroupFile conf/digest.groups
+  Require group admin
+&lt;/Directory&gt;</code></pre>
+									<p>Директивата AuthDigestGroupFile се използва за специфицирането на файл за групи
+										вместо AuthGroupFile в основната схема за автентикация.</p>
 								</div>
 
 
@@ -501,23 +581,96 @@ worker: bob bill</code></pre>
 									<h2>Следи на Съобщенията</h2>
 									<div class="clearfix"></div>
 									<hr>
-									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-										ever since the 1500s, when an unknown printer took a galley of type and
-										scrambled it to make a type specimen book. It has survived not only five
-										centuries, but also the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of Letraset sheets
-										containing Lorem Ipsum passages, and more recently with desktop publishing
-										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-									<p>Why do we use it?It is a long established fact that a reader will be distracted
-										by the readable content of a page when looking at its layout. The point of using
-										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-										opposed to using 'Content here, content here', making it look like readable
-										English. Many desktop publishing packages and web page editors now use Lorem
-										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
-										many web sites still in their infancy. Various versions have evolved over the
-										years, sometimes by accident, sometimes on purpose (injected humour and the
-										like).</p>
+									<p>Следа от съобщения, участващи в удостоверяването на дайджест достъп, е следната.
+										Директория, наречена &quot;digest_auth&quot; е създадена под &quot;htdocs&quot;,
+										съдържаща файл &quot;test.html&quot;. Ако приемем, че HTTP сървърът на Apache
+										работи на порт 8000.</p>
+									<p>Заявка на клиента:<br />
+										<code>GET <strong>/digest_auth/test.html</strong> HTTP/1.1</code></p>
+									<pre><code>Accept: image/gif, image/jpeg, */*
+Accept-Language: en-us
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+</code></pre>
+									<ul>
+										<li><code>Host: 127.0.0.1:8000</code></li>
+									</ul>
+									<p>Отговор на сървъра:<br />
+										<code>HTTP/1.1 <strong>401 Authorization Required</strong></code></p>
+									<pre><code>Date: Tue, 20 Oct 2009 08:16:43 GMT
+Server: Apache/2.2.14 (Win32)
+WWW-Authenticate: digest realm=&quot;Members only&quot;,
+  nonce=&quot;LHOKe1l2BAA=5c373ae0d933a0bb6321125a56a2fcdb6fd7c93b&quot;, algorithm=MD5, qop=&quot;auth&quot;
+Content-Length: 401
+Content-Type: text/html; charset=iso-8859-1
+
+
+</code></pre>
+									<ul>
+										<li><code>(body omitted)</code></li>
+									</ul>
+									<p>Клиента:</p>
+									<p>Вместо да показва отговор &quot;401 Authorization Required&quot;, браузърът
+										поставя диалогов прозорец, посочващ името на сървъра и царството, и подкана за
+										вашето потребителско име и парола. Обърнете внимание, че в IE външният вид на
+										диалоговия прозорец е различен от този, създаден от основната схема за
+										удостоверяване.<br />
+									</p>
+									<div class="figure">
+										<img src="images/image3.png" title="image_tooltip" />
+									</div>
+									<p><img src="images/image4.png" title="image_tooltip" /><br />
+										Клиентът дава свойте данни и браузърът повтаря заявката.<br />
+										<code>GET <strong>/digest_auth/test.html</strong> HTTP/1.1</code></p>
+									<pre><code>Accept: image/gif, image/jpeg, */*
+Accept-Language: en-us
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+Host: 127.0.0.1:8000
+Authorization: digest username=&quot;bob&quot;, realm=&quot;members only&quot;,
+  qop=&quot;auth&quot;, algorithm=&quot;MD5&quot;, uri=&quot;/digest_auth/test.html&quot;,
+  nonce=&quot;5UImQA==3d76b2ab859e1770ec60ed285ec68a3e63028461&quot;,
+  nc=00000001, cnonce=&quot;1672b410efa182c061c2f0a58acaa17d&quot;,
+</code></pre>
+									<ul>
+										<li>response=&quot;3d9ebe6b9534a7135a3fde59a5a72668&quot;</li>
+									</ul>
+									<p>Сървърът:</p>
+									<p>Ако данните са приемливи, сървърът връща искания ресурс с код &quot;200
+										OK”:<br />
+										<code>HTTP/1.1 <strong>200 OK</strong></code></p>
+									<pre><code>Date: Sun, 08 Feb 2004 14:08:57 GMT
+Server: Apache/1.3.29 (Win32)
+Authentication-Info: rspauth=&quot;670ff3158cec20b73d7342932f8c40a1&quot;,
+  cnonce=&quot;1672b410efa182c061c2f0a58acaa17d&quot;,  nc=00000001, qop=auth
+Last-Modified: Sat, 07 Feb 2004 10:53:25 GMT
+ETag: &quot;0-23-4024c3a5&quot;
+Accept-Ranges: bytes
+Content-Length: 35
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Type: text/html
+
+
+(body omitted)</code></pre>
+									<p>Ако данни не са приемливи, сървърът отново връща &quot;401 Authorization
+										Required&quot;, за да повтори процеса на удостоверяване. Браузърът може да ви
+										подкани 3 пъти, преди да покаже съобщението &quot;401&quot;.<br />
+										<code>HTTP/1.1 <strong>401 Authorization Required</strong></code></p>
+									<pre><code>Date: Sun, 08 Feb 2004 14:20:00 GMT
+Server: Apache/1.3.29 (Win32)
+WWW-Authenticate: digest realm=&quot;members only&quot;,
+  nonce=&quot;kEUmQA==afc92fa0cb1ce89577fc1c1c7d80389b8ddd7137&quot;,
+  algorithm=MD5, qop=&quot;auth&quot;
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=iso-8859-1
+
+
+</code></pre>
+									<ul>
+										<li><code>(body omitted)</code></li>
+									</ul>times by accident, sometimes on purpose (injected humour and the
+									like).</p>
 								</div>
 
 
@@ -531,23 +684,84 @@ worker: bob bill</code></pre>
 									<h2>Детайли при дайджестването</h2>
 									<div class="clearfix"></div>
 									<hr>
-									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-										ever since the 1500s, when an unknown printer took a galley of type and
-										scrambled it to make a type specimen book. It has survived not only five
-										centuries, but also the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of Letraset sheets
-										containing Lorem Ipsum passages, and more recently with desktop publishing
-										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-									<p>Why do we use it?It is a long established fact that a reader will be distracted
-										by the readable content of a page when looking at its layout. The point of using
-										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-										opposed to using 'Content here, content here', making it look like readable
-										English. Many desktop publishing packages and web page editors now use Lorem
-										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
-										many web sites still in their infancy. Various versions have evolved over the
-										years, sometimes by accident, sometimes on purpose (injected humour and the
-										like).</p>
+									<p>Когато клиент поиска защитен ресурс по дайджест схемата, сървърът връща отговор
+										&quot;401 Authentication Required&quot;, който включва заглавие
+										&quot;WWW-authenticate&quot;. Следната информация е включена в хедъра
+										&quot;WWW-authenticate&quot;:</p>
+									<ul>
+										<li>digest: информирайте клиента, че дайджест схемата за удостоверяване е
+											налице.</li>
+										<li>realm: &quot;царството&quot;, към което принадлежи защитеният ресурс
+											(припомнете, че потребителското име / паролата е зададено на основата на
+											областта и валидно само за тази конкретна област).</li>
+										<li>
+											<p>nounce (server's nounce): сървърът трябва уникално да генерира nounce
+												всеки път, когато се задейства &quot;401&quot; отговор (така че да се
+												предотврати &quot;атака при повторно изпълнение&quot;). Стойността на
+												nonce зависи от внедряването. Например nonce на сървъра може да се
+												състои от:<br />
+												Време за печат: H (Time-печат: ETAG: частния ключ). Печатът с време може
+												да се използва за ограничаване на срока на валидност на nonce, за да се
+												предотврати &quot;атака при повторно изпълнение&quot;. Etag, който е
+												заглавна единица на искания документ, може да предотврати атака при
+												повторно изпълнение на актуализирана версия на този документ. Сървърът
+												може да избере да внедри „еднократна nonce“ за PUT и POST заявки и
+												времева марка за GET заявка.</p>
+										</li>
+										<li>аlgorithm: да информира клиента за поддържания от сървъра алгоритъм (и) за
+											хеширане. В момента алгоритъмът включва MD5 и MD5-sess (MD5 сесия). Клиентът
+											може да избере един от поддържаните алгоритми.</li>
+										<li>
+											<p>qop (quality of protection): да информира клиента за типовете „качество
+												на защита“, поддържани от сървъра. В момента, qop включва
+												&quot;auth&quot; (автентификация) и &quot;auth-int&quot; (удостоверяване
+												с цялостност на съобщението, хеш стойността съдържа съобщението, за да
+												се гарантира целостта на съобщението). Клиентът може да избере една от
+												тези поддържани опции</p>
+										</li>
+									</ul>
+									<p>След получаване на отговора &quot;401&quot; от сървъра, клиентът трябва да включи
+										заглавие &quot;Authentication&quot; и да изпрати отново заявката. Следната
+										информация е предоставена от хедъра на &quot;Authentication&quot;:</p>
+									<ul>
+										<li>digest</li>
+										<li>username</li>
+										<li>realm</li>
+										<li>gop (quality of protection)</li>
+										<li>algorithm</li>
+										<li>uri: URI от реда за заявки, който е дублиран тук, тъй като проксито е
+											позволено да променя URI на заявката по време на транзит.</li>
+										<li>nonce (server's nonce)</li>
+										<li>nc (nonce count):броят на заявките, които клиентът е изпратил с този nonce.
+											Това позволява на сървъра да открие атака при преиграване, като поддържа
+											собствено копие на броя, ако желае.</li>
+										<li>cnonce (client's nonce):nonce, предоставян от клиента, допринася за
+											получената стойност на хеш, за да се избегне “plaintext” атака</li>
+										<li>response:хеш стойността, която се изчислява в съответствие с настройките на
+											gop (auth или auth-int) и алгоритъм (MD5 или MD5-sess), както следва:</li>
+									</ul>
+									<pre><code>Се използва &quot;qop&quot; -&gt;
+  H(H(A1):nonce:nc:cnonce:qop:H(A2))
+
+
+Не се използва&quot;gop&quot; -&gt;
+  H(H(A1):nonce:H(A2))
+
+
+Се използва &quot;algorithm&quot; -&gt; &quot;MD5&quot; -&gt;
+  A1 = Username:realm:password
+
+
+Се използва &quot;algorithm&quot; -&gt; &quot;MD5-sess&quot; -&gt;
+  A1 = Username:realm:password:nouce:cnonce
+
+
+Се използва &quot;gop&quot; -&gt; &quot;auth&quot; -&gt;
+  A2 = Method:URL
+
+
+Се използва &quot;gop&quot; -&gt; &quot;auth-int&quot; -&gt;
+  A2 = Method:URL:H(entity-body)</code></pre>
 								</div>
 
 
@@ -561,23 +775,17 @@ worker: bob bill</code></pre>
 									<h2>Съображения за сигурност</h2>
 									<div class="clearfix"></div>
 									<hr>
-									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-										ever since the 1500s, when an unknown printer took a galley of type and
-										scrambled it to make a type specimen book. It has survived not only five
-										centuries, but also the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of Letraset sheets
-										containing Lorem Ipsum passages, and more recently with desktop publishing
-										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-									<p>Why do we use it?It is a long established fact that a reader will be distracted
-										by the readable content of a page when looking at its layout. The point of using
-										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-										opposed to using 'Content here, content here', making it look like readable
-										English. Many desktop publishing packages and web page editors now use Lorem
-										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
-										many web sites still in their infancy. Various versions have evolved over the
-										years, sometimes by accident, sometimes on purpose (injected humour and the
-										like).</p>
+									<p>Основната схема за автентикация има следните минуси:</p>
+									<ul>
+										<li>Паролата се изпраща в ясен текст</li>
+										<li>Сървърът трябва да пази името и паролата в базата данни</li>
+										<li>Няма цялостност на съобщенията</li>
+									</ul>
+									<p>Дайджест схемата преодолява тези недостатъци. Това обаче не гарантира
+										конфиденциалност на съобщенията. Тя просто предоставя по-сигурен и безопасен
+										начин за клиентите да представят своите данни. Тя не е толкова сигурна като
+										Kerberos, частен ключ от страна на клиента или SSL, но е много по-добра от
+										telnet, ftp и разбира се, основна схема за удостоверяване.</p>
 								</div>
 
 
@@ -591,23 +799,22 @@ worker: bob bill</code></pre>
 									<h2>Използвани ресурси</h2>
 									<div class="clearfix"></div>
 									<hr>
-									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-										ever since the 1500s, when an unknown printer took a galley of type and
-										scrambled it to make a type specimen book. It has survived not only five
-										centuries, but also the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of Letraset sheets
-										containing Lorem Ipsum passages, and more recently with desktop publishing
-										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-									<p>Why do we use it?It is a long established fact that a reader will be distracted
-										by the readable content of a page when looking at its layout. The point of using
-										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-										opposed to using 'Content here, content here', making it look like readable
-										English. Many desktop publishing packages and web page editors now use Lorem
-										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
-										many web sites still in their infancy. Various versions have evolved over the
-										years, sometimes by accident, sometimes on purpose (injected humour and the
-										like).</p>
+									<ul>
+										<li><a
+												href="https://en.wikipedia.org/wiki/Digest_access_authentication">https://en.wikipedia.org/wiki/digest_access_authentication</a>
+										</li>
+										<li><a href="https://en.wikipedia.org/wiki/Basic_access_authentication"
+												class="uri">https://en.wikipedia.org/wiki/Basic_access_authentication</a>
+										</li>
+										<li><a href="https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Authentication.html"
+												class="uri">https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Authentication.html</a>
+										</li>
+										<li><a href="https://nordicapis.com/3-common-methods-api-authentication-explained/"
+												class="uri">https://nordicapis.com/3-common-methods-api-authentication-explained/</a>
+										</li>
+										<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP"
+												class="uri">https://developer.mozilla.org/en-US/docs/Web/HTTP</a></li>
+									</ul>
 								</div>
 
 
