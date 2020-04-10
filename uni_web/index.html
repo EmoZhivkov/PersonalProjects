@@ -1,249 +1,625 @@
 <!doctype html>
 <html lang="bg">
+
 <head>
-<meta charset="utf-8">
-<title>HTTP Authentication</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<link href="style.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<meta name="theme-color" content="#ffffff">
+	<meta charset="utf-8">
+	<title>HTTP Authentication</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+		integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+	<meta name="theme-color" content="#ffffff">
 </head>
+
 <body>
 
-<div class="row py-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<nav class="px-2">
-					<div class="nav-tabs position-fixed" style="width:280px;max-height:100%;overflow:scroll;padding-bottom:30px;" id="nav-tab" role="tablist">
-						<a class="nav-link fadeInRight" href="#nav-home1" role="tab">Какво е HTTP?</a>
-						<a class="nav-link fadeInRight" href="#nav-home2" role="tab">Автентикация и Оторизация</a>
-						<a class="nav-link fadeInRight" href="#nav-home3" role="tab">Схеми за автентикация на HTTP</a>
-						<a class="nav-link fadeInRight" href="#nav-home4" role="tab">Основна Автентикация</a>
-						<a class="nav-link fadeInRight" href="#nav-home5" role="tab">Имплементирането на основна схема за автентикация</a>
-						<a class="nav-link fadeInRight" href="#nav-home6" role="tab">Следи на Съобщенията</a>
-						<a class="nav-link fadeInRight" href="#nav-home7" role="tab">Съображения за сигурност</a>
-						<a class="nav-link fadeInRight" href="#nav-home8" role="tab">Потребителски групи</a>
-						<a class="nav-link fadeInRight" href="#nav-home9" role="tab">Дайджест Автентикация</a>
-						<a class="nav-link fadeInRight" href="#nav-home10" role="tab">Имплементиране на дайджест автентикация</a>
-						<a class="nav-link fadeInRight" href="#nav-home11" role="tab">Следи на Съобщенията</a>
-						<a class="nav-link fadeInRight" href="#nav-home12" role="tab">Детайли при дайджестването</a>
-						<a class="nav-link fadeInRight" href="#nav-home13" role="tab">Съображения за сигурност</a>
-						<a class="nav-link fadeInRight" href="#nav-home14" role="tab">Използвани ресурси</a>
-                    </div>
-                </nav>
-			</div>
-			<div class="col-lg-9">
-				<div class="row">
-					<div class="col-12 pb-5 text-center">
-						<h1 class="text-uppercase"> Hypertext Transfer Protocol (HTTP/1.1) <span class="small text-black-50">Authentication. Примери</span></h1>
-					</div>
+	<div class="row py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<nav class="px-2">
+						<div class="nav-tabs position-fixed"
+							style="width:280px;max-height:100%;overflow:scroll;padding-bottom:30px;" id="nav-tab"
+							role="tablist">
+							<a class="nav-link fadeInRight" href="#nav-home1" role="tab">Какво е HTTP?</a>
+							<a class="nav-link fadeInRight" href="#nav-home2" role="tab">Автентикация и Оторизация</a>
+							<a class="nav-link fadeInRight" href="#nav-home3" role="tab">Схеми за автентикация на
+								HTTP</a>
+							<a class="nav-link fadeInRight" href="#nav-home4" role="tab">Основна Автентикация</a>
+							<a class="nav-link fadeInRight" href="#nav-home5" role="tab">Имплементирането на основна
+								схема за автентикация</a>
+							<a class="nav-link fadeInRight" href="#nav-home6" role="tab">Следи на Съобщенията</a>
+							<a class="nav-link fadeInRight" href="#nav-home7" role="tab">Съображения за сигурност</a>
+							<a class="nav-link fadeInRight" href="#nav-home8" role="tab">Потребителски групи</a>
+							<a class="nav-link fadeInRight" href="#nav-home9" role="tab">Дайджест Автентикация</a>
+							<a class="nav-link fadeInRight" href="#nav-home10" role="tab">Имплементиране на дайджест
+								автентикация</a>
+							<a class="nav-link fadeInRight" href="#nav-home11" role="tab">Следи на Съобщенията</a>
+							<a class="nav-link fadeInRight" href="#nav-home12" role="tab">Детайли при дайджестването</a>
+							<a class="nav-link fadeInRight" href="#nav-home13" role="tab">Съображения за сигурност</a>
+							<a class="nav-link fadeInRight" href="#nav-home14" role="tab">Използвани ресурси</a>
+						</div>
+					</nav>
 				</div>
-				<div class="tab-content" id="nav-tabContent">
-					<div class="tab-pane fade show active" id="nav-home1" role="tabpanel" aria-labelledby="nav-home1">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Какво е HTTP?</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
+				<div class="col-lg-9">
+					<div class="row">
+						<div class="col-12 pb-5 text-center">
+							<h1 class="text-uppercase"> Hypertext Transfer Protocol (HTTP/1.1) <span
+									class="small text-black-50">Authentication. Примери</span></h1>
 						</div>
 					</div>
-					<div class="tab-pane fade show active" id="nav-home2" role="tabpanel" aria-labelledby="nav-home2">
-						<div class="row">
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-home1" role="tabpanel"
+							aria-labelledby="nav-home1">
+							<div class="row">
 
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Автентикация и Оторизация</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Какво е HTTP?</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>Hypertext Transfer Protocol (HTTP) е протокол на приложения слой за предаване на
+										документи за хипермедия, като HTML. Той е създаден за комуникация между уеб
+										браузъри и уеб сървъри, но може да се използва и за други цели. HTTP следва
+										класически модел клиент-сървър, като клиентът отваря връзка, за да направи
+										заявка, след което изчаква, докато получи отговор. HTTP е протокол без
+										състояние, което означава, че сървърът не съхранява никакви данни (състояние)
+										между две заявки. Въпреки че често се основава на TCP / IP слоеве, той може да
+										се използва на всеки надежден транспортен слой, тоест на протокол, който не губи
+										съобщения мълчаливо, както прави UDP.</p>
+								</div>
+
 							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home2" role="tabpanel"
+							aria-labelledby="nav-home2">
+							<div class="row">
 
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Автентикация и Оторизация</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>Преди да се потопим в тази тема твърде дълбоко, първо трябва да определим какво
+										всъщност е автентификацията и по-важното какво не е. Колкото и автентикацията да
+										управлява съвременния интернет, темата често е свързана с термина: оторизация.
+									</p>
+									<p>Двете функции често са обвързани заедно в едно единствено решение - всъщност едно
+										от решенията, които ще обсъдим в един момент, е хибридна система за автентикация
+										и оторизация. Поради това и поради приликите им във приложението им, е лесно да
+										се объркат тези два елемента.</p>
+									<p>Най-лесният начин да разделите оторизация и автентикация е да попитате: какво
+										всъщност доказват те? Казано по-просто, автентикация е когато предприятието
+										докаже своята самоличност. С други думи, автентикацията доказва, че вие ​​сте
+										това, което казвате, че сте. Това е сходно с наличието на лична карта - артикул,
+										даден от доверен орган, който може да се използва като доказателство, което
+										предполага, че всъщност сте това, за което се представяте.</p>
+									<p>Оторизация е съвсем различно понятие, въпреки че със сигурност е тясно свързано с
+										другото. Казано по-просто, оторизацията е когато предприятието докаже право на
+										достъп. С други думи, оторизацията доказва, че имате право да направите заявка.
+										Когато се опитвате да се върнете зад кулисите на концерт или събитие, не е
+										задължително да доказвате, че сте това, което казвате, че сте - предоставяте
+										билета, което фактически е доказателство, че имате право да сте там, където сте.
+										Реално се “опитвате да влезете”.</p>
+									<p>Помислете за момент за шофьорска книжка. В много страни шофьорската книжка
+										доказва едновременно, че сте човек, за когото казвате, че сте, и след това
+										доказва, че имате право да управлявате класа на превозното средство, което
+										карате. В такъв случай имаме автентикация и оторизация - и има много случай на
+										различни системи, които дават парче код, което удостоверява потребителя и
+										доказва тяхното упълномощаване. В такъв случай имаме хибридно решение.</p>
+								</div>
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home3" role="tabpanel"
+							aria-labelledby="nav-home3">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Схеми за автентикация на HTTP</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>HTTP предоставя две схеми за удостоверяване на клиенти: Основнa и дайджест
+										автентикация. Спецификацията е дадена в &quot;RFC 2617 HTTP Authentication:
+										Basic and digest Access Authentication&quot;. Важно е да се подчертае, че тези
+										схеми просто предоставят средство за клиента да изпрати потребителското си име и
+										парола за удостоверяване. Схемите не гарантират конфиденциалност на съобщението
+										(т.е. криптиране на съобщението) и целостта на съобщението (атака човек в
+										средата).</p>
+
+								</div>
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home4" role="tabpanel"
+							aria-labelledby="nav-home4">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Основна Автентикация</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>Основната схема за автентикация бе въведена от HTTP / 1.0. Това е проста схема,
+										която използва потребителско име и парола за удостоверяване на клиенти.</p>
+									<p>Клиентът изпраща своето потребителско име и парола до сървъра. Сървърът търси
+										файла с паролата и решава дали клиентът е упълномощен да получи достъп до
+										искания ресурс. Файлът с парола може да бъде обикновен текстов файл или база
+										данни (което значително подобрява процеса на извличане и съвпадение при случай
+										на голяма потребителска база). Потребителите могат да бъдат групирани в групи.
+										След това достъпът може да бъде контролиран на ниво група. За да се подобри
+										гъвкавостта, защитеното пространство е разделено на различни царства. Всяка
+										двойка потребителско име и парола е валидна за едно конкретно царство.</p>
+									<p>ВАЖНО: Основната схема за автентикация не се счита за сигурна или безопасна. Това
+										е така, защото потребителското име, паролата и съобщенията се изпращат в
+										необработван текст (т.е. не са шифровани). Подслушватели могат лесно да вземат
+										вашето потребителско име, парола и съобщения. Трябва да сте изключително
+										предпазливи, когато давате потребителското си име и парола на сървър, който
+										използва основна схема за автентикация (например: ако използвате същата парола
+										за достъп до банковата си сметка !?). Използвайте вместо това специална парола с
+										нисък риск.</p>
+								</div>
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home5" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Имплементирането на основна схема за автентикация</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>The configuration for basic access authentication involves 3 steps:</p>
+									<p>Конфигурацията за основната автентикация включва 3 основни стъпки:</p>
+									<ol style="list-style-type: decimal">
+										<li>Създайте файл за пароли</li>
+										<li>Конфигурирайте апаче сървърът да използва файла за пароли</li>
+										<li>Имате възможност и да използвате файл за групи, за да контролирате достъпа
+											на ниво групи</li>
+									</ol>
+									<p><strong>Стъпка 1</strong>: За да създадете файл за пароли, използвайте
+										приложението &quot;htpasswd.exe&quot;, което идва с Apache HTTP Server (намира
+										се в &quot;%APACHE_HOME%&quot;) както е показано по-долу:</p>
+									<pre><code>&gt; ... сменяме директорията на %APACHE_HOME\bin ...
+&gt; htpasswd ?
+(помощно меню)
+
+
+&gt; htpasswd -c ../conf/basic.users bob
+(Използваме -c, за да съзададем нов файл)
+Automatically using MD5 format on Windows.
+New password: ***
+Re-type new password: ***
+Adding password for user bob
+
+
+&gt; htpasswd ../conf/basic.users bill
+Automatically using MD5 format on Windows.
+New password: ****
+Re-type new password: ****
+Adding password for user bill
+
+
+&gt; htpasswd ../conf/basic.users alice
+Automatically using MD5 format on Windows.
+New password: *****
+Re-type new password: *****
+Adding password for user alice
+
+
+&gt; htpasswd ../conf/basic.users alan
+Automatically using MD5 format on Windows.
+New password: ****
+Re-type new password: ****
+Adding password for user alan</code></pre>
+									<p>Горните команди създават файл наречен &quot;basic.users&quot; в директорията
+										&quot;%APACHE_HOME&quot;; с 4 потребителя с парола. Уверете се, че файлът с
+										потребители е извън директорията за документи и е защитен от неоторизирани
+										потребители. Ако отворите файла с потребителите ще видите паролите не в текст,
+										ами в шифриран текст.</p>
+									<pre><code>bob:$apr1$c0Nw/XQI$mLuIl7DboHBkp4tZfh2Uj/
+bill:$apr1$vn.O35Db$t8UasLOGIjBgVE93UvIMh0
+alice:$apr1$1rPtsZaD$0MpAqMQC.KpePAffgnqK70
+alan:$apr1$1pPU8Nwf$Ms/1EO90PBm25pnvaT5bi0</code></pre>
+									<p><strong>Стъпка 2</strong>: За да конфигурирате Apache HTTP server да използва
+										вашият файл за пароли, който току що създадохте, добавете следните директиви в
+										подходящата директория на конфигурационния файл &quot;%APACHE_HOME%.conf&quot;
+										(или ги поставете в &quot;.htaccess&quot; на директорията, ако е разрешено
+										презаписването).</p>
+									<pre><code>&lt;Directory protected-directories&gt;
+  AuthType Basic
+  AuthName Private
+  AuthUserFile conf/basic.users
+  Require valid-user
+&lt;/Directory&gt;
+</code></pre>
+									<ul>
+										<li>Блок директивата &lt;Directory&gt; създава група директории за прилагане на
+											контрол на достъпа. Директивите, приложени в блока (като например изискване
+											на валиден потребител), са приложими за всички директории (и техните
+											под-директории), които съответстват на защитените директории.</li>
+										<li>Директивата AuthType Basic специфицира, че ще използва основната схема за
+											автентикация</li>
+										<li>Директивата AuthName определя &quot;царство&quot; (или дял на цялото
+											защитено пространство), което е набор от ресурси (директории, файлове,
+											местоположения), които са достъпни със същото потребителско име и парола.
+											Царствата позволяват защитените ресурси на сървъра да бъдат разделени в
+											набор от защитни пространства, всяка със собствена схема за удостоверяване и
+											/ или база данни за разрешения. Това име на царството ще бъде показано на
+											клиента при подкана за потребителско име и парола. (Горното може да не е
+											правилно за основната схема, тъй като името на царството не е вътре във
+											файла с паролите - за разлика от дайджест схемата за автентикация.</li>
+										<li>Директивата &quot;Require valid-user&quot; предоставя достъп на всички
+											валидни потребители във файла с паролата. Вместо да предоставите достъп на
+											всички потребители, можете да ограничите достъпа до определени потребители,
+											като използвате директивата &quot;Require user <em>username1</em>
+											<em>username2</em> ...&quot;.</li>
+									</ul>
+									<p>Когато клиент поиска защитен ресурс, Apache отговаря с отговор „401
+										Authentication Required“. Това е, за да информира клиента, че потребителските
+										идентификационни данни са необходими. След получаване на отговора 401, браузърът
+										ще подкани потребителя да предостави потребителското си име и парола и ще ги
+										изпрати на сървъра за проверка.</p>
+									<p>Тъй като HTTP е протокол без състояние, всяка заявка ще се третира самостоятелно,
+										без да се знае за предишните заявки. Тоест, трябва да предоставите едно и също
+										потребителско име и парола на всеки искан ресурс. За щастие, браузърът се грижи
+										за детайлите, като кешира потребителското име, паролата, царството и името на
+										сървъра, така че да не се налага да въвеждате потребителското име и паролата за
+										всяка заявка.</p>
+									<p>Процесът на удостоверяване се обобщава по следния начин:</p>
+									<ol style="list-style-type: decimal">
+										<li>Клиент прави заявка за уеб ресурс, който е защитен с основна автентикация, с
+											HTTP GET заявка</li>
+										<li>Сървърът отговаря с &quot;401 Authorization Required&quot;.<br />
+											Отговорът 401 включва &quot;WWW-Authenticate&quot; в хедъра, който определя
+											вида на схемата за удостоверяване и царството, към което принадлежи
+											защитеният ресурс.</li>
+										<li>Клиентът отново изпраща HTTP GET заявка с хедър &quot;Authorization&quot;,
+											която дава идентификационните данни (потребителско име / парола), необходими
+											за достъп до това царство. Поверителните данни обикновено се кешират от
+											браузъра за всички следващи заявки към същата сфера на конкретния сървър.
+										</li>
+										<li>Сървърът проверява идентификационните данни. Ако е приемливо, сървърът връща
+											искания ресурс с код на състоянието „200 OK“. В противен случай отново ще
+											бъде изпратен отговор &quot;401 Authorization Required&quot; . Повечето
+											браузъри ще повторят стъпка (2) до (4) 3 пъти, преди да покажат съобщението
+											401.</li>
+									</ol>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home6" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Следи на Съобщенията</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>Нека да разгледаме следата от съобщенията на основната автентикация. Създваме
+										директория, наречена &quot;basic_auth&quot; (под &quot;htdocs&quot;), която
+										съдържа файл &quot;test.html&quot;. Ако приемем, че Apache HTTP Server работи на
+										порт 8000.</p>
+									<p>Заявка на клиента:<br />
+										<code>GET <strong>/basic_auth/test.html</strong> HTTP/1.1</code></p>
+									<pre><code>Accept: image/gif, image/jpeg, */*
+Accept-Language: en-us
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+Host: 127.0.0.1:8000
+</code></pre>
+									<ul>
+										<li><code>(blank line)</code></li>
+									</ul>
+									<p>Отговор на сървъра:<br />
+										<code>HTTP/1.1 <strong>401 Authorization Required</strong></code></p>
+									<pre><code>Date: Tue, 20 Oct 2009 07:25:42 GMT
+Server: Apache/2.2.14 (Win32)
+WWW-Authenticate: Basic realm=&quot;Private&quot;
+Content-Length: 401
+Content-Type: text/html; charset=iso-8859-1
+
+
+</code></pre>
+									<ul>
+										<li><code>(response message body omitted)</code></li>
+									</ul>
+									<p>Клиента:</p>
+									<p>Вместо да показва отговор &quot;401 Разрешение за разрешение&quot;, браузърът
+										поставя диалогов прозорец (както е показано по-долу за firefox и IE), показващ
+										сървъра, царството и подкана за потребителско име и парола.<br />
+									</p>
+									<p id="gdcalert1">
+										<span style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; gd2md-html
+											alert: inline image link here (to images/-0.png). Store image on your image
+											server and adjust path/filename if necessary. </span><br>(<a href="#">Back
+											to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span
+											style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; </span>
+									</p>
+									<div class="figure">
+										<img src="images/-0.png" title="image_tooltip" alt="alt_text" />
+										<p class="caption">alt_text</p>
+									</div>
+									<p id="gdcalert2">
+										<span style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; gd2md-html
+											alert: inline image link here (to images/-1.png). Store image on your image
+											server and adjust path/filename if necessary. </span><br>(<a href="#">Back
+											to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span
+											style="color: red; font-weight: bold">&gt;&gt;&gt;&gt;&gt; </span>
+									</p>
+									<div class="figure">
+										<img src="images/-1.png" title="image_tooltip" alt="alt_text" />
+										<p class="caption">alt_text</p>
+									</div>
+									<p>Потребителят предоставя идентификационните данни. Браузърът отново изпраща
+										заявката с заглавие &quot;Authorization&quot;, като дава своето потребителско
+										име и парола.<br />
+										<code>GET <strong>/basic_auth/test.html</strong> HTTP/1.1</code></p>
+									<pre><code>Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*
+Accept-Language: en-us
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+Host: 127.0.0.1:8000
+Connection: Keep-Alive
+</code></pre>
+									<ul>
+										<li>**<code>Authorization: Basic YWxpY2U6YWxpY2U=</code></strong></li>
+									</ul>
+									<p>Сървърът:</p>
+									<p>Ако данните са приемливи, сървърът връща ресурса с статус код &quot;200
+										OK&quot;<br />
+										<code>HTTP/1.1 <strong>200 OK</strong></code></p>
+									<pre><code>Date: Tue, 20 Oct 2009 07:37:12 GMT
+Server: Apache/2.2.14 (Win32)
+Last-Modified: Sat, 20 Nov 2004 07:16:26 GMT
+ETag: &quot;f00000003e4f9-2c-3e94b66c2e680&quot;
+Accept-Ranges: bytes
+Content-Length: 44
+Content-Type: text/html
+
+
+(body omitted)
+Ако данните не са приемливи, сървърът връща  &quot;401 Authorization Required&quot; отново. Процесът на автентикация се повтаря.
+HTTP/1.1 401 Authorization Required
+Date: Tue, 20 Oct 2009 07:38:43 GMT
+Server: Apache/2.2.14 (Win32)
+WWW-Authenticate: Basic realm=&quot;Private&quot;
+Content-Length: 401
+Content-Type: text/html; charset=iso-8859-1</code></pre>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home7" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Съображения за сигурност</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>При основната автентификация, идентифициращия се клиент изпраща данните си до
+										сървъра не криптирани, а просто е кодирани в Base64 (вижте RFC2045 за
+										спецификация на кодирането на Base64). Ако потърсите таблицата Base64 (или
+										използвате WinZip), ще видите потребителското име / паролата в заглавието на
+										разрешение в ясен текст.</p>
+									<p>Най-сериозният недостатък при основната автентификация е, че тя предава паролата
+										в чист текст по мрежата. Следователно тази парола не трябва да е същата като
+										тази, която използвате за достъп до други важни лични дейности. Освен това
+										веднъж удостоверено, съобщението се изпраща и в ясен текст.</p>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home8" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Потребителски групи</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>По желание можете да групирате потребителите в групи и да предоставите достъп на
+										избрани групи. За да използвате групов контрол на достъпа, трябва да създадете
+										файл за групи (запишете го като &quot;% APACHE_HOME% / conf /
+										basic.groups&quot;).</p>
+									<pre><code>manager: alice alan
+worker: bob bill</code></pre>
+									<p>В конфигурацията на апаче &quot;conf.conf&quot;, включете следните директиви:</p>
+									<pre><code>&lt;Directory protected-directories&gt;
+  AuthType Basic
+  AuthName Private
+  AuthUserFile conf/basic.users
+  AuthGroupFile conf/basic.groups
+  Require group manager
+&lt;/Directory&gt;</code></pre>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home9" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Дайджест Автентикация</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
+										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+										ever since the 1500s, when an unknown printer took a galley of type and
+										scrambled it to make a type specimen book. It has survived not only five
+										centuries, but also the leap into electronic typesetting, remaining essentially
+										unchanged. It was popularised in the 1960s with the release of Letraset sheets
+										containing Lorem Ipsum passages, and more recently with desktop publishing
+										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+									<p>Why do we use it?It is a long established fact that a reader will be distracted
+										by the readable content of a page when looking at its layout. The point of using
+										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+										opposed to using 'Content here, content here', making it look like readable
+										English. Many desktop publishing packages and web page editors now use Lorem
+										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
+										many web sites still in their infancy. Various versions have evolved over the
+										years, sometimes by accident, sometimes on purpose (injected humour and the
+										like).</p>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home10" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Имплементиране на дайджест автентикация</h2>
+									<div class="clearfix"></div>
+									<hr>
+
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home11" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Следи на Съобщенията</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
+										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+										ever since the 1500s, when an unknown printer took a galley of type and
+										scrambled it to make a type specimen book. It has survived not only five
+										centuries, but also the leap into electronic typesetting, remaining essentially
+										unchanged. It was popularised in the 1960s with the release of Letraset sheets
+										containing Lorem Ipsum passages, and more recently with desktop publishing
+										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+									<p>Why do we use it?It is a long established fact that a reader will be distracted
+										by the readable content of a page when looking at its layout. The point of using
+										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+										opposed to using 'Content here, content here', making it look like readable
+										English. Many desktop publishing packages and web page editors now use Lorem
+										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
+										many web sites still in their infancy. Various versions have evolved over the
+										years, sometimes by accident, sometimes on purpose (injected humour and the
+										like).</p>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home12" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Детайли при дайджестването</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
+										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+										ever since the 1500s, when an unknown printer took a galley of type and
+										scrambled it to make a type specimen book. It has survived not only five
+										centuries, but also the leap into electronic typesetting, remaining essentially
+										unchanged. It was popularised in the 1960s with the release of Letraset sheets
+										containing Lorem Ipsum passages, and more recently with desktop publishing
+										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+									<p>Why do we use it?It is a long established fact that a reader will be distracted
+										by the readable content of a page when looking at its layout. The point of using
+										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+										opposed to using 'Content here, content here', making it look like readable
+										English. Many desktop publishing packages and web page editors now use Lorem
+										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
+										many web sites still in their infancy. Various versions have evolved over the
+										years, sometimes by accident, sometimes on purpose (injected humour and the
+										like).</p>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home13" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Съображения за сигурност</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
+										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+										ever since the 1500s, when an unknown printer took a galley of type and
+										scrambled it to make a type specimen book. It has survived not only five
+										centuries, but also the leap into electronic typesetting, remaining essentially
+										unchanged. It was popularised in the 1960s with the release of Letraset sheets
+										containing Lorem Ipsum passages, and more recently with desktop publishing
+										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+									<p>Why do we use it?It is a long established fact that a reader will be distracted
+										by the readable content of a page when looking at its layout. The point of using
+										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+										opposed to using 'Content here, content here', making it look like readable
+										English. Many desktop publishing packages and web page editors now use Lorem
+										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
+										many web sites still in their infancy. Various versions have evolved over the
+										years, sometimes by accident, sometimes on purpose (injected humour and the
+										like).</p>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="nav-home14" role="tabpanel"
+							aria-labelledby="nav-home5">
+							<div class="row">
+
+								<div class="col-lg-12 p-2 animated fadeIn">
+									<h2>Използвани ресурси</h2>
+									<div class="clearfix"></div>
+									<hr>
+									<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and
+										typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+										ever since the 1500s, when an unknown printer took a galley of type and
+										scrambled it to make a type specimen book. It has survived not only five
+										centuries, but also the leap into electronic typesetting, remaining essentially
+										unchanged. It was popularised in the 1960s with the release of Letraset sheets
+										containing Lorem Ipsum passages, and more recently with desktop publishing
+										software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+									<p>Why do we use it?It is a long established fact that a reader will be distracted
+										by the readable content of a page when looking at its layout. The point of using
+										Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+										opposed to using 'Content here, content here', making it look like readable
+										English. Many desktop publishing packages and web page editors now use Lorem
+										Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
+										many web sites still in their infancy. Various versions have evolved over the
+										years, sometimes by accident, sometimes on purpose (injected humour and the
+										like).</p>
+								</div>
+
+
+							</div>
 						</div>
 					</div>
-					<div class="tab-pane fade show active" id="nav-home3" role="tabpanel" aria-labelledby="nav-home3">
-						<div class="row">
 
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Схеми за автентикация на HTTP</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home4" role="tabpanel" aria-labelledby="nav-home4">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Основна Автентикация</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home5" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Имплементирането на основна схема за автентикация</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home6" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Следи на Съобщенията</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home7" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Съображения за сигурност</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home8" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Потребителски групи</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home9" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Дайджест Автентикация</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home10" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Имплементиране на дайджест автентикация</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home11" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Следи на Съобщенията</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home12" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Детайли при дайджестването</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home13" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Съображения за сигурност</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="nav-home14" role="tabpanel" aria-labelledby="nav-home5">
-						<div class="row">
-
-							<div class="col-lg-12 p-2 animated fadeIn">
-								<h2>Използвани ресурси</h2>
-								<div class="clearfix"></div>
-								<hr>
-								<p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								<p>Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							</div>
-
-
-						</div>
-					</div>
-                </div>
-
-            </div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
 
 </body>
+
 </html>
