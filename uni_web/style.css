@@ -56,6 +56,12 @@ body {
   font-size: 16px;
 }
 
+pre {
+  border: 2px solid #12A9EA;;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .normal {
   font-weight: 400;
 }
