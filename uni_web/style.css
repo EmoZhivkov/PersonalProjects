@@ -114,21 +114,22 @@ a.search2,a.search2:hover {
 
 .nav-tabs .nav-link {
   width: 100%;
+  max-width:260px;
   border-left: 1px solid white !important;
   border-right: 1px solid white !important;
-  margin-top: 25px;
+  margin-bottom:15px;
   color: black;
   background-color: #E5E8EB;
   border: 0;
-  font-size: 16px;
-  font-weight: 400;
+  font-size:14px;
+  font-weight:400;
   text-transform: uppercase;
-  padding: 20px;
+  padding:15px;
   text-align: left;
 }
-
 .nav-link:hover {
-  color: rgba(0,0,0,.5);
+	background: #12A9EA;
+  color:white;
 }
 
 .nav-tabs .nav-link.active {
