@@ -55,8 +55,7 @@
 				<div class="col-lg-9">
 					<div class="row">
 						<div class="col-12 pb-5 text-center">
-							<h1 class="text-uppercase"> Hypertext Transfer Protocol (HTTP/1.1) <span
-									class="small text-black-50">Authentication. Примери</span></h1>
+							<h1 class="text-uppercase"> Hypertext Transfer Protocol (HTTP/1.1) Authentication. Примери</span></h1>
 						</div>
 					</div>
 					<div class="tab-content" id="nav-tabContent">
@@ -65,7 +64,7 @@
 							<div class="row">
 
 								<div class="col-lg-12 p-2 animated fadeIn">
-									<h2>Какво е HTTP?</h2>
+									<h2>Какво е HTTP? [5]</h2>
 									<div class="clearfix"></div>
 									<hr>
 									<p>Hypertext Transfer Protocol (HTTP) е протокол на приложения слой за предаване на
@@ -86,7 +85,7 @@
 							<div class="row">
 
 								<div class="col-lg-12 p-2 animated fadeIn">
-									<h2>Автентикация и Оторизация</h2>
+									<h2>Автентикация и Оторизация [4]</h2>
 									<div class="clearfix"></div>
 									<hr>
 									<p>Преди да се потопим в тази тема твърде дълбоко, първо трябва да определим какво
@@ -125,7 +124,7 @@
 							<div class="row">
 
 								<div class="col-lg-12 p-2 animated fadeIn">
-									<h2>Схеми за автентикация на HTTP</h2>
+									<h2>Схеми за автентикация на HTTP [3]</h2>
 									<div class="clearfix"></div>
 									<hr>
 									<p>HTTP предоставя две схеми за удостоверяване на клиенти: Основнa и дайджест
@@ -145,7 +144,7 @@
 							<div class="row">
 
 								<div class="col-lg-12 p-2 animated fadeIn">
-									<h2>Основна Автентикация</h2>
+									<h2>Основна Автентикация [2], [3]</h2>
 									<div class="clearfix"></div>
 									<hr>
 									<p>Основната схема за автентикация бе въведена от HTTP / 1.0. Това е проста схема,
@@ -156,8 +155,9 @@
 										данни (което значително подобрява процеса на извличане и съвпадение при случай
 										на голяма потребителска база). Потребителите могат да бъдат групирани в групи.
 										След това достъпът може да бъде контролиран на ниво група. За да се подобри
-										гъвкавостта, защитеното пространство е разделено на различни царства. Всяка
-										двойка потребителско име и парола е валидна за едно конкретно царство.</p>
+										гъвкавостта, защитеното пространство е разделено на различни "царства", като под
+										'царства' ще разбираме области. Всяка двойка потребителско име и парола е валидна
+										за едно конкретно царство.</p>
 									<p>ВАЖНО: Основната схема за автентикация не се счита за сигурна или безопасна. Това
 										е така, защото потребителското име, паролата и съобщенията се изпращат в
 										необработван текст (т.е. не са шифровани). Подслушватели могат лесно да вземат
@@ -178,11 +178,10 @@
 									<h2>Имплементирането на основна схема за автентикация</h2>
 									<div class="clearfix"></div>
 									<hr>
-									<p>The configuration for basic access authentication involves 3 steps:</p>
 									<p>Конфигурацията за основната автентикация включва 3 основни стъпки:</p>
 									<ol style="list-style-type: decimal">
 										<li>Създайте файл за пароли</li>
-										<li>Конфигурирайте апаче сървърът да използва файла за пароли</li>
+										<li>Конфигурирайте Apache сървърът да използва файла за пароли</li>
 										<li>Имате възможност и да използвате файл за групи, за да контролирате достъпа
 											на ниво групи</li>
 									</ol>
@@ -230,7 +229,27 @@ Adding password for user alan</code></pre>
 bill:$apr1$vn.O35Db$t8UasLOGIjBgVE93UvIMh0
 alice:$apr1$1rPtsZaD$0MpAqMQC.KpePAffgnqK70
 alan:$apr1$1pPU8Nwf$Ms/1EO90PBm25pnvaT5bi0</code></pre>
-									<p><strong>Стъпка 2</strong>: За да конфигурирате Apache HTTP server да използва
+									<p><strong>Стъпка 2</strong>:
+										<p>Процесът на удостоверяване се обобщава по следния начин:</p>
+									<ol style="list-style-type: decimal">
+										<li>Клиент прави заявка за уеб ресурс, който е защитен с основна автентикация, с
+											HTTP GET заявка</li>
+										<li>Сървърът отговаря с &quot;401 Authorization Required&quot;.<br />
+											Отговорът 401 включва &quot;WWW-Authenticate&quot; в хедъра, който определя
+											вида на схемата за удостоверяване и царството, към което принадлежи
+											защитеният ресурс.</li>
+										<li>Клиентът отново изпраща HTTP GET заявка с хедър &quot;Authorization&quot;,
+											която дава идентификационните данни (потребителско име / парола), необходими
+											за достъп до това царство. Поверителните данни обикновено се кешират от
+											браузъра за всички следващи заявки към същата сфера на конкретния сървър.
+										</li>
+										<li>Сървърът проверява идентификационните данни. Ако е приемливо, сървърът връща
+											искания ресурс с код на състоянието „200 OK“. В противен случай отново ще
+											бъде изпратен отговор &quot;401 Authorization Required&quot; . Повечето
+											браузъри ще повторят стъпка (2) до (4) 3 пъти, преди да покажат съобщението
+											401.</li>
+									</ol>
+										За да конфигурирате Apache HTTP server да използва
 										вашият файл за пароли, който току що създадохте, добавете следните директиви в
 										подходящата директория на конфигурационния файл &quot;%APACHE_HOME%.conf&quot;
 										(или ги поставете в &quot;.htaccess&quot; на директорията, ако е разрешено
@@ -275,25 +294,6 @@ alan:$apr1$1pPU8Nwf$Ms/1EO90PBm25pnvaT5bi0</code></pre>
 										за детайлите, като кешира потребителското име, паролата, царството и името на
 										сървъра, така че да не се налага да въвеждате потребителското име и паролата за
 										всяка заявка.</p>
-									<p>Процесът на удостоверяване се обобщава по следния начин:</p>
-									<ol style="list-style-type: decimal">
-										<li>Клиент прави заявка за уеб ресурс, който е защитен с основна автентикация, с
-											HTTP GET заявка</li>
-										<li>Сървърът отговаря с &quot;401 Authorization Required&quot;.<br />
-											Отговорът 401 включва &quot;WWW-Authenticate&quot; в хедъра, който определя
-											вида на схемата за удостоверяване и царството, към което принадлежи
-											защитеният ресурс.</li>
-										<li>Клиентът отново изпраща HTTP GET заявка с хедър &quot;Authorization&quot;,
-											която дава идентификационните данни (потребителско име / парола), необходими
-											за достъп до това царство. Поверителните данни обикновено се кешират от
-											браузъра за всички следващи заявки към същата сфера на конкретния сървър.
-										</li>
-										<li>Сървърът проверява идентификационните данни. Ако е приемливо, сървърът връща
-											искания ресурс с код на състоянието „200 OK“. В противен случай отново ще
-											бъде изпратен отговор &quot;401 Authorization Required&quot; . Повечето
-											браузъри ще повторят стъпка (2) до (4) 3 пъти, преди да покажат съобщението
-											401.</li>
-									</ol>
 								</div>
 
 
@@ -335,7 +335,7 @@ Content-Type: text/html; charset=iso-8859-1
 										<li><code>(response message body omitted)</code></li>
 									</ul>
 									<p>Клиента:</p>
-									<p>Вместо да показва отговор &quot;401 Разрешение за разрешение&quot;, браузърът
+									<p>Вместо да показва отговор &quot;401 Изисква се одобрение&quot;, браузърът
 										поставя диалогов прозорец (както е показано по-долу за firefox и IE), показващ
 										сървъра, царството и подкана за потребителско име и парола.<br />
 									</p>
@@ -345,6 +345,10 @@ Content-Type: text/html; charset=iso-8859-1
 									<div class="figure">
 										<img src="images/image2.png" title="image_tooltip"" />
 									</div>
+									<p>[Горните две фигури представят диалоговите прозорци на firefox и
+										internet explorer за подкана за потребителско име и парола.]
+									</p>
+
 									<p>Потребителят предоставя идентификационните данни. Браузърът отново изпраща
 										заявката с заглавие &quot;Authorization&quot;, като дава своето потребителско
 										име и парола.<br />
@@ -401,6 +405,8 @@ Content-Type: text/html; charset=iso-8859-1</code></pre>
 										в чист текст по мрежата. Следователно тази парола не трябва да е същата като
 										тази, която използвате за достъп до други важни лични дейности. Освен това
 										веднъж удостоверено, съобщението се изпраща и в ясен текст.</p>
+									<p>За по-сигурна връзка клиент-сървър при основната автентикация е добре да се
+										използва HTTPS протокола, тъй като той решава горепосочените проблеми.</p>
 								</div>
 
 
@@ -420,7 +426,7 @@ Content-Type: text/html; charset=iso-8859-1</code></pre>
 										basic.groups&quot;).</p>
 									<pre><code>manager: alice alan
 worker: bob bill</code></pre>
-									<p>В конфигурацията на апаче &quot;conf.conf&quot;, включете следните директиви:</p>
+									<p>В конфигурацията на Apache &quot;conf.conf&quot;, включете следните директиви:</p>
 									<pre><code>&lt;Directory protected-directories&gt;
   AuthType Basic
   AuthName Private
@@ -438,7 +444,7 @@ worker: bob bill</code></pre>
 							<div class="row">
 
 								<div class="col-lg-12 p-2 animated fadeIn">
-									<h2>Дайджест Автентикация</h2>
+									<h2>Дайджест Автентикация [1], [3]</h2>
 									<div class="clearfix"></div>
 									<hr>
 									<p>Подобно на основната автентификация, дайджест удостоверяването изисква клиентът
@@ -501,10 +507,10 @@ worker: bob bill</code></pre>
 									<div class="clearfix"></div>
 									<hr>
 									<p>Също като основната схема за автентикация, нужната конфигурация за използването
-										на дайджест автентикация в Апаче HTTP сървър включва следните 3 стъпки:</p>
+										на дайджест автентикация в Apache HTTP сървър включва следните 3 стъпки:</p>
 									<ol style="list-style-type: decimal">
 										<li>Създайте файл за пароли</li>
-										<li>Конфигурирайте апаче сървърът да използва файла за пароли</li>
+										<li>Конфигурирайте Apache сървърът да използва файла за пароли</li>
 										<li>Имате възможност и да използвате файл за групи, за да контролирате достъпа
 											на ниво групи</li>
 									</ol>
@@ -533,7 +539,7 @@ alice:members only:d65afa1afb84c30a7547aecff4431700</code></pre>
 										парола е свързана с царство. Потребителското име и паролата са валидни само за
 										едно царство.</p>
 									<p><strong>Стъпка 2</strong>: За да активирате дайджест схемата трябва да включите
-										следните директиви в конфигурацията на апаче &quot;conf.conf&quot; (или
+										следните директиви в конфигурацията на Apache &quot;conf.conf&quot; (или
 										.htaccess ако презаписването е разрешено):</p>
 									<pre><code>LoadModule digest_auth_module modules/mod_auth_digest.so
 ......
@@ -619,6 +625,9 @@ Content-Type: text/html; charset=iso-8859-1
 										<img src="images/image3.png" title="image_tooltip" />
 									</div>
 									<p><img src="images/image4.png" title="image_tooltip" /><br />
+										<p>[Горните две фигури представят диалоговите прозорци на firefox и
+											internet explorer за подкана за потребителско име и парола.]
+										</p>
 										Клиентът дава свойте данни и браузърът повтаря заявката.<br />
 										<code>GET <strong>/digest_auth/test.html</strong> HTTP/1.1</code></p>
 									<pre><code>Accept: image/gif, image/jpeg, */*
@@ -775,13 +784,7 @@ Content-Type: text/html; charset=iso-8859-1
 									<h2>Съображения за сигурност</h2>
 									<div class="clearfix"></div>
 									<hr>
-									<p>Основната схема за автентикация има следните минуси:</p>
-									<ul>
-										<li>Паролата се изпраща в ясен текст</li>
-										<li>Сървърът трябва да пази името и паролата в базата данни</li>
-										<li>Няма цялостност на съобщенията</li>
-									</ul>
-									<p>Дайджест схемата преодолява тези недостатъци. Това обаче не гарантира
+									<p>Дайджест схемата преодолява недостатъците на основната схема, но това обаче не гарантира
 										конфиденциалност на съобщенията. Тя просто предоставя по-сигурен и безопасен
 										начин за клиентите да представят своите данни. Тя не е толкова сигурна като
 										Kerberos, частен ключ от страна на клиента или SSL, но е много по-добра от
@@ -801,19 +804,19 @@ Content-Type: text/html; charset=iso-8859-1
 									<hr>
 									<ul>
 										<li><a
-												href="https://en.wikipedia.org/wiki/Digest_access_authentication">https://en.wikipedia.org/wiki/digest_access_authentication</a>
+												href="https://en.wikipedia.org/wiki/Digest_access_authentication">https://en.wikipedia.org/wiki/digest_access_authentication [1]</a>
 										</li>
 										<li><a href="https://en.wikipedia.org/wiki/Basic_access_authentication"
-												class="uri">https://en.wikipedia.org/wiki/Basic_access_authentication</a>
+												class="uri">https://en.wikipedia.org/wiki/Basic_access_authentication [2]</a>
 										</li>
 										<li><a href="https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Authentication.html"
-												class="uri">https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Authentication.html</a>
+												class="uri">https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Authentication.html [3]</a>
 										</li>
 										<li><a href="https://nordicapis.com/3-common-methods-api-authentication-explained/"
-												class="uri">https://nordicapis.com/3-common-methods-api-authentication-explained/</a>
+												class="uri">https://nordicapis.com/3-common-methods-api-authentication-explained/ [4]</a>
 										</li>
 										<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP"
-												class="uri">https://developer.mozilla.org/en-US/docs/Web/HTTP</a></li>
+												class="uri">https://developer.mozilla.org/en-US/docs/Web/HTTP [5]</a></li>
 									</ul>
 								</div>
 
