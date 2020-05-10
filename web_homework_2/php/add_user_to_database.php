@@ -10,6 +10,10 @@ function test_input($data) {
     return $data;
 }
 
+function validate_date($date, $format = "Y-m-d") {
+    return (bool)strtotime($date) && date($format, strtotime($date)) == $date;
+}
+
 function add_user_to_database(){
     global $HOST, $DB_NAME, $USERNAME, $PASSWORD;
 
@@ -37,17 +41,6 @@ function add_user_to_database(){
         $err = true;
     }
 
-    if (strlen($course_year) != 4) {
-        echo "Course year must be 4 digits.</br>";
-        $err = true;
-    }
-
-    $current_year = date("Y");
-    if ($course_year > $current_year) {
-        echo "Course year cannot be bigger than the current year.</br>";
-        $err = true;
-    }
-
     $course_name = test_input($_POST["course_name"]);
     if (!preg_match("/^[a-zA-Z]+$/", $course_name)) {
         echo "The course name should not be blank and should not contain any numbers or special symbols.</br>";
@@ -62,7 +55,24 @@ function add_user_to_database(){
 
     $group_number = test_input($_POST["group_number"]);
     if (($group_number == "") || (!preg_match("/^[1-9][0-9]*$/", $group_number))) {
-        echo "group_number_err", "Please Enter Numeric Values bigger than 0.</br>";
+        echo "Please Enter Numeric Values bigger than 0.</br>";
+        $err = true;
+    }
+
+    $birth_date = test_input($_POST["birth_date"]);
+    $current_date = date('Y-m-d');
+    if (!validate_date($birth_date)) {
+        echo "Invalid date format.</br>";
+        $err = true;
+    } else if ($birth_date > $current_date) {
+        echo "Birth date cannot be bigger than the current date.</br>";
+        $err = true;
+    }
+
+    $zodiac_sign = test_input($_POST["zodiac_sign"]);
+    $valid_signs = ['capricorn','aquarius','pisces','aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius'];
+    if (!in_array($zodiac_sign, $valid_signs)) {
+        echo "Invalid zodiac sign.</br>";
         $err = true;
     }
 
@@ -78,6 +88,8 @@ function add_user_to_database(){
     $user->course_name = $course_name;
     $user->fn = $fn;
     $user->group_number = $group_number;
+    $user->birth_date = $birth_date;
+    $user->zodiac_sign = $zodiac_sign;
 
     $database = new Database($HOST, $DB_NAME, $USERNAME, $PASSWORD);
     $database->add_user($user);

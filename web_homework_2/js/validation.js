@@ -32,8 +32,10 @@ function change_zodiac_sign() {
         zodiac_sign = 'sagittarius';
     }
 
-    var element = document.getElementById('zodiac_sign');
+    var element = document.getElementById('zodiac_sign_display');
     element.innerHTML = zodiac_sign;
+
+    document.user_form.zodiac_sign.value = zodiac_sign;
 
     return true;
 }
@@ -119,5 +121,13 @@ function validate_form() {
         print_error("group_number_err", "");
     }
 
-    return is_correct;
+    var birth_date = document.user_form.birth_date.value;
+    var date = new Date(birth_date);
+    var today = new Date();
+    if (date > today) {
+        print_error("birth_date_err", "Birth date cannot be bigger than the current date.");
+        is_correct = false;
+    }
+
+    return true;
 }

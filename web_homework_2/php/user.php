@@ -7,6 +7,8 @@ class User {
     public $course_name;
     public $fn;
     public $group_number;
+    public $birth_date;
+    public $zodiac_sign;
 }
 
 ?>
