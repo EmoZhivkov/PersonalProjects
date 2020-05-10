@@ -11,16 +11,16 @@ USE `62215_Emil_Zhivkov`;
 
 CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(20),
-    second_name VARCHAR(20),
+    first_name VARCHAR(63),
+    second_name VARCHAR(63),
     course_year INT,
-    course_name VARCHAR(60),
+    course_name VARCHAR(63),
     fn INT,
     group_number INT,
     birth_date DATE,
     zodiac_sign VARCHAR(20),
     link VARCHAR(255),
-    picture VARCHAR(20),
+    picture VARCHAR(63),
     motivation VARCHAR(255)
 );
 
