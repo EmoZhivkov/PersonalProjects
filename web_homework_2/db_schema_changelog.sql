@@ -14,7 +14,8 @@ CREATE TABLE Users (
     first_name VARCHAR(20),
     second_name VARCHAR(20),
     course_year INT,
-    course_name VARCHAR(60)
+    course_name VARCHAR(60),
+    fn INT
 );
 
 INSERT INTO
@@ -22,12 +23,14 @@ INSERT INTO
         first_name,
         second_name,
         course_year,
-        course_name
+        course_name,
+        fn
     )
 VALUES
     (
         'Emil',
         'Zhivkov',
         2018,
-        'Software Engineering'
+        'Software Engineering',
+        62215
     );

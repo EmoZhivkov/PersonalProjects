@@ -67,5 +67,16 @@ function validate_form() {
         }
     }
 
+    var fn = document.user_form.fn.value;
+    var regex = /^[0-9]+$/;
+
+    if ((fn != "") && (!regex.test(fn))) {
+        print_error("fn_err", "Please Enter Numeric Values Only");
+        return false;
+    } else if (fn.charAt(0) == "0") {
+        print_error("fn_err", "The faculty number cannot start with a 0");
+        return false;
+    }
+
     return true;
 }

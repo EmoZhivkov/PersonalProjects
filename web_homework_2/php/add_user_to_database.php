@@ -54,6 +54,15 @@ function add_user_to_database(){
         $err = true;
     }
 
+    $fn = test_input($_POST["fn"]);
+    if (($fn != "") && (!preg_match("/^[0-9]+$/", $fn))) {
+        echo "Please Enter Numeric Values Only.</br>";
+        $err = true;
+    } else if ($fn[0] == "0") {
+        echo "The faculty number cannot start with a 0.</br>";
+        $err = true;
+    }
+
     if ($err) {
         echo "Did not fill out form correctly.";
         die();
@@ -64,6 +73,7 @@ function add_user_to_database(){
     $user->second_name = $second_name;
     $user->course_year = $course_year;
     $user->course_name = $course_name;
+    $user->fn = $fn;
 
     $database = new Database($HOST, $DB_NAME, $USERNAME, $PASSWORD);
     $database->add_user($user);

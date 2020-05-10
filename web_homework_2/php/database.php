@@ -18,13 +18,14 @@ class Database {
 
     function add_user($user) {
         try {
-            $sql = "INSERT INTO Users (first_name, second_name, course_year, course_name) VALUES (:first_name, :second_name, :course_year, :course_name)";
+            $sql = "INSERT INTO Users (first_name, second_name, course_year, course_name, fn) VALUES (:first_name, :second_name, :course_year, :course_name, :fn)";
             $stmt = $this->conn->prepare($sql) or die("SQL statement failed");
 
             $stmt->bindParam(':first_name', $user->first_name);
             $stmt->bindParam(':second_name', $user->second_name);
             $stmt->bindParam(':course_year', $user->course_year);
             $stmt->bindParam(':course_name', $user->course_name);
+            $stmt->bindParam(':fn', $user->fn);
 
             $stmt->execute();
             echo "New records created successfully";
