@@ -24,13 +24,13 @@ function add_user_to_database(){
     $err = false;
 
     $first_name = test_input($_POST["first_name"]);
-    if (!preg_match("/[а-яА-Яa-zA-Z]+/", $first_name)) {
+    if (!preg_match("/[а-яА-Яa-zA-Z]{1,64}/", $first_name)) {
         echo "The first name should not be blank and should not contain any numbers or special symbols.</br>";
         $err = true;
     }
 
     $second_name = test_input($_POST["second_name"]);
-    if (!preg_match("/[а-яА-Яa-zA-Z]+/", $second_name)) {
+    if (!preg_match("/[а-яА-Яa-zA-Z]{1,64}/", $second_name)) {
         echo "The second name should not be blank and should not contain any numbers or special symbols.</br>";
         $err = true;
     }
@@ -42,7 +42,7 @@ function add_user_to_database(){
     }
 
     $course_name = test_input($_POST["course_name"]);
-    if (!preg_match("/[а-яА-Яa-zA-Z]+/", $course_name)) {
+    if (!preg_match("/[а-яА-Яa-zA-Z]{1,64}/", $course_name)) {
         echo "The course name should not be blank and should not contain any numbers or special symbols.</br>";
         $err = true;
     }
