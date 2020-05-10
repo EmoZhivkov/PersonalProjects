@@ -71,7 +71,7 @@ function validate_form() {
         print_error('first_name_err', 'The given name should not be blank!');
         is_correct = false;
     } else {
-        var regex = /^[a-zA-Z\s]+$/;
+        var regex = /[\p{L}]+/u;
 
         if (regex.test(first_name) === false) {
             print_error("first_name_err", "Please enter a valid first name!");
@@ -86,7 +86,7 @@ function validate_form() {
         print_error('second_name_err', 'The given name should not be blank!');
         is_correct = false;
     } else {
-        var regex = /^[a-zA-Z\s]+$/;
+        var regex = /[\p{L}]+/u;
 
         if (regex.test(second_name) === false) {
             print_error("second_name_err", "Please enter a valid second name!");
@@ -110,7 +110,7 @@ function validate_form() {
         print_error('course_name_err', 'The given course name should not be blank!');
         is_correct = false;
     } else {
-        var regex = /^[a-zA-Z\s]+$/;
+        var regex = /[\p{L}]+/u;
 
         if (regex.test(course_name) === false) {
             print_error("course_name_err", "Please enter a valid course name!");

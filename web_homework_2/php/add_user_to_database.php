@@ -24,7 +24,6 @@ function add_user_to_database(){
     $err = false;
 
     $first_name = test_input($_POST["first_name"]);
-    $first_name = 'Емил';
     if (!preg_match("/[\p{L}]+/", $first_name)) {
         echo "The first name should not be blank and should not contain any numbers or special symbols.</br>";
         $err = true;
