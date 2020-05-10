@@ -9,6 +9,7 @@ class User {
     public $group_number;
     public $birth_date;
     public $zodiac_sign;
+    public $link;
 }
 
 ?>

@@ -76,6 +76,12 @@ function add_user_to_database(){
         $err = true;
     }
 
+    $link = test_input($_POST["link"]);
+    if (($link == "") || (!preg_match("/https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,}/", $link))) {
+        echo "Invalid link address.</br>";
+        $err = true;
+    }
+
     if ($err) {
         echo "Did not fill out form correctly.";
         die();
@@ -90,6 +96,7 @@ function add_user_to_database(){
     $user->group_number = $group_number;
     $user->birth_date = $birth_date;
     $user->zodiac_sign = $zodiac_sign;
+    $user->link = $link;
 
     $database = new Database($HOST, $DB_NAME, $USERNAME, $PASSWORD);
     $database->add_user($user);

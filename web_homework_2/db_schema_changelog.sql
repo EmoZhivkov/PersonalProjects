@@ -18,7 +18,8 @@ CREATE TABLE Users (
     fn INT,
     group_number INT,
     birth_date DATE,
-    zodiac_sign VARCHAR(20)
+    zodiac_sign VARCHAR(20),
+    link VARCHAR(255)
 );
 
 INSERT INTO
@@ -30,7 +31,8 @@ INSERT INTO
         fn,
         group_number,
         birth_date,
-        zodiac_sign
+        zodiac_sign,
+        link
     )
 VALUES
     (
@@ -41,5 +43,6 @@ VALUES
         62215,
         3,
         '1998-07-31',
-        'leo'
+        'leo',
+        'www.facebook.com'
     );

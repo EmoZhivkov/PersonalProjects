@@ -127,6 +127,17 @@ function validate_form() {
     if (date > today) {
         print_error("birth_date_err", "Birth date cannot be bigger than the current date.");
         is_correct = false;
+    } else {
+        print_error("birth_date_err", "");
+    }
+
+    var link = document.user_form.link.value;
+    var regex = /https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,}/;
+    if ((link == "") || (!regex.test(link))) {
+        print_error("link_err", "Invalid link address.");
+        is_correct = false;
+    } else {
+        print_error("link_err", "");
     }
 
     return true;
