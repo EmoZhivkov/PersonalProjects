@@ -22,7 +22,7 @@ class Database {
             $sql = "INSERT INTO Users (first_name) VALUES (:first_name)";
             $stmt = $this->conn->prepare($sql) or die("SQL statement failed");
 
-            $stmt->bindParam(':first_name', $user -> first_name);
+            $stmt->bindParam(':first_name', $user->first_name);
 
             $stmt->execute();
             echo "New records created successfully";
