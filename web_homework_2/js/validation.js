@@ -40,6 +40,23 @@ function change_zodiac_sign() {
     return true;
 }
 
+function validate_image() {
+    var file = document.getElementById("picture").files[0];
+
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png"  && t != "gif") {
+        print_error('picture_err', 'Please select a valid image file!');
+        document.getElementById("picture").value = '';
+        return false;
+    }
+    if (file.size > 1024000) {
+        print_error('picture_err', 'The picture is too large. Max Upload size is 1MB.');
+        document.getElementById("picture").value = '';
+        return false;
+    }
+    return true;
+}
+
 function print_error(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }

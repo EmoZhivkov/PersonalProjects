@@ -93,8 +93,8 @@ function add_user_to_database(){
         }
     }
 
-    if ($_FILES["picture"]["size"] > 500000) {
-        echo "The picture is too large.";
+    if ($_FILES["picture"]["size"] > 1024000) {
+        echo "The picture is too large. Max upload size is 1MB.";
         $err = true;
     }
 

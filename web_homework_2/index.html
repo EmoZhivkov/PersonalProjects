@@ -52,8 +52,8 @@
         </div>
         <div class="row">
             <label>Picture</label>
-            <input type="file" name="picture" id="picture">
-            <div class="error" id="link_err"></div>
+            <input type="file" onchange="return validate_image()" name="picture" id="picture">
+            <div class="error" id="picture_err"></div>
         </div>
         <div class="row">
             <label>Motivation</label>
