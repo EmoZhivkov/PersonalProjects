@@ -140,5 +140,13 @@ function validate_form() {
         print_error("link_err", "");
     }
 
-    return true;
+    var motivation = document.user_form.motivation.value;
+    if (motivation == "") {
+        print_error("motivation_err", "Motivation cannot be blank.");
+        is_correct = false;
+    } else {
+        print_error("link_err", "");
+    }
+
+    return is_correct;
 }

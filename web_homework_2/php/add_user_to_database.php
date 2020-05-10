@@ -82,6 +82,12 @@ function add_user_to_database(){
         $err = true;
     }
 
+    $motivation = test_input($_POST["motivation"]);
+    if ($motivation == "") {
+        echo "Motivation cannot be blank.</br>";
+        $err = true;
+    }
+
     if ($err) {
         echo "Did not fill out form correctly.";
         die();
@@ -97,6 +103,7 @@ function add_user_to_database(){
     $user->birth_date = $birth_date;
     $user->zodiac_sign = $zodiac_sign;
     $user->link = $link;
+    $user->motivation = $motivation;
 
     $database = new Database($HOST, $DB_NAME, $USERNAME, $PASSWORD);
     $database->add_user($user);
