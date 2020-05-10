@@ -112,7 +112,8 @@ function add_user_to_database(){
     }
 
     if ($err) {
-        echo "Did not fill out form correctly.";
+        echo "<h1>Did not fill out form correctly.</h1></br>";
+        echo '<a href="javascript:history.go(-1)">Go back to correct your data.</a>';
         die();
     } else if (!move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
         echo "There was an error uploading your picture.";
@@ -136,5 +137,6 @@ function add_user_to_database(){
     $database->add_user($user);
 }
 
-add_user_to_database()
+add_user_to_database();
+echo '</br><a href="javascript:history.go(-1)">Go back to submit another form</a>';
 ?>
