@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <form name="user_form" onsubmit="return validate_form()" action="./php/add_user_to_database.php" method="POST">
+    <form name="user_form" onsubmit="return validate_form()" action="./php/add_user_to_database.php" method="POST" enctype="multipart/form-data">
         <div class="row">
             <label>First Name</label>
             <input type="text" name="first_name">
@@ -48,6 +48,11 @@
         <div class="row">
             <label>Link</label>
             <input type="text" name="link">
+            <div class="error" id="link_err"></div>
+        </div>
+        <div class="row">
+            <label>Picture</label>
+            <input type="file" name="picture" id="picture">
             <div class="error" id="link_err"></div>
         </div>
         <div class="row">

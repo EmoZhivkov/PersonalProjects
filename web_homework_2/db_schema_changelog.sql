@@ -20,6 +20,7 @@ CREATE TABLE Users (
     birth_date DATE,
     zodiac_sign VARCHAR(20),
     link VARCHAR(255),
+    picture VARCHAR(20),
     motivation VARCHAR(255)
 );
 
@@ -34,6 +35,7 @@ INSERT INTO
         birth_date,
         zodiac_sign,
         link,
+        picture,
         motivation
     )
 VALUES
@@ -47,5 +49,6 @@ VALUES
         '1998-07-31',
         'leo',
         'www.facebook.com',
+        'img/emo.png',
         'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
     );

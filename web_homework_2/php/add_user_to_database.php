@@ -82,6 +82,29 @@ function add_user_to_database(){
         $err = true;
     }
 
+    $target_dir = "../images/";
+    $target_file = $target_dir . $fn . '_' . basename($_FILES["picture"]["name"]);
+
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["picture"]["tmp_name"]);
+        if($check == false) {
+            echo "Uploaded file is not a picture.</br>";
+            $err = true;
+        }
+    }
+
+    if ($_FILES["picture"]["size"] > 500000) {
+        echo "The picture is too large.";
+        $err = true;
+    }
+
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+        echo "Only JPG, JPEG, PNG & GIF files are allowed.";
+        $err = true;
+    }
+
     $motivation = test_input($_POST["motivation"]);
     if ($motivation == "") {
         echo "Motivation cannot be blank.</br>";
@@ -90,6 +113,9 @@ function add_user_to_database(){
 
     if ($err) {
         echo "Did not fill out form correctly.";
+        die();
+    } else if (!move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+        echo "There was an error uploading your picture.";
         die();
     }
 
@@ -103,6 +129,7 @@ function add_user_to_database(){
     $user->birth_date = $birth_date;
     $user->zodiac_sign = $zodiac_sign;
     $user->link = $link;
+    $user->picture = $target_file;
     $user->motivation = $motivation;
 
     $database = new Database($HOST, $DB_NAME, $USERNAME, $PASSWORD);

@@ -10,6 +10,7 @@ class User {
     public $birth_date;
     public $zodiac_sign;
     public $link;
+    public $picture;
     public $motivation;
 }
 
