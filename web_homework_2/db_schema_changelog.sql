@@ -13,18 +13,21 @@ CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(20),
     second_name VARCHAR(20),
-    course_year INT
+    course_year INT,
+    course_name VARCHAR(60)
 );
 
 INSERT INTO
     Users (
         first_name,
         second_name,
-        course_year
+        course_year,
+        course_name
     )
 VALUES
     (
         'Emil',
         'Zhivkov',
-        2018
+        2018,
+        'Software Engineering'
     );

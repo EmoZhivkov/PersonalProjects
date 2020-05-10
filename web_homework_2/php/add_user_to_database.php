@@ -48,6 +48,12 @@ function add_user_to_database(){
         $err = true;
     }
 
+    $course_name = test_input($_POST["course_name"]);
+    if (!preg_match("/^[a-zA-Z]+$/", $course_name)) {
+        echo "The course name should not be blank and should not contain any numbers or special symbols.</br>";
+        $err = true;
+    }
+
     if ($err) {
         echo "Did not fill out form correctly.";
         die();
@@ -57,6 +63,7 @@ function add_user_to_database(){
     $user->first_name = $first_name;
     $user->second_name = $second_name;
     $user->course_year = $course_year;
+    $user->course_name = $course_name;
 
     $database = new Database($HOST, $DB_NAME, $USERNAME, $PASSWORD);
     $database->add_user($user);
