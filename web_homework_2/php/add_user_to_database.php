@@ -32,8 +32,8 @@ function add_user_to_database(){
     }
 
     $course_year = test_input($_POST["course_year"]);
-    if (($course_year == "") || (!preg_match("/^[0-9]+$/", $course_year))) {
-        echo "The course year should contain numeric values only.</br>";
+    if (($course_year == "") || (!preg_match("/^[1-9][0-9]*$/", $course_year))) {
+        echo "The course year should contain numeric values bigger than 0.</br>";
         $err = true;
     }
 
