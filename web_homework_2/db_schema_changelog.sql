@@ -11,17 +11,17 @@ USE `62215_Emil_Zhivkov`;
 
 CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(63),
-    second_name VARCHAR(63),
-    course_year INT,
-    course_name VARCHAR(63),
-    fn INT,
-    group_number INT,
-    birth_date DATE,
-    zodiac_sign VARCHAR(20),
-    link VARCHAR(255),
-    picture VARCHAR(63),
-    motivation VARCHAR(255)
+    first_name VARCHAR(64) NOT NULL,
+    second_name VARCHAR(64) NOT NULL,
+    course_year INT NOT NULL CHECK (course_year >= 1),
+    course_name VARCHAR(64) NOT NULL,
+    fn INT NOT NULL CHECK (fn >= 1),
+    group_number INT NOT NULL CHECK (group_number >= 1),
+    birth_date DATE NOT NULL,
+    zodiac_sign VARCHAR(20) NOT NULL CHECK (zodiac_sign in ("capricorn","aquarius","pisces","aries","taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius")),
+    link VARCHAR(255) NOT NULL,
+    picture VARCHAR(512) NOT NULL,
+    motivation VARCHAR(512) NOT NULL
 );
 
 INSERT INTO
@@ -48,7 +48,7 @@ VALUES
         3,
         '1998-07-31',
         'leo',
-        'www.facebook.com',
-        'img/emo.png',
-        'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        'https://www.facebook.com/EmoZhivkov/',
+        '../images/emo.png',
+        'This is my motivation!'
     );
