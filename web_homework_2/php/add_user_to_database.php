@@ -55,11 +55,8 @@ function add_user_to_database(){
     }
 
     $fn = test_input($_POST["fn"]);
-    if (($fn == "") || (!preg_match("/^[0-9]+$/", $fn))) {
-        echo "Please Enter Numeric Values Only bigger than 0..</br>";
-        $err = true;
-    } else if ($fn[0] == "0") {
-        echo "The faculty number cannot start with a 0.</br>";
+    if (($fn == "") || (!preg_match("/^[1-9][0-9]*$/", $fn))) {
+        echo "Please Enter Numeric Values bigger than 0.</br>";
         $err = true;
     }
 
