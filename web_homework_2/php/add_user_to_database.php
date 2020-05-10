@@ -83,7 +83,7 @@ function add_user_to_database(){
     }
 
     $target_dir = "../images/";
-    $target_file = $target_dir . $fn . '_' . basename($_FILES["picture"]["name"]);
+    $target_file = $target_dir . time() . '_' . basename($_FILES["picture"]["name"]);
 
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["picture"]["tmp_name"]);
