@@ -32,7 +32,7 @@ function add_user_to_database(){
     }
 
     $course_year = test_input($_POST["course_year"]);
-    if (($course_year != "") && (!preg_match("/^[0-9]+$/", $course_year))) {
+    if (($course_year == "") || (!preg_match("/^[0-9]+$/", $course_year))) {
         echo "The course year should contain numeric values only.</br>";
         $err = true;
     }
@@ -55,11 +55,17 @@ function add_user_to_database(){
     }
 
     $fn = test_input($_POST["fn"]);
-    if (($fn != "") && (!preg_match("/^[0-9]+$/", $fn))) {
-        echo "Please Enter Numeric Values Only.</br>";
+    if (($fn == "") || (!preg_match("/^[0-9]+$/", $fn))) {
+        echo "Please Enter Numeric Values Only bigger than 0..</br>";
         $err = true;
     } else if ($fn[0] == "0") {
         echo "The faculty number cannot start with a 0.</br>";
+        $err = true;
+    }
+
+    $group_number = test_input($_POST["group_number"]);
+    if (($group_number == "") || (!preg_match("/^[1-9][0-9]*$/", $group_number))) {
+        echo "group_number_err", "Please Enter Numeric Values bigger than 0.</br>";
         $err = true;
     }
 
@@ -74,6 +80,7 @@ function add_user_to_database(){
     $user->course_year = $course_year;
     $user->course_name = $course_name;
     $user->fn = $fn;
+    $user->group_number = $group_number;
 
     $database = new Database($HOST, $DB_NAME, $USERNAME, $PASSWORD);
     $database->add_user($user);

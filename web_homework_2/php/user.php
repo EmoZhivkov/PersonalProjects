@@ -6,6 +6,7 @@ class User {
     public $course_year;
     public $course_name;
     public $fn;
+    public $group_number;
 }
 
 ?>

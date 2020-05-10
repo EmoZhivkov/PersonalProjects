@@ -15,7 +15,8 @@ CREATE TABLE Users (
     second_name VARCHAR(20),
     course_year INT,
     course_name VARCHAR(60),
-    fn INT
+    fn INT,
+    group_number INT
 );
 
 INSERT INTO
@@ -24,7 +25,8 @@ INSERT INTO
         second_name,
         course_year,
         course_name,
-        fn
+        fn,
+        group_number
     )
 VALUES
     (
@@ -32,5 +34,6 @@ VALUES
         'Zhivkov',
         2018,
         'Software Engineering',
-        62215
+        62215,
+        3
     );
