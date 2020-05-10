@@ -35,5 +35,23 @@ function validate_form() {
         }
     }
 
+    var course_year = document.user_form.course_year.value;
+    var regex = /^[0-9]+$/;
+
+    if ((course_year != "") && (!regex.test(course_year))) {
+        print_error("course_year_err", "Please Enter Numeric Values Only");
+        return false;
+    }
+
+    if (course_year.length != 4) {
+        print_error("course_year_err", "Course year must be 4 digits.");
+        return false;
+    }
+
+    var current_year=new Date().getFullYear();
+    if (course_year > current_year) {
+        print_error("course_year_err", "Course year cannot be bigger than the current year.");
+        return false;
+    }
     return true;
 }

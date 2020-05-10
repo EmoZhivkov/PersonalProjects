@@ -1,5 +1,7 @@
---USERNAME: root
---PASSWORD: 123456
+/*
+    USERNAME: root
+    PASSWORD: 123456
+*/
 
 DROP DATABASE `62215_Emil_Zhivkov`;
 
@@ -10,16 +12,19 @@ USE `62215_Emil_Zhivkov`;
 CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(20),
-    second_name VARCHAR(20)
+    second_name VARCHAR(20),
+    course_year INT
 );
 
 INSERT INTO
     Users (
         first_name,
-        second_name
+        second_name,
+        course_year
     )
 VALUES
     (
         'Emil',
-        'Zhivkov'
+        'Zhivkov',
+        2018
     );
