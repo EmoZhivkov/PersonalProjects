@@ -38,6 +38,12 @@
             <input type="number" name="group_number">
             <div class="error" id="group_number_err"></div>
         </div>
+        <div class="row">
+            <label>Birth Date</label>
+            <input type="date" onchange="return change_zodiac_sign()" name="birth_date">
+            <div id="zodiac_sign"></div>
+            <div class="error" id="birth_date_err"></div>
+        </div>
         <input type="submit">
     </form>
 </body>

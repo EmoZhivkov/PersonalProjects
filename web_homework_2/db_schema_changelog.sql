@@ -16,7 +16,9 @@ CREATE TABLE Users (
     course_year INT,
     course_name VARCHAR(60),
     fn INT,
-    group_number INT
+    group_number INT,
+    birth_date DATE,
+    zodiac_sign VARCHAR(20)
 );
 
 INSERT INTO
@@ -26,7 +28,9 @@ INSERT INTO
         course_year,
         course_name,
         fn,
-        group_number
+        group_number,
+        birth_date,
+        zodiac_sign
     )
 VALUES
     (
@@ -35,5 +39,7 @@ VALUES
         2018,
         'Software Engineering',
         62215,
-        3
+        3,
+        '1998-07-31',
+        'leo'
     );

@@ -1,3 +1,43 @@
+function change_zodiac_sign() {
+    var birth_date = document.user_form.birth_date.value;
+
+    var date = new Date(birth_date);
+    var month = date.getMonth() + 1;
+    var day = date.getDay();
+
+    var zodiac_sign = '';
+    if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
+        zodiac_sign = 'capricorn';
+    } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
+        zodiac_sign = 'aquarius';
+    } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+        zodiac_sign = 'pisces';
+    } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+        zodiac_sign = 'aries';
+    } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+        zodiac_sign = 'taurus';
+    } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+        zodiac_sign = 'gemini';
+    } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
+        zodiac_sign = 'cancer';
+    } else if ((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
+        zodiac_sign = 'leo';
+    } else if ((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
+        zodiac_sign = 'virgo';
+    } else if ((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
+        zodiac_sign = 'libra';
+    } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
+        zodiac_sign = 'scorpio';
+    } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+        zodiac_sign = 'sagittarius';
+    }
+
+    var element = document.getElementById('zodiac_sign');
+    element.innerHTML = zodiac_sign;
+
+    return true;
+}
+
 function print_error(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }
@@ -14,7 +54,7 @@ function validate_form() {
     } else {
         var regex = /^[a-zA-Z\s]+$/;
 
-        if(regex.test(first_name) === false) {
+        if (regex.test(first_name) === false) {
             print_error("first_name_err", "Please enter a valid first name!");
             is_correct = false;
         } else {
@@ -29,7 +69,7 @@ function validate_form() {
     } else {
         var regex = /^[a-zA-Z\s]+$/;
 
-        if(regex.test(second_name) === false) {
+        if (regex.test(second_name) === false) {
             print_error("second_name_err", "Please enter a valid second name!");
             is_correct = false;
         } else {
@@ -53,7 +93,7 @@ function validate_form() {
     } else {
         var regex = /^[a-zA-Z\s]+$/;
 
-        if(regex.test(course_name) === false) {
+        if (regex.test(course_name) === false) {
             print_error("course_name_err", "Please enter a valid course name!");
             is_correct = false;
         } else {
