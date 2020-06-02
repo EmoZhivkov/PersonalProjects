@@ -3,12 +3,21 @@ function print_error(elemId, hintMsg) {
 }
 
 function validate_form() {
+    // const Http = new XMLHttpRequest();
+    // const url='https://jsonplaceholder.typicode.com/users';
+    // Http.open("GET", url);
+    // Http.send();
+    // console.log(Http.responseText)
+    // Http.onreadystatechange = (e) => {
+    //     console.log(Http.responseText)
+    // }
+
     var is_correct = true;
 
     var username = document.user_form.username.value;
     var regex = /^[a-zA-Zа-яА-Я\s]{3,10}$/;
     if (regex.test(username) === false) {
-        print_error("username_err", "The user name should be between 3 and 10 symbols.");
+        print_error("username_err", "The username should be between 3 and 10 symbols.");
         is_correct = false;
     } else {
         print_error("username_err", "");
@@ -50,6 +59,18 @@ function validate_form() {
         print_error("post_code_err", "");
     }
 
+    // Should check if there is a user with the same name using the request from aboveg
+    /*
+        document.getElementById('result').style.color = 'red';
+        print_error("result", "Failed Registration: Username is already taken");
+    */
 
-    return is_correct;
+    if (is_correct === true) {
+        print_error("result", "Successful Registration");
+    } else {
+        document.getElementById('result').style.color = 'red';
+        print_error("result", "Failed Registration: Incorrect fields!");
+    }
+
+    return false;
 }

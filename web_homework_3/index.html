@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form name="user_form" action="" onsubmit="return validate_form()" method="POST" >
+    <form name="user_form" action="" onsubmit="return validate_form()" method="POST">
         <div class="row">
             <label>*Username</label>
             <input type="text" name="username">
@@ -45,6 +45,9 @@
             <input type="text" name="post_code">
             <div class="error" id="post_code_err"></div>
         </div>
-        <input type="submit" value="Register">
+        <div class="row">
+            <input type="submit" value="Register">
+            <div class="error" id="result" style="margin-top: 10px; color: green; font-size: large;"></div>
+        </div>
     </form>
 </body>
