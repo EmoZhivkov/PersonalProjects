@@ -1,16 +1,29 @@
+var is_ready = false;
+var response = null;
+
+function handleGetRequest(responseText) {
+    response = responseText;
+    is_ready = true;
+}
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+    xmlHttp.send(null);
+}
+
 function print_error(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }
 
 function validate_form() {
-    // const Http = new XMLHttpRequest();
-    // const url='https://jsonplaceholder.typicode.com/users';
-    // Http.open("GET", url);
-    // Http.send();
-    // console.log(Http.responseText)
-    // Http.onreadystatechange = (e) => {
-    //     console.log(Http.responseText)
-    // }
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    httpGetAsync(url, handleGetRequest);
 
     var is_correct = true;
 
@@ -59,14 +72,21 @@ function validate_form() {
         print_error("post_code_err", "");
     }
 
-    // Should check if there is a user with the same name using the request from aboveg
-    /*
-        document.getElementById('result').style.color = 'red';
-        print_error("result", "Failed Registration: Username is already taken");
-    */
-
     if (is_correct === true) {
         print_error("result", "Successful Registration");
+
+        // Wait for handler
+        while (!is_ready) { }
+
+        console.log(response);
+        response = JSON.parse(response);
+
+        response.forEach(element => {
+            if (element.username === username) {
+                document.getElementById('result').style.color = 'red';
+                print_error("result", "Failed Registration: Username is already taken");
+            }
+        });
     } else {
         document.getElementById('result').style.color = 'red';
         print_error("result", "Failed Registration: Incorrect fields!");
