@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="index.css">
+    <script src="validation.js"></script>
+    <title> JS_WEB </title>
+</head>
+
+<body>
+    <form name="user_form" action="" onsubmit="return validate_form()" method="POST" >
+        <div class="row">
+            <label>*Username</label>
+            <input type="text" name="username">
+            <div class="error" id="username_err"></div>
+        </div>
+        <div class="row">
+            <label>*First and Second Name</label>
+            <input type="text" name="name">
+            <div class="error" id="name_err"></div>
+        </div>
+        <div class="row">
+            <label>*Email</label>
+            <input type="text" name="email">
+            <div class="error" id="email_err"></div>
+        </div>
+        <div class="row">
+            <label>*Password</label>
+            <input type="password" name="password">
+            <div class="error" id="password_err"></div>
+        </div>
+        <div class="row">
+            <label>Street</label>
+            <input type="text" name="street">
+            <div class="error" id="street_err"></div>
+        </div>
+        <div class="row">
+            <label>City</label>
+            <input type="text" name="city">
+            <div class="error" id="city_err"></div>
+        </div>
+        <div class="row">
+            <label>Post Code</label>
+            <input type="text" name="post_code">
+            <div class="error" id="post_code_err"></div>
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</body>
