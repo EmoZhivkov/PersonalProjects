@@ -6,13 +6,13 @@ function handleGetRequest(responseText) {
     is_ready = true;
 }
 
-function httpGetAsync(theUrl, callback)
-{
+function httpGetAsync(theUrl, callback) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             callback(xmlHttp.responseText);
     }
+
     xmlHttp.open("GET", theUrl, true); // true for asynchronous
     xmlHttp.send(null);
 }
@@ -78,9 +78,8 @@ function validate_form() {
         // Wait for handler
         while (!is_ready) { }
 
-        console.log(response);
         response = JSON.parse(response);
-
+        
         response.forEach(element => {
             if (element.username === username) {
                 document.getElementById('result').style.color = 'red';
