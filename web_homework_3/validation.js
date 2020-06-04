@@ -1,29 +1,10 @@
-var is_ready = false;
-var response = null;
-
-function handleGetRequest(responseText) {
-    response = responseText;
-    is_ready = true;
-}
-
-function httpGetAsync(theUrl, callback) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous
-    xmlHttp.send(null);
-}
-
 function print_error(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }
 
-function validate_form() {
+async function __validate_form() {
     const url = 'https://jsonplaceholder.typicode.com/users';
-    httpGetAsync(url, handleGetRequest);
+    var request = fetch(url);
 
     var is_correct = true;
 
@@ -75,21 +56,21 @@ function validate_form() {
     if (is_correct === true) {
         print_error("result", "Successful Registration");
 
-        // Wait for handler
-        while (!is_ready) { }
-
-        response = JSON.parse(response);
-        
-        response.forEach(element => {
-            if (element.username === username) {
+        let response = await request.then(response => response.json());
+        for (var i = 0; i < response.length; i++){
+            if (response[i].username === username) {
                 document.getElementById('result').style.color = 'red';
                 print_error("result", "Failed Registration: Username is already taken");
             }
-        });
+        }
     } else {
         document.getElementById('result').style.color = 'red';
         print_error("result", "Failed Registration: Incorrect fields!");
     }
 
+}
+
+function validate_form() {
+    __validate_form();
     return false;
 }
