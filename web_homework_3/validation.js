@@ -61,6 +61,7 @@ async function __validate_form() {
             if (response[i].username === username) {
                 document.getElementById('result').style.color = 'red';
                 print_error("result", "Failed Registration: Username is already taken");
+                break;
             }
         }
     } else {
