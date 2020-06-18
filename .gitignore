@@ -4,3 +4,7 @@ cmake-build-debug/
 .vscode/
 .mypy_cache
 venv/
+.DS_Store
+notMNIST.pickle
+notMNIST_large.tar.gz
+notMNIST_small.tar.gz
