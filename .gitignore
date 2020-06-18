@@ -8,3 +8,4 @@ venv/
 notMNIST.pickle
 notMNIST_large.tar.gz
 notMNIST_small.tar.gz
+text8.zip
