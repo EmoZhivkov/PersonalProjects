@@ -3,11 +3,11 @@ from math import inf
 import parser
 
 
-def get_zero_row_idx(puzzle):
-    for idx, row in enumerate(puzzle):
-        for col in puzzle:
-            if col == 0:
-                return idx
+def get_zero_row_idx(puzzle, size):
+    for i in range(size):
+        for j in range(size):
+            if puzzle[i + j] == 0:
+                return i
 
 
 def is_solvable(puzzle, solved, size):
@@ -26,7 +26,7 @@ def is_solvable(puzzle, solved, size):
     
     # if the blank is on an even row(counting from the bottom) and the number of inversions is odd
     # if the blank is on an odd row(counting from the bottom) and the number of inversions is even
-    zero_row_idx = get_zero_row_idx(puzzle)
+    zero_row_idx = get_zero_row_idx(puzzle, size)
     if (size - zero_row_idx) % 2 != inversions % 2:
         return True
 
@@ -65,54 +65,72 @@ def clone_and_swap(data,y0,y1):
 
 def possible_moves(data, size):
     res = []
+    readable_res = []
+
     y = data.index(0)
     if y % size > 0:
         left = clone_and_swap(data,y,y-1)
         res.append(left)
+        readable_res.append('right')
+
     if y % size + 1 < size:
         right = clone_and_swap(data,y,y+1)
         res.append(right)
+        readable_res.append('left')
+
     if y - size >= 0:
         up = clone_and_swap(data,y,y-size)
         res.append(up)
+        readable_res.append('down')
+
     if y + size < len(data):
         down = clone_and_swap(data,y,y+size)
         res.append(down)
-    return res
+        readable_res.append('up')
+
+    return res, readable_res
 
 
 def ida_star_search(puzzle, solved, size):
-    def search(path, g, bound, evaluated):
+    def search(path, readable_path, g, bound, evaluated):
         evaluated += 1
         node = path[0]
+
         f = g + manhattan(node, solved, size)
         if f > bound:
             return f, evaluated
         if node == solved:
             return True, evaluated
+
         ret = inf
-        moves = possible_moves(node, size)
-        for m in moves:
+        moves, readable_moves = possible_moves(node, size)
+        for idx, m in enumerate(moves):
             if m not in path:
                 path.appendleft(m)
-                t, evaluated = search(path, g + 1, bound, evaluated)
+                readable_path.appendleft(readable_moves[idx])
+
+                t, evaluated = search(path, readable_path, g + 1, bound, evaluated)
                 if t is True:
                     return True, evaluated
                 if t < ret:
                     ret = t
+
                 path.popleft()
+                readable_path.popleft()
         return ret, evaluated
 
     bound = manhattan(puzzle, solved, size)
     path = deque([puzzle])
+    readable_path = deque()
     evaluated = 0
     while path:
-        t, evaluated = search(path, 0, bound, evaluated)
+        t, _ = search(path, readable_path, 0, bound, evaluated)
         if t is True:
             path.reverse()
-            return (True, path, {'space':len(path), 'time':evaluated})
+            readable_path.reverse()
+            return (True, path, readable_path)
         elif t is inf:
-            return (False, [], {'space':len(path), 'time':evaluated})
+            return (False, [], [])
         else:
             bound = t
 
@@ -131,10 +149,10 @@ def main():
 
     res = ida_star_search(puzzle, solved, size)
 
-    success, steps, complexity = res
+    success, _, readable_steps = res
     if success:
-        print(max(len(steps) - 1, 0))
-        for s in steps:
+        print(max(len(readable_steps), 0))
+        for s in readable_steps:
             print(s)
     else:
         print('solution not found')
