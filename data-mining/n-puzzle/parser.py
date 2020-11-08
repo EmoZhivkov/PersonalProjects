@@ -1,4 +1,4 @@
-import argparse
+import math
 import sys
 
 def is_digit(n):
@@ -10,7 +10,7 @@ def is_digit(n):
 
 def is_valid_input(data):
     if len(data[0]) != 1:
-        return 'first line of input should be a single number (size)'  # first list[] in data must be size of matrix
+        return 'first line of input should be a single number (size)'
     size = data.pop(0)[0]
 
     if len(data[0]) != 1:
@@ -21,17 +21,20 @@ def is_valid_input(data):
         return 'puzzle too small'
     if len(data) != size:               # data[] should be an array of size N lists[]
         return 'number of rows doesnt match puzzle size'
+
     for line in data:                   # each list[] must be of size N (data must be square matrix)
         if len(line) != size:
             return 'number of columns doesnt match puzzle size'
+    
     expanded = []
     for line in data:
         for x in line:
             expanded.append(x)
+
     generated = [x for x in range(size**2)]
     difference = [x for x in generated if x not in expanded]
     if len(difference) != 0:
-        return 'puzzle tiles must be in range from 0 to SIZE**2-1'
+        return 'puzzle tiles must be in range from 0 to SIZE'
     return 'ok'
 
 def get_input():
@@ -39,8 +42,6 @@ def get_input():
     with open(file_name, 'r') as f:
         data = [line.strip() for line in f]
 
-    data = [line.split('#')[0] for line in data]      #remove comments
-    data = [line for line in data if len(line) > 0]           #remove empty lines
     puzzle = []
     for line in data:
         row = []
@@ -52,6 +53,7 @@ def get_input():
                 row.append(int(x))
         puzzle.append(row)
 
+    puzzle[0][0] = int(math.sqrt(puzzle[0][0] + 1))
     size = puzzle[0][0]
     zero_location = puzzle[1][0]
 
