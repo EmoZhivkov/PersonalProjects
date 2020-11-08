@@ -26,10 +26,14 @@ def is_solvable(puzzle, solved, size):
     return False
 
 
-def zero_last(size):
-    lst = [x for x in range(1,size*size)]
-    lst.append(0)
-    return tuple(lst)
+def get_solved(size, zero_location):
+    puzzle = [x for x in range(1,size*size)]
+    if zero_location == -1:
+        puzzle.append(0)
+    elif 0 <= zero_location < size*size:
+        puzzle.insert(zero_location, 0)
+    
+    return tuple(puzzle)
 
 
 def manhattan(candidate, solved, size):
@@ -50,6 +54,7 @@ def clone_and_swap(data,y0,y1):
     clone[y1] = tmp
     return tuple(clone)
 
+
 def possible_moves(data, size):
     res = []
     y = data.index(0)
@@ -66,6 +71,7 @@ def possible_moves(data, size):
         down = clone_and_swap(data,y,y+size)
         res.append(down)
     return res
+
 
 def ida_star_search(puzzle, solved, size):
     def search(path, g, bound, evaluated):
@@ -107,9 +113,9 @@ def main():
     data = parser.get_input()
     if not data:
         return       
-    puzzle, size = data
+    puzzle, size, zero_location = data
 
-    solved = zero_last(size)
+    solved = get_solved(size, zero_location)
     
     if not is_solvable(puzzle, solved, size):
         print('not solvable')
