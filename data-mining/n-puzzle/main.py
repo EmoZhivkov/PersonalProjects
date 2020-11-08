@@ -1,11 +1,17 @@
-#!/usr/bin/env python3
-
 from collections import deque
 from math import inf
 import parser
 
 
+def get_zero_row_idx(puzzle):
+    for idx, row in enumerate(puzzle):
+        for col in puzzle:
+            if col == 0:
+                return idx
+
+
 def is_solvable(puzzle, solved, size):
+    # Count the number of inversions
     inversions = 0
     for i in range(size * size - 1):
         for j in range(i + 1, size * size):            
@@ -13,16 +19,17 @@ def is_solvable(puzzle, solved, size):
                 vj = puzzle[j]
                 if solved.index(vi) > solved.index(vj):
                     inversions += 1
+    
+    # if the size is odd, the number of inversions should be even
+    if size % 2 == 1 and inversions % 2 == 0:
+        return True
+    
+    # if the blank is on an even row(counting from the bottom) and the number of inversions is odd
+    # if the blank is on an odd row(counting from the bottom) and the number of inversions is even
+    zero_row_idx = get_zero_row_idx(puzzle)
+    if (size - zero_row_idx) % 2 != inversions % 2:
+        return True
 
-    puzzle_zero_row = puzzle.index(0) // size
-    puzzle_zero_column = puzzle.index(0) % size
-    solved_zero_row = solved.index(0) // size
-    solved_zero_column = solved.index(0) % size
-    taxicab = abs(puzzle_zero_row - solved_zero_row) + abs(puzzle_zero_column - solved_zero_column)
-    if taxicab % 2 == 0 and inversions % 2 == 0:
-        return True
-    if taxicab % 2 == 1 and inversions % 2 == 1:
-        return True
     return False
 
 
