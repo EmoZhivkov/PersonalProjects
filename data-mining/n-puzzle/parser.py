@@ -1,5 +1,6 @@
 import math
 import sys
+import fileinput
 
 # mainly used to validate the negative number for the zero location
 def is_digit(n):
@@ -50,9 +51,20 @@ def is_valid_input(data):
     return True
 
 def get_input():
-    file_name = sys.argv[1]
-    with open(file_name, 'r') as f:
-        data = [line.strip() for line in f]
+    # file_name = sys.argv[1]
+    # with open(file_name, 'r') as f:
+    #     data = [line.strip() for line in f]
+
+    data = []
+    size = input()
+    data.append(size)
+    size = int(math.sqrt(int(size) + 1))
+
+    zero_location = input()
+    data.append(zero_location)
+
+    for _ in range(size):
+        data.append(input())
 
     puzzle = []
     for line in data:
@@ -67,7 +79,7 @@ def get_input():
 
     # Convert the size in a more usable format
     puzzle[0][0] = int(math.sqrt(puzzle[0][0] + 1))
-    
+
     size = puzzle[0][0]
     zero_location = puzzle[1][0]
 

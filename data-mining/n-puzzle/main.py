@@ -4,10 +4,21 @@ import parser
 
 
 def get_zero_row_idx(puzzle, size):
-    for i in range(size):
-        for j in range(size):
-            if puzzle[i + j] == 0:
-                return i
+    matrix = []
+    cnt = 0
+    row = []
+    for i in range(len(puzzle)):
+        row.append(puzzle[i])
+        cnt += 1
+        if cnt == size:
+            matrix.append(row)
+            cnt = 0
+            row = []
+
+    for idx, row in enumerate(matrix):
+        for col in row:
+            if col == 0:
+                return idx
 
 
 def is_solvable(puzzle, solved, size):
