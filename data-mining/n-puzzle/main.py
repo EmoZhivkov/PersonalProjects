@@ -92,15 +92,20 @@ def possible_moves(data, size):
 
 
 def ida_star_search(puzzle, solved, size):
-    def search(path, readable_path, g, bound, evaluated):
-        evaluated += 1
-        node = path[0]
+    def search(path, readable_path, g, bound):
+        # g -> how many steps until now
+        # bound -> how many steps we shouldn't cross
 
+        node = path[0]
         f = g + manhattan(node, solved, size)
+
+        # if f becomes bigger than the minimum required steps
         if f > bound:
-            return f, evaluated
+            return f
+
+        # if the current is the same as the solved one -> return true
         if node == solved:
-            return True, evaluated
+            return True
 
         ret = inf
         moves, readable_moves = possible_moves(node, size)
@@ -109,29 +114,31 @@ def ida_star_search(puzzle, solved, size):
                 path.appendleft(m)
                 readable_path.appendleft(readable_moves[idx])
 
-                t, evaluated = search(path, readable_path, g + 1, bound, evaluated)
+                t = search(path, readable_path, g + 1, bound)
                 if t is True:
-                    return True, evaluated
+                    return True
                 if t < ret:
                     ret = t
 
                 path.popleft()
                 readable_path.popleft()
-        return ret, evaluated
+
+        return ret
 
     bound = manhattan(puzzle, solved, size)
     path = deque([puzzle])
     readable_path = deque()
-    evaluated = 0
     while path:
-        t, _ = search(path, readable_path, 0, bound, evaluated)
+        t = search(path, readable_path, 0, bound)
         if t is True:
-            path.reverse()
+            # return the readable path
             readable_path.reverse()
-            return (True, path, readable_path)
+            return (True, readable_path)
         elif t is inf:
+            # cannot solve it
             return (False, [], [])
         else:
+            # set the new minimum number of steps
             bound = t
 
 
@@ -147,9 +154,7 @@ def main():
         print('not solvable')
         return
 
-    res = ida_star_search(puzzle, solved, size)
-
-    success, _, readable_steps = res
+    success, readable_steps = ida_star_search(puzzle, solved, size)
     if success:
         print(max(len(readable_steps), 0))
         for s in readable_steps:
