@@ -43,11 +43,12 @@ def get_solved(size, zero_location):
     return tuple(puzzle)
 
 
-def manhattan(candidate, solved, size):
+# compute the sum of the distances of each tile from where it belongs
+def manhattan(puzzle, solved, size):
     res = 0
     for i in range(size*size):
-        if candidate[i] != 0 and candidate[i] != solved[i]:
-            ci = solved.index(candidate[i])
+        if puzzle[i] != 0 and puzzle[i] != solved[i]:
+            ci = solved.index(puzzle[i])
             y = (i // size) - (ci // size)
             x = (i % size) - (ci % size)
             res += abs(y) + abs(x)
