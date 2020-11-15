@@ -2,6 +2,8 @@
 #include <limits>
 #include <stdlib.h>
 #include <vector>
+#include <ctime> 
+#include <cstdio>
 
 using namespace std;
 
@@ -14,7 +16,6 @@ int* colCount;
 int* upperDiagCount;
 int* lowerDiagCount;
 
-// runtime: n
 int getNumberOfConflicts(int excludeRow) {
 	int conflicts=0;
 
@@ -47,7 +48,6 @@ int getNumberOfConflicts() {
 	return getNumberOfConflicts(-1);
 }
 
-// runtime: n^2
 void initBoard() {
 	queens = new int[N];
 
@@ -73,11 +73,11 @@ void initBoard() {
 	upperDiagCount[queens[0]+0] += 1;
 	lowerDiagCount[(N-queens[0])+0-1] += 1;
 
-	// i=row index
+
 	for(int i=1; i<N; i++) {
 		minConflictCols.clear();
 		minConflicts = INF;
-		// j=col index
+
 		for(int j=0; j<N; j++) {
 			tempConflicts = ((colCount[j]+1)*colCount[j])/2;
 			tempConflicts += ((upperDiagCount[j+i]+1)*upperDiagCount[j+i])/2;
@@ -167,6 +167,9 @@ void minimumConflicts() {
 int main(int argc, const char *argv[]) {
     N = atoi(argv[1]);
 
+    time_t begin,end; // time_t is a datatype to store time values.
+    time (&begin); // note time before execution
+
 	srand(time(0));
 
 	initBoard();
@@ -195,7 +198,11 @@ int main(int argc, const char *argv[]) {
 		previousConflicts = newConflicts;
 	}
 
-	cout << "Number of steps to 0 conflicts: " << steps << "\n\n";
+    time (&end); // note time after execution
+
+    double difference = difftime (end,begin);
+    cout << "The solution took: " << difference << endl;
+
 
 	return 0;
 }
