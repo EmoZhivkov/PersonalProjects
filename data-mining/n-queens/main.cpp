@@ -8,8 +8,7 @@
 using namespace std;
 
 const int INF = numeric_limits<int>::max();
-
-int N = 8;
+int N = 0;
 int* queens;
 
 int* colCount;
@@ -66,7 +65,6 @@ void initBoard() {
 	int minConflicts=INF;
 	int tempConflicts;
 
-	// choose first queen randomly
 	queens[0] = rand()%N;
 
 	colCount[queens[0]] += 1;
@@ -113,7 +111,6 @@ void printBoard() {
 	cout << "Conflicts: " << getNumberOfConflicts() << "\n\n";
 }
 
-// runtime: n
 int rowWithMostConflicts() {
 	int rowConflicts=0;
 	int tempConflicts;
@@ -135,19 +132,16 @@ int rowWithMostConflicts() {
 	return maxConflictRows[rand()%maxConflictRows.size()];
 }
 
-// runtime: n
 void minimumConflicts() {
 	int highestConflictRow = rowWithMostConflicts();
 
 	int minConflicts=INF;
 	int tempConflicts;
-	// min conflicts cols for queen
+
 	vector<int> minConflictCols;
 
-	//printBoard();
 	getNumberOfConflicts(highestConflictRow);
 
-	// i=col index
 	for(int i=0; i<N; i++) {
 		tempConflicts = ((colCount[i]+1)*colCount[i])/2;
 		tempConflicts += ((upperDiagCount[i+highestConflictRow]+1)*upperDiagCount[i+highestConflictRow])/2;
@@ -179,14 +173,12 @@ int main(int argc, const char *argv[]) {
 	int newConflicts;
 
 	int count = 0;
-	int steps = 0;
 
-	cout << "Solving:" << endl;
+	cout << "Solving: ";
 
     // Go through until we have zero conflicts
 	while(previousConflicts != 0)	{
 		minimumConflicts();
-		steps++;
 		newConflicts = getNumberOfConflicts();
 		if(previousConflicts == newConflicts) {
 			count++;
@@ -202,7 +194,7 @@ int main(int argc, const char *argv[]) {
     long seconds = end.tv_sec - begin.tv_sec;
     long nanoseconds = end.tv_nsec - begin.tv_nsec;
     double elapsed = seconds + nanoseconds*1e-9;
-    
+
     printf("Time measured: %.3f seconds.\n", elapsed);
 
 	return 0;
