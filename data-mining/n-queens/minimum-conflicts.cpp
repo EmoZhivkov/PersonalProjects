@@ -2,6 +2,8 @@
 #include <limits>
 #include <stdlib.h>
 #include <vector>
+#include <time.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -165,6 +167,9 @@ void minimumConflicts() {
 int main(int argc, const char *argv[]) {
     N = atoi(argv[1]);
 
+    struct timespec begin, end; 
+    clock_gettime(CLOCK_REALTIME, &begin);
+
 	srand(time(0));
 
 	initBoard();
@@ -192,6 +197,13 @@ int main(int argc, const char *argv[]) {
 		}
 		previousConflicts = newConflicts;
 	}
+
+    clock_gettime(CLOCK_REALTIME, &end);
+    long seconds = end.tv_sec - begin.tv_sec;
+    long nanoseconds = end.tv_nsec - begin.tv_nsec;
+    double elapsed = seconds + nanoseconds*1e-9;
+    
+    printf("Time measured: %.3f seconds.\n", elapsed);
 
 	return 0;
 }
