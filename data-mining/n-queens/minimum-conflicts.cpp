@@ -15,7 +15,7 @@ int* upperDiagCount;
 int* lowerDiagCount;
 
 // runtime: n
-int BoardConflicts(int excludeRow) {
+int getNumberOfConflicts(int excludeRow) {
 	int conflicts=0;
 
 	for(int i=0; i<2*N-1; i++) {
@@ -43,31 +43,12 @@ int BoardConflicts(int excludeRow) {
 	return conflicts;
 }
 
-int BoardConflicts() {
-	return BoardConflicts(-1);
+int getNumberOfConflicts() {
+	return getNumberOfConflicts(-1);
 }
-
-/*
-// runtime: n
-int QueenConflicts(int row) {
-	int conflicts=0;
-	int col=queens[row];
-	for(int i=0; i<N; i++) {
-		if(i!=row) {
-			if(queens[i]==queens[row]) {
-				conflicts++;
-			}
-			if(abs(row-i)==abs(col-queens[i])) {
-				conflicts++;
-			}
-		}
-	}
-	return conflicts;
-}
-*/
 
 // runtime: n^2
-void Initialize() {
+void initBoard() {
 	queens = new int[N];
 
 	colCount = new int[N];
@@ -118,7 +99,7 @@ void Initialize() {
 	}
 }
 
-void Print() {
+void printBoard() {
 	for(int i=0; i<N; i++) {
 		for(int j=0; j<queens[i]; j++) {
 			cout << "| ";
@@ -129,12 +110,11 @@ void Print() {
 		}
 		cout << "|\n";
 	}
-	cout << "Conflicts: " << BoardConflicts() << "\n\n";
+	cout << "Conflicts: " << getNumberOfConflicts() << "\n\n";
 }
 
-// calculates row with most conflicts
 // runtime: n
-int HighestConflicts() {
+int rowWithMostConflicts() {
 	int rowConflicts=0;
 	int tempConflicts;
 	vector<int> maxConflictRows;
@@ -156,16 +136,16 @@ int HighestConflicts() {
 }
 
 // runtime: n
-void MinConflicts() {
-	int highestConflictRow = HighestConflicts();
+void minimumConflicts() {
+	int highestConflictRow = rowWithMostConflicts();
 
 	int minConflicts=INF;
 	int tempConflicts;
 	// min conflicts cols for queen
 	vector<int> minConflictCols;
 
-	//Print();
-	BoardConflicts(highestConflictRow);
+	//printBoard();
+	getNumberOfConflicts(highestConflictRow);
 
 	// i=col index
 	for(int i=0; i<N; i++) {
@@ -185,42 +165,26 @@ void MinConflicts() {
 }
 
 int main(int argc, const char *argv[]) {
-	if(argc > 2) {
-		cerr << "Usage:\n\t" << argv[0] << endl;
-		cerr << "\t" << argv[0] << " [Number of Queens]" << endl;
-		exit(1);
-	} else if(argc == 2) {
-		N = atoi(argv[1]);
-	}
-	if(N < 4) {
-		cerr << "No solutions. The number of Queens is less than 4." << endl;
-		exit(2);
-	}
-
-	cout << "Number of queens: " << N << endl;
-	cout << "Initializing board..." << endl;
+    N = atoi(argv[1]);
 
 	srand(time(0));
-	Initialize();
 
-	if(N <= 20) {
-		Print();
-	}
+	initBoard();
 
-	int previousConflicts = BoardConflicts();
+    // The initial conflicts
+	int previousConflicts = getNumberOfConflicts();
 	int newConflicts;
-
-	cout << "Initial conflicts: " << previousConflicts << endl << endl;
 
 	int count = 0;
 	int steps = 0;
 
-	cout << "Solving..." << endl;
+	cout << "Solving:" << endl;
 
+    // Go through until we have zero conflicts
 	while(previousConflicts != 0)	{
-		MinConflicts();
+		minimumConflicts();
 		steps++;
-		newConflicts = BoardConflicts();
+		newConflicts = getNumberOfConflicts();
 		if(previousConflicts == newConflicts) {
 			count++;
 			if(count>1) {
@@ -231,9 +195,6 @@ int main(int argc, const char *argv[]) {
 		previousConflicts = newConflicts;
 	}
 
-	if(N <= 20) {
-		Print();
-	}
 	cout << "Number of steps to 0 conflicts: " << steps << "\n\n";
 
 	return 0;
