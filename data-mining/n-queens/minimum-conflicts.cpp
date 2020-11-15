@@ -2,8 +2,6 @@
 #include <limits>
 #include <stdlib.h>
 #include <vector>
-#include <ctime> 
-#include <cstdio>
 
 using namespace std;
 
@@ -167,9 +165,6 @@ void minimumConflicts() {
 int main(int argc, const char *argv[]) {
     N = atoi(argv[1]);
 
-    time_t begin,end; // time_t is a datatype to store time values.
-    time (&begin); // note time before execution
-
 	srand(time(0));
 
 	initBoard();
@@ -197,12 +192,6 @@ int main(int argc, const char *argv[]) {
 		}
 		previousConflicts = newConflicts;
 	}
-
-    time (&end); // note time after execution
-
-    double difference = difftime (end,begin);
-    cout << "The solution took: " << difference << endl;
-
 
 	return 0;
 }

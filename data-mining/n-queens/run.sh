@@ -2,4 +2,4 @@ g++ -O3 -funroll-loops -g -Wall -ansi minimum-conflicts.cpp -c -o minimum-confli
 g++ -O3 -funroll-loops -g -Wall -ansi minimum-conflicts.o -o MinimumConflict
 
 # running the program with 10000 queens
-./MinimumConflict 10000
+time ./MinimumConflict 10000
