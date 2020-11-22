@@ -7,180 +7,146 @@ COORDINATE_SYSTEM_LIMITS = 1000
 
 
 class State:
-    # Create a new state
     def __init__(self, route: [], distance: int = 0):
         self.route = route
         self.distance = distance
 
-    # Compare states
     def __eq__(self, other):
         for i in range(len(self.route)):
             if(self.route[i] != other.route[i]):
                 return False
         return True
 
-    # Sort states
     def __lt__(self, other):
         return self.distance < other.distance
 
-    # Print a state
     def __repr__(self):
         return ('({0},{1})\n'.format(self.route, self.distance))
 
-    # Create a shallow copy
     def copy(self):
         return State(self.route, self.distance)
 
-    # Create a deep copy
     def deepcopy(self):
         return State(copy.deepcopy(self.route), copy.deepcopy(self.distance))
 
-    # Update distance
-    def update_distance(self, matrix, home):
+    def update_distance(self, matrix, start_point):
         self.distance = 0
 
-        # Keep track of departing city
-        from_index = home
+        from_index = start_point
 
-        # Loop all cities in the current route
         for i in range(len(self.route)):
             self.distance += matrix[from_index][self.route[i]]
             from_index = self.route[i]
             
-        # Add the distance back to home
-        self.distance += matrix[from_index][home]
+        self.distance += matrix[from_index][start_point]
 
 
-# This class represent a city (used when we need to delete cities)
-class City:
-    # Create a new city
+class Point:
     def __init__(self, index: int, distance: int):
         self.index = index
         self.distance = distance
 
-    # Sort cities
     def __lt__(self, other):
         return self.distance < other.distance
 
 
+def create_population(dist_matrix, start_point: int, point_indexes: [], generations: int):
+    gene_pool = point_indexes.copy()
 
-# Create a population
-def create_population(matrix: [], home: int, city_indexes: [], size: int):
-    # Create a gene pool
-    gene_pool = city_indexes.copy()
+    gene_pool.pop(start_point)
 
-    # Remove the home city
-    gene_pool.pop(home)
-
-    # Create a population
     population = []
-
-    for i in range(size):
-        # Shuffle the gene pool at random
+    for i in range(generations):
         random.shuffle(gene_pool)
 
-        # Create a new state and update the distance
         state = State(gene_pool[:])
-        state.update_distance(matrix, home)
+        state.update_distance(dist_matrix, start_point)
 
-        # Add an individual to the population
         population.append(state)
 
     return population
 
 
-# Ordered crossover (TSP)
-def crossover(matrix: [], home: int, parents: []):
-
-    # Copy parents
+def crossover(dist_matrix: [], start_point: int, parents: []):
     parent_1 = parents[0].deepcopy()
     parent_2 = parents[1].deepcopy()
 
-    # Child gene parts
+    # the different parts of the child genes
     part_1 = []
     part_2 = []
 
-    # Select the genes to copy from parents
+    # which genes to get from the parents
     a = int(random.random() * len(parent_1.route))
     b = int(random.random() * len(parent_2.route))
     start_gene = min(a, b)
     end_gene = max(a, b)
 
-    # Get genes from parent 1
+    # genes from the first parent
     for i in range(start_gene, end_gene):
         part_1.append(parent_1.route[i])
 
-    # Get genes from parent 2
+    # genes from the second parent
     part_2 = [int(x) for x in parent_2.route if x not in part_1]
 
-    # Create a child
     state = State(part_1 + part_2)
-    state.update_distance(matrix, home)
+    state.update_distance(dist_matrix, start_point)
 
     return state
 
 
-# Mutate a solution
-def mutate(matrix: [], home: int, state: State, mutation_rate: float = 0.01):
-    # Create a copy of the state
+def mutate(dist_matrix: [], start_point: int, state: State, mutation_rate: float = 0.01):
     mutated_state = state.deepcopy()
 
-    # Loop all the states in a route
+    # go though all of the states
     for i in range(len(mutated_state.route)):
 
-        # Check if we should do a mutation
+        # if we should mutate
         if(random.random() < mutation_rate):
 
-            # Swap two cities
+            # swap two points
             j = int(random.random() * len(state.route))
             city_1 = mutated_state.route[i]
             city_2 = mutated_state.route[j]
             mutated_state.route[i] = city_2
             mutated_state.route[j] = city_1
 
-    # Update the distance
-    mutated_state.update_distance(matrix, home)
+    mutated_state.update_distance(dist_matrix, start_point)
 
-    # Return a mutated state
     return mutated_state
 
 
-# A genetic algorithm
-def genetic_algorithm(matrix: [], home: int, steps_to_print_length: [], population: [], keep: int, mutation_rate: float, generations: int):
-    # Loop to create new generations
+def genetic_algorithm(dist_matrix: [], start_point: int, steps_to_print_length: [], population: [], keep: int, mutation_rate: float, generations: int):
     for i in range(generations):
 
-        # Sort the population to get the fittest individuals at the beginning
+        # we want the fittest individuals to be first
         population.sort()
 
+        # check if we should print the best dist at a given generation step
         if steps_to_print_length and steps_to_print_length[-1] == i:
             print(f'Fittest individual at step {steps_to_print_length[-1]}: {population[0].distance}')
             steps_to_print_length.pop()
 
-        # Generate parents
+        # create parents
         parents = []
         for j in range(1, len(population)):
             parents.append((population[j-1], population[j]))
 
-        # Generate childrens (breed) with crossover
+        # create children with crossover
         children = []
         for partners in parents:
-            children.append(crossover(matrix, home, partners))
+            children.append(crossover(dist_matrix, start_point, partners))
 
-        # Mutate children
+        # mutate children
         for j in range(len(children)):
-            children[j] = mutate(matrix, home, children[j], mutation_rate)
+            children[j] = mutate(dist_matrix, start_point, children[j], mutation_rate)
 
-        # Keep the fittest n from the population
+        # keep the fittest n from the population
         population = population[:keep]
 
-        # Add children to the population
         population.extend(children)
 
-    # Sort the population
     population.sort()
 
-    # Return the best state
     return population[0]
 
 
@@ -213,7 +179,7 @@ def main():
 
     # Genetic algorithm parameters
     start = random.randint(0, n - 1)
-    generations = 300
+    generations = 100
     mutation_rate = 0.01
     keep = 10
 
