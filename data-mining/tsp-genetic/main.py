@@ -7,7 +7,7 @@ COORDINATE_SYSTEM_LIMITS = 1000
 
 
 class State:
-    def __init__(self, route: [], distance: int = 0):
+    def __init__(self, route, distance=0):
         self.route = route
         self.distance = distance
 
@@ -42,7 +42,7 @@ class State:
 
 
 class Point:
-    def __init__(self, index: int, distance: int):
+    def __init__(self, index, distance):
         self.index = index
         self.distance = distance
 
@@ -50,7 +50,7 @@ class Point:
         return self.distance < other.distance
 
 
-def create_population(dist_matrix, start_point: int, point_indexes: [], generations: int):
+def create_population(dist_matrix, start_point, point_indexes, generations):
     gene_pool = point_indexes.copy()
 
     gene_pool.pop(start_point)
@@ -67,7 +67,7 @@ def create_population(dist_matrix, start_point: int, point_indexes: [], generati
     return population
 
 
-def crossover(dist_matrix: [], start_point: int, parents: []):
+def crossover(dist_matrix, start_point, parents):
     parent_1 = parents[0].deepcopy()
     parent_2 = parents[1].deepcopy()
 
@@ -94,7 +94,7 @@ def crossover(dist_matrix: [], start_point: int, parents: []):
     return state
 
 
-def mutate(dist_matrix: [], start_point: int, state: State, mutation_rate: float = 0.01):
+def mutate(dist_matrix, start_point, state, mutation_rate):
     mutated_state = state.deepcopy()
 
     # go though all of the states
@@ -115,7 +115,7 @@ def mutate(dist_matrix: [], start_point: int, state: State, mutation_rate: float
     return mutated_state
 
 
-def genetic_algorithm(dist_matrix: [], start_point: int, steps_to_print_length: [], population: [], keep: int, mutation_rate: float, generations: int):
+def genetic_algorithm(dist_matrix, start_point, steps_to_print_length, population, keep, mutation_rate, generations):
     for i in range(generations):
 
         # we want the fittest individuals to be first
@@ -169,15 +169,14 @@ def init_distance_matrix(number_of_points, points):
 def main():
     n = int(input('Enter the number of points <= 100: '))
 
-    # Random points
     point_indexes = [i for i in range(n)]
     points = [(random.randint(-COORDINATE_SYSTEM_LIMITS, COORDINATE_SYSTEM_LIMITS), 
                random.randint(-COORDINATE_SYSTEM_LIMITS, COORDINATE_SYSTEM_LIMITS)) for _ in range(n)]
 
-    # Calculate distances between the points
+    # calculate distances between the points
     dist_matrix = init_distance_matrix(n, points)
 
-    # Genetic algorithm parameters
+    # algorithm parameters
     start = random.randint(0, n - 1)
     generations = 100
     mutation_rate = 0.01
