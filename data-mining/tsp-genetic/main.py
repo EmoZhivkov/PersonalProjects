@@ -41,16 +41,7 @@ class State:
         self.distance += matrix[from_index][start_point]
 
 
-class Point:
-    def __init__(self, index, distance):
-        self.index = index
-        self.distance = distance
-
-    def __lt__(self, other):
-        return self.distance < other.distance
-
-
-def create_population(dist_matrix, start_point, point_indexes, generations):
+def init_population(dist_matrix, start_point, point_indexes, generations):
     gene_pool = point_indexes.copy()
 
     gene_pool.pop(start_point)
@@ -68,27 +59,27 @@ def create_population(dist_matrix, start_point, point_indexes, generations):
 
 
 def crossover(dist_matrix, start_point, parents):
-    parent_1 = parents[0].deepcopy()
-    parent_2 = parents[1].deepcopy()
+    first_parent = parents[0].deepcopy()
+    second_parent = parents[1].deepcopy()
 
     # the different parts of the child genes
-    part_1 = []
-    part_2 = []
+    first_part = []
+    second_part = []
 
     # which genes to get from the parents
-    a = int(random.random() * len(parent_1.route))
-    b = int(random.random() * len(parent_2.route))
+    a = int(random.random() * len(first_parent.route))
+    b = int(random.random() * len(second_parent.route))
     start_gene = min(a, b)
     end_gene = max(a, b)
 
     # genes from the first parent
     for i in range(start_gene, end_gene):
-        part_1.append(parent_1.route[i])
+        first_part.append(first_parent.route[i])
 
     # genes from the second parent
-    part_2 = [int(x) for x in parent_2.route if x not in part_1]
+    second_part = [int(x) for x in second_parent.route if x not in first_part]
 
-    state = State(part_1 + part_2)
+    state = State(first_part + second_part)
     state.update_distance(dist_matrix, start_point)
 
     return state
@@ -100,18 +91,17 @@ def mutate(dist_matrix, start_point, state, mutation_rate):
     # go though all of the states
     for i in range(len(mutated_state.route)):
 
-        # if we should mutate
+        # should we mutate
         if(random.random() < mutation_rate):
 
             # swap two points
             j = int(random.random() * len(state.route))
-            city_1 = mutated_state.route[i]
-            city_2 = mutated_state.route[j]
-            mutated_state.route[i] = city_2
-            mutated_state.route[j] = city_1
+            first_city = mutated_state.route[i]
+            second_city = mutated_state.route[j]
+            mutated_state.route[i] = second_city
+            mutated_state.route[j] = first_city
 
     mutated_state.update_distance(dist_matrix, start_point)
-
     return mutated_state
 
 
@@ -150,8 +140,8 @@ def genetic_algorithm(dist_matrix, start_point, steps_to_print_length, populatio
     return population[0]
 
 
-def distance_between_two_points(p1, p2):
-    return int(math.dist(p1, p2))
+def distance_between_two_points(first_point, second_point):
+    return int(math.dist(first_point, second_point))
 
 
 def init_distance_matrix(number_of_points, points):
@@ -186,10 +176,10 @@ def main():
     steps_to_print_length = [i for i in range(generations, 10, -between_steps)]
     steps_to_print_length.append(10)
 
-    population = create_population(dist_matrix, start, point_indexes, generations)
-    state = genetic_algorithm(dist_matrix, start, steps_to_print_length, population, keep, mutation_rate, generations)
+    population = init_population(dist_matrix, start, point_indexes, generations)
+    final_state = genetic_algorithm(dist_matrix, start, steps_to_print_length, population, keep, mutation_rate, generations)
 
-    print(f'Fittest individual on step {generations}: ', state.distance)
+    print(f'Fittest individual on step {generations}: ', final_state.distance)
 
 
 if __name__ == "__main__":
