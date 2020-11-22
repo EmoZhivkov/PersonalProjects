@@ -1,6 +1,5 @@
 import random
 import copy
-import pprint
 import math
 
 COORDINATE_SYSTEM_LIMITS = 1000
@@ -11,20 +10,8 @@ class State:
         self.route = route
         self.distance = distance
 
-    def __eq__(self, other):
-        for i in range(len(self.route)):
-            if(self.route[i] != other.route[i]):
-                return False
-        return True
-
     def __lt__(self, other):
         return self.distance < other.distance
-
-    def __repr__(self):
-        return ('({0},{1})\n'.format(self.route, self.distance))
-
-    def copy(self):
-        return State(self.route, self.distance)
 
     def deepcopy(self):
         return State(copy.deepcopy(self.route), copy.deepcopy(self.distance))
