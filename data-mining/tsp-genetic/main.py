@@ -29,16 +29,16 @@ class State:
     def deepcopy(self):
         return State(copy.deepcopy(self.route), copy.deepcopy(self.distance))
 
-    def update_distance(self, matrix, start_point):
+    def update_distance(self, dist_matrix, start_point):
         self.distance = 0
 
         from_index = start_point
 
         for i in range(len(self.route)):
-            self.distance += matrix[from_index][self.route[i]]
+            self.distance += dist_matrix[from_index][self.route[i]]
             from_index = self.route[i]
             
-        self.distance += matrix[from_index][start_point]
+        self.distance += dist_matrix[from_index][start_point]
 
 
 def init_population(dist_matrix, start_point, point_indexes, generations):
