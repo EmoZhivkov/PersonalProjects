@@ -133,13 +133,13 @@ def distance_between_two_points(first_point, second_point):
 
 def init_distance_matrix(number_of_points, points):
     dist_matrix = []
-
     for i in range(number_of_points):
         row = []
         for j in range(number_of_points):
             row.append(distance_between_two_points(points[i], points[j]))
-        dist_matrix.append(row)
 
+        dist_matrix.append(row)
+    
     return dist_matrix
 
 
@@ -151,8 +151,15 @@ def main():
                random.randint(-COORDINATE_SYSTEM_LIMITS, COORDINATE_SYSTEM_LIMITS)) for _ in range(n)]
 
     # calculate distances between the points
-    dist_matrix = init_distance_matrix(n, points)
-
+    try:
+        dist_matrix = init_distance_matrix(n, points)
+    except AttributeError as e:
+        print()
+        print('---------------------------------------')
+        print('You must run the program with python3.8')
+        print('---------------------------------------')
+        return
+        
     # algorithm parameters
     start = random.randint(0, n - 1)
     generations = 100
