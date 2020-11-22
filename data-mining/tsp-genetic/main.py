@@ -1,4 +1,3 @@
-# Import libraries
 import random
 import copy
 import pprint
@@ -147,13 +146,16 @@ def mutate(matrix: [], home: int, state: State, mutation_rate: float = 0.01):
 
 
 # A genetic algorithm
-def genetic_algorithm(matrix: [], home: int, population: [], keep: int, mutation_rate: float, generations: int):
-
+def genetic_algorithm(matrix: [], home: int, steps_to_print_length: [], population: [], keep: int, mutation_rate: float, generations: int):
     # Loop to create new generations
     for i in range(generations):
 
         # Sort the population to get the fittest individuals at the beginning
         population.sort()
+
+        if steps_to_print_length and steps_to_print_length[-1] == i:
+            print(f'Fittest individual at step {steps_to_print_length[-1]}: {population[0].distance}')
+            steps_to_print_length.pop()
 
         # Generate parents
         parents = []
@@ -177,7 +179,7 @@ def genetic_algorithm(matrix: [], home: int, population: [], keep: int, mutation
 
     # Sort the population
     population.sort()
-    
+
     # Return the best state
     return population[0]
 
@@ -199,38 +201,30 @@ def init_distance_matrix(number_of_points, points):
 
 
 def main():
-    
     n = int(input('Enter the number of points <= 100: '))
-    print()
 
     # Random points
     point_indexes = [i for i in range(n)]
     points = [(random.randint(-COORDINATE_SYSTEM_LIMITS, COORDINATE_SYSTEM_LIMITS), 
                random.randint(-COORDINATE_SYSTEM_LIMITS, COORDINATE_SYSTEM_LIMITS)) for _ in range(n)]
-    print('Random points in the coordinate system: ')
-    print(points)
-    print()
 
     # Calculate distances between the points
     dist_matrix = init_distance_matrix(n, points)
 
     # Genetic algorithm parameters
-    start = random.randint(0, n)
-    generations = 100
+    start = random.randint(0, n - 1)
+    generations = 300
     mutation_rate = 0.01
-    keep = 20
+    keep = 10
+
+    between_steps = generations // 4
+    steps_to_print_length = [i for i in range(generations, 10, -between_steps)]
+    steps_to_print_length.append(10)
 
     population = create_population(dist_matrix, start, point_indexes, generations)
-    state = genetic_algorithm(dist_matrix, start, population, keep, mutation_rate, generations)
-    
-    print('Solution: ')
-    print(points[start], end='')
-    for i in range(0, len(state.route)):
-        print(' -> ', points[state.route[i]], end='')
-    print(' -> ', points[start], end='')
-    print()
+    state = genetic_algorithm(dist_matrix, start, steps_to_print_length, population, keep, mutation_rate, generations)
 
-    print('Total distance: ', state.distance)
+    print(f'Fittest individual on step {generations}: ', state.distance)
 
 
 if __name__ == "__main__":
