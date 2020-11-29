@@ -1,12 +1,16 @@
 import time
 
+
 class TicTacToe:
     def __init__(self):
+        self.initialize()
+
+    def initialize(self):
         self.current_state = [['.','.','.'],
                               ['.','.','.'],
                               ['.','.','.']]
 
-        self.player_turn = 'X'
+        self.player_turn = input('Who is first? (X or O): ')
 
     def draw_board(self):
         for i in range(0, 3):
@@ -134,12 +138,15 @@ class TicTacToe:
             if self.result != None:
                 if self.result == 'X':
                     print('X is the winner')
+                    return
                 elif self.result == 'O':
                     print('O is the winner')
+                    return
                 elif self.result == '.':
                     print("Tie")
+                    return
 
-                self.__init__()
+                self.initialize()
                 return
 
             if self.player_turn == 'X':
