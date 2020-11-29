@@ -1,15 +1,11 @@
 import time
 
-class Game:
+class TicTacToe:
     def __init__(self):
-        self.initialize_game()
-
-    def initialize_game(self):
         self.current_state = [['.','.','.'],
                               ['.','.','.'],
                               ['.','.','.']]
 
-        # Player X always plays first
         self.player_turn = 'X'
 
     def draw_board(self):
@@ -28,43 +24,42 @@ class Game:
             return True
 
     def is_end(self):
-        # Vertical win
+        # vertical
         for i in range(0, 3):
             if (self.current_state[0][i] != '.' and
                 self.current_state[0][i] == self.current_state[1][i] and
                 self.current_state[1][i] == self.current_state[2][i]):
                 return self.current_state[0][i]
 
-        # Horizontal win
+        # horizontal
         for i in range(0, 3):
             if (self.current_state[i] == ['X', 'X', 'X']):
                 return 'X'
             elif (self.current_state[i] == ['O', 'O', 'O']):
                 return 'O'
 
-        # Main diagonal win
+        # diagonal
         if (self.current_state[0][0] != '.' and
             self.current_state[0][0] == self.current_state[1][1] and
             self.current_state[0][0] == self.current_state[2][2]):
             return self.current_state[0][0]
 
-        # Second diagonal win
+        # diagonal
         if (self.current_state[0][2] != '.' and
             self.current_state[0][2] == self.current_state[1][1] and
             self.current_state[0][2] == self.current_state[2][0]):
             return self.current_state[0][2]
 
-        # Is whole board full?
+        # if the game has not ended
         for i in range(0, 3):
             for j in range(0, 3):
                 # There's an empty field, we continue the game
                 if (self.current_state[i][j] == '.'):
                     return None
 
-        # It's a tie!
         return '.'
 
-    def max_alpha_beta(self, alpha, beta):
+    def max(self, alpha, beta):
         maxv = -2
         px = None
         py = None
@@ -82,14 +77,13 @@ class Game:
             for j in range(0, 3):
                 if self.current_state[i][j] == '.':
                     self.current_state[i][j] = 'O'
-                    (m, min_i, in_j) = self.min_alpha_beta(alpha, beta)
+                    (m, min_i, in_j) = self.min(alpha, beta)
                     if m > maxv:
                         maxv = m
                         px = i
                         py = j
                     self.current_state[i][j] = '.'
 
-                    # Next two ifs in Max and Min are the only difference between regular algorithm and minimax
                     if maxv >= beta:
                         return (maxv, px, py)
 
@@ -98,8 +92,7 @@ class Game:
 
         return (maxv, px, py)
     
-    def min_alpha_beta(self, alpha, beta):
-
+    def min(self, alpha, beta):
         minv = 2
 
         qx = None
@@ -118,7 +111,7 @@ class Game:
             for j in range(0, 3):
                 if self.current_state[i][j] == '.':
                     self.current_state[i][j] = 'X'
-                    (m, max_i, max_j) = self.max_alpha_beta(alpha, beta)
+                    (m, max_i, max_j) = self.max(alpha, beta)
                     if m < minv:
                         minv = m
                         qx = i
@@ -133,34 +126,32 @@ class Game:
 
         return (minv, qx, qy)
     
-    def play_alpha_beta(self):
+    def play(self):
         while True:
             self.draw_board()
             self.result = self.is_end()
 
             if self.result != None:
                 if self.result == 'X':
-                    print('The winner is X!')
+                    print('X is the winner')
                 elif self.result == 'O':
-                    print('The winner is O!')
+                    print('O is the winner')
                 elif self.result == '.':
-                    print("It's a tie!")
+                    print("Tie")
 
-
-                self.initialize_game()
+                self.__init__()
                 return
 
             if self.player_turn == 'X':
-
                 while True:
                     start = time.time()
-                    (m, qx, qy) = self.min_alpha_beta(-2, 2)
+                    (m, qx, qy) = self.min(-2, 2)
                     end = time.time()
-                    print('Evaluation time: {}s'.format(round(end - start, 7)))
-                    print('Recommended move: X = {}, Y = {}'.format(qx, qy))
+                    print('The move took: {}s'.format(round(end - start, 7)))
 
-                    px = int(input('Insert the X coordinate: '))
-                    py = int(input('Insert the Y coordinate: '))
+                    px = int(input('X: '))
+                    py = int(input('Y: '))
+                    print()
 
                     qx = px
                     qy = py
@@ -170,17 +161,18 @@ class Game:
                         self.player_turn = 'O'
                         break
                     else:
-                        print('The move is not valid! Try again.')
+                        print('The move is not possible.')
+                        print()
 
             else:
-                (m, px, py) = self.max_alpha_beta(-2, 2)
+                (m, px, py) = self.max(-2, 2)
                 self.current_state[px][py] = 'O'
                 self.player_turn = 'X'
 
 
 def main():
-    g = Game()
-    g.play_alpha_beta()
+    TicTacToe().play()
+
 
 if __name__ == "__main__":
     main()
