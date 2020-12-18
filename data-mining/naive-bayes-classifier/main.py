@@ -5,6 +5,7 @@ from random import randrange
 from math import sqrt
 from math import exp
 from math import pi
+from copy import deepcopy
 
 # Load a CSV file
 def load_csv(filename):
@@ -21,7 +22,8 @@ def load_csv(filename):
 def str_column_to_float(dataset, column):
 	value_dict = {
 		'y': 2,
-		'n': 1
+		'n': 1,
+		'?': 0
 	}
 
 	for row in dataset:
@@ -151,37 +153,55 @@ def naive_bayes(train, test):
 # Test Naive Bayes on Iris Dataset
 seed(1)
 filename = 'votes.data'
-dataset = load_csv(filename)
+dataset_with_third_category = load_csv(filename)
+dataset_with_means = deepcopy(dataset_with_third_category)
 
 # move the answer to the end
-for row in dataset:
+for row in dataset_with_means:
+	row.append(row.pop(0))
+	
+for row in dataset_with_third_category:
 	row.append(row.pop(0))
 
 # get the mean of each column
-mean_for_col = [{} for _ in range(len(dataset[0]))]
-for row in dataset:
+mean_for_col = [{} for _ in range(len(dataset_with_means[0]))]
+for row in dataset_with_means:
 	for i, col in enumerate(row):
 		if col in mean_for_col[i]:
 			mean_for_col[i][col] += 1
 		else:
 			mean_for_col[i][col] = 1
 
-for row in dataset:
-	for i in range(len(dataset[0]) -1):
+for row in dataset_with_means:
+	for i in range(len(dataset_with_means[0]) -1):
 		if row[i] == '?':
 			row[i] = max([item for item in mean_for_col[i].items()], key=lambda x: x[1])[0]
 	
-for i in range(len(dataset[0])-1):
-	str_column_to_float(dataset, i)
+
+# -----------for third category--------------------
+for i in range(len(dataset_with_third_category[0])-1):
+	str_column_to_float(dataset_with_third_category, i)
 
 # convert class column to integers
-str_column_to_int(dataset, len(dataset[0])-1)
+str_column_to_int(dataset_with_third_category, len(dataset_with_third_category[0])-1)
+
+
+# -----------for means-----------------------------
+for i in range(len(dataset_with_means[0])-1):
+	str_column_to_float(dataset_with_means, i)
+
+# convert class column to integers
+str_column_to_int(dataset_with_means, len(dataset_with_means[0])-1)
+
+
 # evaluate algorithm
 n_folds = 10
-scores = evaluate_algorithm(dataset, naive_bayes, n_folds)
-print('Scores: %s' % scores)
-print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
 
-# without k means or some kind of means method -> 91.6 percent
-# with means(convert missing values to the mean value) -> 92.3
-# with k means -> 
+scores_with_third_category = evaluate_algorithm(dataset_with_third_category, naive_bayes, n_folds)
+scores_with_means = evaluate_algorithm(dataset_with_means, naive_bayes, n_folds)
+
+print('Scores with third category: %s' % scores_with_third_category)
+print('Mean Accuracy: %.3f%%' % (sum(scores_with_third_category)/float(len(scores_with_third_category))))
+print()
+print('Scores with means: %s' % scores_with_means)
+print('Mean Accuracy: %.3f%%' % (sum(scores_with_means)/float(len(scores_with_means))))
