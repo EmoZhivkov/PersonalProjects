@@ -21,8 +21,7 @@ def load_csv(filename):
 def str_column_to_float(dataset, column):
 	value_dict = {
 		'y': 2,
-		'n': 1,
-		'?': 0
+		'n': 1
 	}
 
 	for row in dataset:
@@ -158,6 +157,20 @@ dataset = load_csv(filename)
 for row in dataset:
 	row.append(row.pop(0))
 
+# get the mean of each column
+mean_for_col = [{} for _ in range(len(dataset[0]))]
+for row in dataset:
+	for i, col in enumerate(row):
+		if col in mean_for_col[i]:
+			mean_for_col[i][col] += 1
+		else:
+			mean_for_col[i][col] = 1
+
+for row in dataset:
+	for i in range(len(dataset[0]) -1):
+		if row[i] == '?':
+			row[i] = max([item for item in mean_for_col[i].items()], key=lambda x: x[1])[0]
+	
 for i in range(len(dataset[0])-1):
 	str_column_to_float(dataset, i)
 
@@ -168,3 +181,7 @@ n_folds = 10
 scores = evaluate_algorithm(dataset, naive_bayes, n_folds)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
+
+# without k means or some kind of means method -> 91.6 percent
+# with means(convert missing values to the mean value) -> 92.3
+# with k means -> 
