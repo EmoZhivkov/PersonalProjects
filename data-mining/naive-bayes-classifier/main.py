@@ -19,8 +19,14 @@ def load_csv(filename):
 
 # Convert string column to float
 def str_column_to_float(dataset, column):
+	value_dict = {
+		'y': 2,
+		'n': 1,
+		'?': 0
+	}
+
 	for row in dataset:
-		row[column] = float(row[column].strip())
+		row[column] = value_dict[row[column]]
 
 # Convert string column to integer
 def str_column_to_int(dataset, column):
@@ -145,14 +151,20 @@ def naive_bayes(train, test):
 
 # Test Naive Bayes on Iris Dataset
 seed(1)
-filename = 'iris.csv'
+filename = 'votes.data'
 dataset = load_csv(filename)
+
+# move the answer to the end
+for row in dataset:
+	row.append(row.pop(0))
+
 for i in range(len(dataset[0])-1):
 	str_column_to_float(dataset, i)
+
 # convert class column to integers
 str_column_to_int(dataset, len(dataset[0])-1)
 # evaluate algorithm
-n_folds = 5
+n_folds = 10
 scores = evaluate_algorithm(dataset, naive_bayes, n_folds)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
