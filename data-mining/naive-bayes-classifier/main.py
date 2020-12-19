@@ -190,8 +190,7 @@ def main():
 	# convert class column to integers
 	convert_class_column_to_number(dataset_with_means, len(dataset_with_means[0])-1)
 
-
-	# evaluate algorithm
+	# hyperparameter
 	n_folds = 10
 
 	scores_with_third_category = evaluate(dataset_with_third_category, naive_bayes, n_folds)
