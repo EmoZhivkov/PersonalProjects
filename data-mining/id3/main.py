@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 
-class GadId3Classifier:
+class Id3:
     def fit(self, input, output):
         data = input.copy()
         data[output.name] = output
@@ -59,7 +59,7 @@ class GadId3Classifier:
 
         return information_gain
 
-    def decision_tree(self, data, orginal_data, feature_attribute_names, target_attribute_name, parent_node_class=None):
+    def decision_tree(self, data, original_data, feature_attribute_names, target_attribute_name, parent_node_class=None):
         # base cases:
         # if data is pure, return the majority class of subset
         unique_classes = np.unique(data[target_attribute_name])
@@ -96,7 +96,7 @@ class GadId3Classifier:
                 sub_data = data.where(data[best_feature] == value).dropna()
 
                 # call the algorithm recursively
-                subtree = self.decision_tree(sub_data, orginal_data, feature_attribute_names, target_attribute_name, parent_node_class)
+                subtree = self.decision_tree(sub_data, original_data, feature_attribute_names, target_attribute_name, parent_node_class)
 
                 # add subtree to original tree
                 tree[best_feature][value] = subtree
@@ -123,38 +123,28 @@ class GadId3Classifier:
 
 
 def main():
-    data_path = "processed.cleveland.data"
+    data_path = "breast-cancer.data"
     df = pd.read_csv(data_path)
 
-    # rename known columns
-
-    columns = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg',
-            'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'disease_present']
-
-    # columns = ['class','age','menopause','tumor-size','inv-nodes','node-caps','deg-malig','breast','breast-quad','irradiat']
+    # give a name to the columns for easier work
+    columns = ['has_cancer','age','menopause','tumor-size','inv-nodes','node-caps','deg-malig','breast','breast-quad','irradiat']
     df.columns = columns
 
-    # TODO: convert columns to the correct things
-    # go through all of the columns and convert them into numeric values 
-
-    # convert disease_present feature to binary
-    df['disease_present'] = df.disease_present.replace([1,2,3,4], 1)
-
-    # drop rows with missing values, missing = ?
+    # remove all rows with missing values
     df = df.replace("?", np.nan)
     df = df.dropna()
 
-    # organize data into input and output
-    X = df.drop(columns="disease_present")
-    y = df["disease_present"]
+    # make all fields numeric and easier to work with
+    df = df.apply(lambda x: pd.factorize(x)[0])
+
+    X = df.drop(columns="has_cancer")
+    y = df["has_cancer"]
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 
-    # initialize and fit model
-    model = GadId3Classifier()
+    model = Id3()
     model.fit(X_train, y_train)
 
-    # return accuracy score
     y_pred = model.predict(X_test)
     print(accuracy_score(y_test, y_pred))
 
