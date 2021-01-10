@@ -123,13 +123,19 @@ class GadId3Classifier:
 
 
 def main():
-    data_url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data"
-    df = pd.read_csv(data_url, header=None)
+    data_path = "processed.cleveland.data"
+    df = pd.read_csv(data_path)
 
     # rename known columns
+
     columns = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg',
             'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'disease_present']
+
+    # columns = ['class','age','menopause','tumor-size','inv-nodes','node-caps','deg-malig','breast','breast-quad','irradiat']
     df.columns = columns
+
+    # TODO: convert columns to the correct things
+    # go through all of the columns and convert them into numeric values 
 
     # convert disease_present feature to binary
     df['disease_present'] = df.disease_present.replace([1,2,3,4], 1)
