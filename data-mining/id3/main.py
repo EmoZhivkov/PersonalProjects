@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, KFold
 from sklearn.metrics import accuracy_score
 
 
@@ -11,40 +11,35 @@ class Id3:
         self.tree = self.decision_tree(data, data, input.columns, output.name)
 
     def predict(self, input):
-        # convert input data into a dictionary of samples
         samples = input.to_dict(orient='records')
         predictions = []
 
-        # make a prediction for every sample
         for sample in samples:
             predictions.append(self.make_prediction(sample, self.tree, 1.0))
 
         return predictions
 
     def entropy(self, attribute_column):
-        # find unique values and their frequency counts for the given attribute
+        # get the unique values for the column
         values, counts = np.unique(attribute_column, return_counts=True)
 
-        # calculate entropy for each unique value
         entropy_list = []
 
         for i in range(len(values)):
             probability = counts[i]/np.sum(counts)
             entropy_list.append(-probability*np.log2(probability))
 
-        # calculate sum of individual entropy values
         total_entropy = np.sum(entropy_list)
 
         return total_entropy
 
     def information_gain(self, data, feature_attribute_name, target_attribute_name):
-        # find total entropy of given subset
+        # total entropy of given subset
         total_entropy = self.entropy(data[target_attribute_name])
 
         # find unique values and their frequency counts for the attribute to be split
         values, counts = np.unique(data[feature_attribute_name], return_counts=True)
 
-        # calculate weighted entropy of subset
         weighted_entropy_list = []
 
         for i in range(len(values)):
@@ -54,24 +49,25 @@ class Id3:
 
         total_weighted_entropy = np.sum(weighted_entropy_list)
 
-        # calculate information gain
         information_gain = total_entropy - total_weighted_entropy
 
         return information_gain
 
     def decision_tree(self, data, original_data, feature_attribute_names, target_attribute_name, parent_node_class=None):
-        # base cases:
         # if data is pure, return the majority class of subset
         unique_classes = np.unique(data[target_attribute_name])
         if len(unique_classes) <= 1:
             return unique_classes[0]
+
         # if subset is empty, ie. no samples, return majority class of original data
         elif len(data) == 0:
             majority_class_index = np.argmax(np.unique(original_data[target_attribute_name], return_counts=True)[1])
             return np.unique(original_data[target_attribute_name])[majority_class_index]
+
         # if data set contains no features to train with, return parent node class
         elif len(feature_attribute_names) == 0:
             return parent_node_class
+
         # if none of the above are true, construct a branch:
         else:
             # determine parent node class of current branch
@@ -104,9 +100,7 @@ class Id3:
             return tree
 
     def make_prediction(self, sample, tree, default=1):
-        # map sample data to tree
         for attribute in list(sample.keys()):
-            # check if feature exists in tree
             if attribute in list(tree.keys()):
                 try:
                     result = tree[attribute][sample[attribute]]
@@ -133,9 +127,6 @@ def main():
     # remove all rows with missing values
     df = df.replace("?", np.nan)
     df = df.dropna()
-
-    # make all fields numeric and easier to work with
-    df = df.apply(lambda x: pd.factorize(x)[0])
 
     X = df.drop(columns="has_cancer")
     y = df["has_cancer"]
